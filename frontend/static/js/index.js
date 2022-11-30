@@ -49,10 +49,10 @@ function loadHtml(id ,filename){
 const router = async () => {
     const routes = [
         { path: "/", view: "home.html" },
-        { path: "/about", view: About },
-        { path: "/shop/:id", view: Shop },
-        { path: "/events", view: Events },
-        { path: "/contact", view: Contacts },
+        { path: "/about", view: "about.html" },
+        { path: "/shop/:id", view: "shop.html" },
+        { path: "/events", view: "events.html" },
+        { path: "/contact", view: "contact.html" },
         
     ];
 
@@ -75,7 +75,7 @@ const router = async () => {
 
     
     
-   return loadHtml("app", `${routes[0].view}`);
+   return loadHtml("app", `${routes.view}`);
 };
 
 window.addEventListener("popstate", router);
