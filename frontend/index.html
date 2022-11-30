@@ -1,22 +1,97 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Single Page App</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title></title>
+    <meta name="description" content="">
+    <script  src="/static/js/jquery.min.js"></script>
 </head>
 <body>
-    <nav class="nav">
-        <a href="/" class="nav__link" data-link>Dashboard</a>
-        <a href="/posts" class="nav__link" data-link>Posts</a>
-        <a href="/settings" class="nav__link" data-link>Settings</a>
+    <div class="body-container">
+        <div class="nav-bar-container">
+            <div class="nav-bar">
+                <nav>
+                   
+                <li> <a href="/" class="nav__link" data-link>Home</a></li>
+                        <li><a href="/about" class="nav__link" data-link>About Us</a></li>
+                        <li><a href="/shop" class="nav__link" data-link>Shop</a></li>
+                        <li><a href="/events" class="nav__link" data-link>Events</a></li>
+                        <li><a href="/contact" class="nav__link" data-link>Contacts</a></li>
+                        <li><a href="/signin" class="nav__link" data-link>SignIn</a>
+                    </li>
+                        
 
-    </nav>
+                        
 
-<div id="app"></div>
+                    <select> 
+                        <option value="/" selected="selected" class="nav__link" data-link><a href="/" class="nav__link" data-link>Home</a></option> 
+                        <option href="/about" class="nav__link" data-link><a href="/about" class="nav__link" data-link>About Us</a></option>
+                        <option value="/events"><a href="/shop" class="nav__link" data-link>Shop</a></option> 
+                        <option value="/events"><a href="/events" class="nav__link" data-link>Events</a></option> 
+                        <option value="/contact"><a href="/contact" class="nav__link" data-link>Contacts</a></option> 
+                        <option value="/signin"><a href="/signin" class="nav__link" data-link>SignIn</a></option> 
+                    </select> 
+                </nav>
+            </div>
+        </div>
 
+
+        <div id="app">
+            
+        </div>
+
+
+
+
+        <div class="footer-container">
+            <div class="footer">
+                
+
+                
+                <div class="subscribe" id="footer-grid">
+                <div class="subcribe-contents">
+                    <div class="text">
+                        <p>Enter email and click Subscribe for the latest news letter</p>
+                    </div>
+                    <br>
+                    <div class="wrapper">
+                        <form action="" method="post">
+                            <input  type="email" name="subscribe" id="email-text" >
+                            <input type="button" value="subscribe" id="submit-button">
+                        </form>
+                </div>
+                <br>
+                    
+                    </div>
+                </div>
+                <div class="contacts" id="footer-grid">
+                <div class="contacts-contents">
+                <div class="text">
+                        <p>Enter email and click Subscribe for the latest news letter</p>
+                    </div>
+                <div class="contacts-blocks">
+                       
+                            <li><img src="" alt="" srcset=""></li>
+                            <li><img src="" alt="" srcset=""></li>
+                            <li><img src="" alt="" srcset=""></li>
+                            <li><img src="" alt="" srcset=""></li>
+                        
+                    </div>
+    	        </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; WeSkate Pty Ltd est 2021. All rights reserved</p>
+    </div>
 
     <script type="module" src="/static/js/index.js"></script>
+   
+
+
+    <noscript>You need to enable JavaScript to view the full site.</noscript>
 </body>
 </html>

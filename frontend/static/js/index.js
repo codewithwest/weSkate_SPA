@@ -1,7 +1,8 @@
-import Dashboard from "./views/Dashboard.js";
-import Posts from "./views/Posts.js";
-import PostView from "./views/PostView.js";
-import Settings from "./views/Settings.js";
+import Home from "./views/Home.js";
+import Contacts from "./views/Contacts.js";
+import About from "./views/About.js";
+import Events from "./views/Events.js";
+import Shop from "./views/Shop.js";
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -19,12 +20,40 @@ const navigateTo = url => {
     router();
 };
 
+
+function loadHtml(id ,filename){
+    console.log(`${filename}`);
+    let xhttp;
+    let file = filename;
+    let element = document.getElementById(id);
+    if (file) {
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    element.innerHtml = this.responseText;}
+                if (this.status == 404) {
+                    element.innerHtml = "<h1>.Not Found here</h1>";}
+            }
+        }
+        console.log(xhttp)
+        var to = xhttp.open("GET", `static/views/${file}`, true);
+        console.log(to);
+        xhttp.send();
+        return;
+    }
+    
+    
+};
+
 const router = async () => {
     const routes = [
-        { path: "/", view: Dashboard },
-        { path: "/posts", view: Posts },
-        { path: "/posts/:id", view: PostView },
-        { path: "/settings", view: Settings }
+        { path: "/", view: "home.html" },
+        { path: "/about", view: About },
+        { path: "/shop/:id", view: Shop },
+        { path: "/events", view: Events },
+        { path: "/contact", view: Contacts },
+        
     ];
 
     // Test each route for potential match
@@ -44,9 +73,9 @@ const router = async () => {
         };
     }
 
-    const view = new match.route.view(getParams(match));
-
-    document.querySelector("#app").innerHTML = await view.getHtml();
+    
+    
+   return loadHtml("app", `${routes[0].view}`);
 };
 
 window.addEventListener("popstate", router);
