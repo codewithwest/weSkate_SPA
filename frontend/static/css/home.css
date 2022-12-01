@@ -1,83 +1,61 @@
-
-.home-body-container{
+body{
+    margin: 0 0;
+}
+.home-container{
+    height: 100%;    
+    width: 100%;
+       
+}
+.home-container .home-rows{
+    width:99%;
+    height: 100%;
+   
     
-    width:100%;
-    height: 100%;
-    border: 1px dotted red;
 }
-.home-body-container .body-container{
-   display: flex;
-    width:100%;
-    height: 100%;
-    border: 2px dotted green;
-}
-.home-body-container .body-container .columns{
+
+#homerows{
     display: flex;
     width: 100%;
-    height: 100%;
-}
-
-
-
-.columns .nav-column{
-    
-   position: sticky;
-    top: 0;
-    align-content: center;
-    justify-items: center;
-    width: 20%;
-    background: coral;
-   height: 100%;
-
-}
-
-li{
-    
     height: 25%;
-    margin: 10px 0;
+    border: 1px dotted indianred;
     text-align: center;
-    list-style: none;
-    border: 1px dotted green;
-}
-li a{
-    text-decoration: none;
-}
-.columns .display-column{
-    width: 80%;
-    background: green;
-    height: 100%;
+    margin: 1% 0;
 }
 
-.section-defined{
-    
+.home-container .home-rows .home-row1-2-aligner {
     width: 100%;
-    height: 100%;
-    background-color: yellow;
-}
-#section1{
-    background: red;
-    height: 700px;
-}
-
-.in-link{
     display: flex;
-    width: 100%;
+} 
+.home-container .home-rows .home-row1-2-aligner .home-download{
+    color: aliceblue;
+    font-size: 33px;
+    background: linear-gradient(25deg,transparent, rgba(122,33,122, 0.8), rgba(11,22,145, 0.7));
+   border: none;
+    height: 35%;
+   width: 40%;
+    margin: auto auto;
 }
-.in-link li{
-    width:25%;
-    height: 30%;
+
+.home-container .home-rows .home-row1-2-aligner #row1-desc{
+    border: 1px dotted green;
+    width: 50%;
+    display: inline-block;
 }
-#section2{
-    background: blue;
-    height: 700px;
+.home-container .home-rows .home-row1-2-aligner .descright{
+    margin: auto 0;
 }
-#section3{
-    background: pink;
-    height: 700px;
-}
-#section4{
-    background: black;
-    height: 700px;
+
+#row-pics{
+    background: linear-gradient(9deg, transparent, rgba(125, 144, 221, 0.5));
+    width: calc(100%/3);
+    display: inline-block;
 }
 
 
+.home-container .home-rows .home-row1-2-aligner .motor{
+    margin: auto auto;
+}
+
+.home-container .home-rows .home-row4 .remarks{
+    margin: auto 0;
+}
