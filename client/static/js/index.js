@@ -22,6 +22,7 @@ const navigateTo = url => {
 
 const router = async () => {
     const routes = [
+        { path: "", view: Home },
         { path: "/", view: Home },
         { path: "/about", view: About },
         { path: "/shop", view: Shop },
@@ -51,8 +52,11 @@ const router = async () => {
     //document.getElementById("app").innerHTML = await view.getHtml();
 
     const html = await fetch(newUrl).then((Response)  => Response.text());
-
+    var srcLink = await view.getJs();
     document.getElementById('content').innerHTML = html;
+    var script = document.getElementById('script');
+    script.setAttribute('src',srcLink )
+
 };
 
 window.addEventListener("popstate", router);

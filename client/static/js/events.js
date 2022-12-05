@@ -1,5 +1,3 @@
-console.log("heloo");
-
 
 function addEvents(){
     var posts = ["one", "two","three","four","five","six","seven","eight","nine","ten","eleven","twelve",];
@@ -28,7 +26,7 @@ function addEvents(){
             var event = document.createElement("div");
             event.setAttribute("id", "event");
             event.setAttribute("class", "event");
-            event.style.backgroundImage="url(../assets/event1.jpg)";
+            event.style.backgroundImage="url(/static/assets/event1.jpg)";
             container.appendChild(event);
             //create an rsvp div and append 
             var eventContainer = document.getElementById('event');
@@ -64,7 +62,7 @@ function addEvents(){
             var desc = document.createTextNode(postsDesc[i]);
             eventDesc.appendChild(desc);
             eventDescCreator.appendChild(eventDesc);    
-            console.log(event)
+           
             };
         };
     elementEventAdd();

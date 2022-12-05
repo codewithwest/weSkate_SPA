@@ -2,59 +2,113 @@
 .home-container{
     height: 100%;    
     width: 100%;
-    background: aquamarine;
+    background: greenyellow;
        
 }
-.home-container .home-rows{
-    width:99%;
+.home-container .rows{
+    border: 1px dotted red;
+    width:100%;
+    height: 100%;  
+}
+.home-container .rows .row-child{
+    display: flex;
+    width: 100%;
+    height: 120px;
+    border: 1px dotted indianred;
+    text-align: center;
+    margin: 0.02% 0;
+}
+
+
+/* row child 1*/
+#row-child0 .row-child1-children{
+    display: flex;
+    width: 50%;
     height: 100%;
    
+}
+#row-child0 .row-child1-children .text-container{
+    display: flex;
+    margin: auto auto;
+    height: 80%;
+    width: 70%;
+   
+}
+#row-child0 .row-child1-children .text-container p{
+    text-align: center;
+    margin: auto auto;
+   
+}
+
+/* row child 2*/
+#row-child1 .row-child2-children{
+    display: flex;
+    width: calc(100%/3);
+    border: 1px solid pink;
+}
+#row-child1 .row-child2-children .text-cover{
+    display: flex;
+    margin: auto auto;
+    width: 80%;
+    height: 60%;
     
 }
 
-#homerows{
+#row-child1 .row-child2-children .button-cover{
     display: flex;
-    width: 100%;
-    height: 25%;
-    border: 1px dotted indianred;
-    text-align: center;
-    margin: 1% 0;
-}
-
-.home-container .home-rows .home-row1-2-aligner {
-    width: 100%;
-    display: flex;
-} 
-.home-container .home-rows .home-row1-2-aligner .home-download{
-    color: aliceblue;
-    font-size: 33px;
-    background: linear-gradient(25deg,transparent, rgba(122,33,122, 0.8), rgba(11,22,145, 0.7));
-   border: none;
-    height: 35%;
-   width: 40%;
     margin: auto auto;
+    width: 80%;
+    height: 50%;
+    background: linear-gradient(10deg, transparent, transparent, rgba(50, 169, 52, 0.8)), linear-gradient(195deg, transparent, rgba(202, 34, 208, 0.8) , transparent);
+}
+#row-child1 .row-child2-children .button-cover input{
+    font-size: 28px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(10deg, transparent, transparent, rgba(50, 169, 52, 0.8)), linear-gradient(195deg, transparent, rgba(202, 34, 208, 0.8) , transparent);
 }
 
-.home-container .home-rows .home-row1-2-aligner #row1-desc{
-    border: 1px dotted green;
-    width: 50%;
-    display: inline-block;
+/* row child 3*/
+#row-child2 .row-child3-children {
+    height: 200px !important;
+    
 }
-.home-container .home-rows .home-row1-2-aligner .descright{
-    margin: auto 0;
-}
-
-#row-pics{
-    background: linear-gradient(9deg, transparent, rgba(125, 144, 221, 0.5));
+#row-child2 .row-child3-children {
+    padding: 10px;
+    display: flex;
+    background-position: center;
+    background-size: cover;
     width: calc(100%/3);
-    display: inline-block;
+    box-shadow: 2px 2px 3px rgba(50, 169, 52, 0.8), -2px -2px 3px rgba(50, 169, 52, 0.8);
+    
 }
 
+#row-child2 .desc-container{
+    width: 80%;
+    box-shadow: 2px 2px 3px rgba(50, 108, 169, 0.8), -2px -2px 3px rgba(50, 108, 169, 0.8);
+    height: 30%;
+    margin: 140px auto;
+}
 
-.home-container .home-rows .home-row1-2-aligner .motor{
+/*Row child 4*/
+#row-child3 {
+    margin-top: 100px;
+   height: 150px;
+    
+    
+}
+#row-child3 .row-child4-children{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+    
+}
+#row-child3 .row-child4-children .mess-container{
     margin: auto auto;
+    width: 80%;
+    height: 70%;
+    box-shadow: 2px 2px 3px rgba(50, 108, 169, 0.8), -2px -2px 3px rgba(50, 108, 169, 0.8);
+    font-size: 28px;
 }
 
-.home-container .home-rows .home-row4 .remarks{
-    margin: auto 0;
-}

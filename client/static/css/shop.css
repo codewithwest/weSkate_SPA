@@ -26,13 +26,47 @@
     width: 74%;
 }
 
+.displayLayout{
+    height: 100%;
+    width: 100%;
+}
+/* Sections and their colors*/
+
+
+.displayLayout #SkateBoardsR{
+    
+    background: pink;
+}
+.displayLayout #T-ShirtsR{
+    display: none;
+    background: red;
+}
+.displayLayout #HoodiesR{
+
+   display: none;
+    background: green;
+}
+.displayLayout #KnitsR{
+    display: none;
+    background: blue;
+}
+.displayLayout #PantsR{
+    display: none;
+    background: yellow;
+}
+.displayLayout #ShortsR{
+    display: none;
+    background: burlywood;
+}
+
+
 .shop-layout-creator .navAndDisplay0 #navListItems{
     
     display: flex;
     width: 100%;
     box-shadow: 2px 2px 3px rgba(11, 33, 22, 0.6);
 }
-.shop-layout-creator .navAndDisplay0 #navListItems #linkListItem{
+.shop-layout-creator .navAndDisplay0 #navListItems .linkListItem{
     
     text-decoration: none;
     display: flex;
@@ -40,7 +74,7 @@
     width: 100%;
     height: 100%;
 }
-.shop-layout-creator .navAndDisplay0 #navListItems #linkListItem p{
+.shop-layout-creator .navAndDisplay0 #navListItems .linkListItem p{
     margin: auto auto;
 }
 
@@ -88,12 +122,12 @@
 
 
 .shop-layout-creator .navAndDisplay1 .displayLayout .displayLayoutBody{ 
-    display: flex;
+   
     margin-top: 2%;
-    margin-left: 1%;
-    
-    
+    margin-left: 1%;  
   }
+
+  
 
 
 

@@ -9,4 +9,7 @@ export default class extends AbstractView {
      getHtml(){
         return '/static/templates/home.html'
      }
+     async getJs() { 
+        return '/static/js/home.js' ;
+    }
 }

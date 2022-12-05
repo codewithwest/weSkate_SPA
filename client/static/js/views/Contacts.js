@@ -9,4 +9,7 @@ export default class extends AbstractView {
     async getHtml() {
         return '/static/templates/contacts.html';
     }
+    async getJs() { 
+        return '/static/js/contacts.js' ;
+    }
 }

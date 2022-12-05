@@ -7,8 +7,11 @@ export default class {
         document.title = title;
     }
 
-    async getHtml() { 
-        return '' ;
+    getHtml(){
+        return '/static/templates/home.html'
+     }
+     async getJs() { 
+        return '/static/js/home.js' ;
     }
 }
 
