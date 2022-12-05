@@ -1,0 +1,151 @@
+body, html{
+    width: 100%;
+  
+    margin: 0 0;
+}
+
+.static-container{
+    height: 100%;
+    width: 100%;
+    display: inline;
+}
+
+.static-container .navContainer{
+    box-shadow: inset 2px 2px 3px rgba(122, 10, 80, 0.8),
+    inset -2px -2px 3px rgba(122, 10, 80, 0.8);
+    display: flex;
+    width: 100%;
+    height: 65px;
+}
+.static-container .navContainer .logo-container{
+    /*
+    background: linear-gradient(25deg, transparent,transparent, rgba(122, 120, 80, 0.8)), 
+    linear-gradient(155deg, transparent, rgba(122, 10, 80, 0.8), transparent);
+    */
+    display: inline;
+    width: 24%;
+    height: 100%;
+}
+.static-container .navContainer #logo{
+    /*
+    background: linear-gradient(25deg, transparent,transparent, rgba(122, 120, 80, 0.8)), 
+    linear-gradient(155deg, transparent, rgba(122, 10, 80, 0.8), transparent);
+    */
+    background-position: center;
+    background-size: cover;
+    
+    width: 100%;
+    height: 100%;
+}
+.static-container .navContainer .nav-container{
+    width: 75%;
+    height: 100%;
+}
+
+.static-container .navContainer .nav-container .nav{
+    
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.static-container .navContainer .nav-container .nav .linkContainer{
+    display: flex;
+
+    width: calc(100%/5);
+
+    text-align: center;
+}
+.static-container .navContainer .nav-container .linkContainer a{
+    width: 100%;
+    text-decoration: none;
+    margin: auto 0;
+}
+
+
+.static-container .footer{  
+    box-shadow: inset 2px 2px 3px rgba(122, 10, 80, 0.8),
+    inset -2px -2px 3px rgba(122, 10, 80, 0.8);
+    display: flex;
+    height: 180px;
+    width: 100%;
+    
+}
+
+.static-container .footer .left-footer{  
+    height: 100%;
+    width: 60%;
+  
+}
+.static-container .footer .bottom-footer{
+    display: flex;
+    
+}
+.static-container .footer .bottom-footer .net-divs{
+    background-position: center;
+    background-size: cover;  
+    margin: auto;
+    height: 75%;
+    display: inline-block;
+    width: calc(100%/6);
+    border-radius: 100%;
+    
+}
+.static-container .footer  .top-footer{  
+    text-align: center;
+    height:25%;
+    width: 100%;
+    
+}
+.static-container .footer  .bottom-footer{
+    display: flex;  
+    height: 50%;
+    width: 100%;
+    
+}
+.static-container .footer .right-footer{  
+   
+    height: 100%;
+    width: 100%;
+    
+}
+.static-container .footer .right-footer .form-container{  
+    display: flex;
+    height: 100%;
+    width: 100%;
+    
+}
+.static-container .footer .right-footer .form-inner-container{  
+    display: flex;
+    margin: auto auto;
+    height: 50%;
+    width: 75%;
+    
+}
+.static-container .footer .right-footer .form-inner-container form{  
+
+    display: flex;
+    height: 100%;
+    width: 100%;
+    
+}
+.form-inner-container form button{  
+    display: inline-block;
+    width: 50%;
+    
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background: #fff;
+    
+}
+.form-inner-container form input{  
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    cursor: e-resize;
+    width: 100%;
+    background: #fff;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    
+}

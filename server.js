@@ -3,10 +3,10 @@ const path = require("path");
 
 const app = express();
 
-app.use("/static", express.static(path.resolve(__dirname, "frontend", "static")));
+app.use("/static", express.static(path.resolve(__dirname, "client", "static")));
 
 app.get("/*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
+    res.sendFile(path.resolve(__dirname, "client", "index.html"));
 });
 
-app.listen(process.env.PORT || 5000, () => console.log("Server running... on port 5000 \n http://localhost:5000"));
+app.listen(process.env.PORT || 3000, () => console.log("Server running...\n http://localhost:3000"));

@@ -1,0 +1,60 @@
+
+.home-container{
+    height: 100%;    
+    width: 100%;
+    background: aquamarine;
+       
+}
+.home-container .home-rows{
+    width:99%;
+    height: 100%;
+   
+    
+}
+
+#homerows{
+    display: flex;
+    width: 100%;
+    height: 25%;
+    border: 1px dotted indianred;
+    text-align: center;
+    margin: 1% 0;
+}
+
+.home-container .home-rows .home-row1-2-aligner {
+    width: 100%;
+    display: flex;
+} 
+.home-container .home-rows .home-row1-2-aligner .home-download{
+    color: aliceblue;
+    font-size: 33px;
+    background: linear-gradient(25deg,transparent, rgba(122,33,122, 0.8), rgba(11,22,145, 0.7));
+   border: none;
+    height: 35%;
+   width: 40%;
+    margin: auto auto;
+}
+
+.home-container .home-rows .home-row1-2-aligner #row1-desc{
+    border: 1px dotted green;
+    width: 50%;
+    display: inline-block;
+}
+.home-container .home-rows .home-row1-2-aligner .descright{
+    margin: auto 0;
+}
+
+#row-pics{
+    background: linear-gradient(9deg, transparent, rgba(125, 144, 221, 0.5));
+    width: calc(100%/3);
+    display: inline-block;
+}
+
+
+.home-container .home-rows .home-row1-2-aligner .motor{
+    margin: auto auto;
+}
+
+.home-container .home-rows .home-row4 .remarks{
+    margin: auto 0;
+}

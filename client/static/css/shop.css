@@ -1,0 +1,182 @@
+
+.shop-layout-creator{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.shop-layout-creator #navAndDisplay0 + #navAndDisplay1{
+    display: inline;
+    margin: 1% 1%;
+    
+}
+.shop-layout-creator .navAndDisplay0{
+    top: 0;
+    position: sticky;
+    margin-left: 1px;
+    height: 40%;
+    width: 25%;
+    box-shadow: inset 2px 2px 2px rgba(11, 33, 22, 0.6);
+    
+}
+.shop-layout-creator .navAndDisplay1{
+    box-shadow: -2px -2px 3px rgba(11, 33, 22, 0.6), 2px 2px 3px rgba(11, 33, 22, 0.6);
+    background: rgba(2, 24, 13, 0.5);
+    height: 100%;
+    width: 74%;
+}
+
+.shop-layout-creator .navAndDisplay0 #navListItems{
+    
+    display: flex;
+    width: 100%;
+    box-shadow: 2px 2px 3px rgba(11, 33, 22, 0.6);
+}
+.shop-layout-creator .navAndDisplay0 #navListItems #linkListItem{
+    
+    text-decoration: none;
+    display: flex;
+    margin: 6% 5%;
+    width: 100%;
+    height: 100%;
+}
+.shop-layout-creator .navAndDisplay0 #navListItems #linkListItem p{
+    margin: auto auto;
+}
+
+
+
+.shop-layout-creator .navAndDisplay1 .displayLayout{ 
+    display: inline;
+    width: 100%;
+    height: 20%;
+
+}
+.shop-layout-creator .navAndDisplay1 .displayLayout .displayLayoutNavCo{ 
+    top: 0;
+    background: black;
+    position: sticky;
+    margin-top: 1%;
+    z-index: 100;
+    display: flex;
+    width: 100%;
+    height: 15%;
+
+}
+.shop-layout-creator .navAndDisplay1 .displayLayout .displayLayoutNavCo li{ 
+    color: white;
+    
+    box-shadow:  2px 2px 3px  rgba(11, 33, 22, 0.6);
+    background: rgba(2, 24, 13, 0.9);
+    display: flex;
+    width: 100%;
+    height: 15%;
+    
+}
+.shop-layout-creator .navAndDisplay1 .displayLayout .displayLayoutNavCo li a{ 
+    
+    font-size: 110%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    
+}
+.shop-layout-creator .navAndDisplay1 .displayLayout .displayLayoutNavCo li a{ 
+  margin: 5% 5%;  
+  height: 100%;
+}
+
+
+.shop-layout-creator .navAndDisplay1 .displayLayout .displayLayoutBody{ 
+    display: flex;
+    margin-top: 2%;
+    margin-left: 1%;
+    
+    
+  }
+
+
+
+
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+  
+  .flex-container > .event {
+      color: white;
+      background-size:cover;
+      position: relative; 
+      width: 32%;
+      height: 100%;
+      margin: 0.5% 0.5%;
+      box-shadow:  2px 2px 4px rgba(7, 7, 7, 0.9), -2px -2px 4px rgba(7, 7, 7, 0.9) ;
+      text-align: center;
+      font-size: 30px;
+  }
+  
+  
+  .flex-container .event .rsvp {
+      height: 40%;
+      width:40%;
+      margin: 10% auto;
+      
+  }
+  
+  
+  .flex-container .event .rsvp button{
+     
+      border: 0.1px solid white;
+      color: white;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      animation-duration:5s;
+      background: linear-gradient(20deg, rgba(18, 24, 24, 0.7), transparent, rgba(132, 43,155, 0.2));
+  }
+  .flex-container .event .rsvp  button:hover{
+      box-shadow: inset 2px 2px 3px white, inset -2px -2px 3px white;
+      color: blue;
+      
+  }
+  
+  
+  .flex-container .event .rsvp button p{
+      margin: 10% 0;
+      height: 100%;
+      width: 100%;
+      font-weight: 800;
+      
+  }
+  
+  .flex-container .event .eventName{
+      
+      margin-top: 30%;
+    
+      
+  }
+  .flex-container .event .eventName p{
+      margin: 0;
+      
+  }
+  
+  .flex-container .event .eventdesc{
+      font-size: 20px;
+      height: 30%;
+      margin-top: 3%;
+      
+      
+  }
+  .flex-container .event .eventdesc p{
+      font-size: 80%;
+      font-weight: 600;
+      
+      
+  }
+  
+  

@@ -1,14 +1,23 @@
 {
-  "name": "route_me",
+  "name": "weskate_spa",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":" node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codewithwest/weSkate_SPA.git"
   },
   "keywords": [],
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codewithwest/weSkate_SPA/issues"
+  },
+  "homepage": "https://github.com/codewithwest/weSkate_SPA#readme",
   "dependencies": {
     "express": "^4.18.2"
   }
