@@ -13,81 +13,8 @@ function divCreator(parentContainer, idNames,classNames){
 
 
 
-function addEvents(desiredSection, background){
-
-    let sec = desiredSection;
-    let behind = background
-    var posts = ["one", "two","three","four","five","six","seven","eight","nine","ten","eleven","twelve",];
-    var postsDesc = [
-        "Charity skate coming up this saturday  Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-    ];
-    
-    //
-        function elementEventAdd(){
-            //create event cover div element
-        for (let i = 0; i < posts.length ; i++) {
-            var container = document.getElementById(sec);
-            var event = document.createElement("div");
-            event.setAttribute("id", "event");
-            event.setAttribute("class", "event");
-            event.style.backgroundImage=`url(/static/assets/${behind}.jpg)`;
-            container.appendChild(event);
-            /*
-            //create an rsvp div and append 
-            var eventContainer = document.getElementById('event');
-            var rsvpContainer = document.createElement('div');
-            rsvpContainer.setAttribute("id", `rsvp${i}`);
-            rsvpContainer.setAttribute("class", "rsvp");
-            event.appendChild(rsvpContainer);
-            //Add Button to the rsvp div ellemnt
-            var rsvpDiv = document.getElementById(`rsvp${i}`);
-            var button = document.createElement("button")
-            var buttonTextCreator = document.createElement("p")
-            var buttonText = document.createTextNode("RSVP");
-            buttonTextCreator.appendChild(buttonText);
-            button.appendChild(buttonTextCreator);
-            button.addEventListener('click', () => {
-            alert("You have Succsefully registered");})
-            rsvpDiv.appendChild(button);
-            */
-            
-            //Create eventName div
-            var eventNameCreator = document.createElement('div');
-            eventNameCreator.setAttribute("id", `event${i}`);
-            eventNameCreator.setAttribute("class", "eventName");
-            event.appendChild(eventNameCreator);
-            var eventName = document.createElement('p');
-            var name = document.createTextNode(posts[i]);
-            eventName.appendChild(name);
-            eventNameCreator.appendChild(eventName);
-            //Create The Desc Div and Contents
-            var eventDescCreator = document.createElement('div');
-            eventDescCreator.setAttribute("id", `event${i}desc`);
-            eventDescCreator.setAttribute("class", "eventdesc");
-            event.appendChild(eventDescCreator);
-            var eventDesc = document.createElement('p');
-            var desc = document.createTextNode(postsDesc[i]);
-            eventDesc.appendChild(desc);
-            eventDescCreator.appendChild(eventDesc);    
-           
-            };
-        };
-    elementEventAdd();
-    
-    };  
     var skateCategories = ["SkateBoard","Decks", "wheels", "trucks", "bearing"];
-    var shirtsCategories = ["Golf Shirt","Vests", "Crop Tops", "Tee"];
+    var shirtsCategories = ["half sleeve","Yoke neck", "Long sleeve Crew neck", "V-neck"];
     var hoodiesCategories = ["Plain Branded","Emroided", "Printed"];
     var knitsCategories = ["double knit","light knit"];
     
@@ -273,6 +200,7 @@ let knownCategoryLinks4 = document.getElementById(`${skateCategories[4]}`)
 knownCategoryLinks0.onclick = function(event){
         event.preventDefault()
         document.getElementById(`skateboard${0}`).style.display="block"
+        
         document.getElementById(`skateboard${1}`).style.display="none"    
         document.getElementById(`skateboard${2}`).style.display="none"    
         document.getElementById(`skateboard${3}`).style.display="none"    
@@ -467,7 +395,143 @@ knitsLinksCheck()
 pantsLinksCheck()
 shortsLinksCheck()
 //Add events attempt
-for (let ind = 0; ind < mechCategories.length; ind++) {
-   // addEvents(`flex-container${[ind]}`)
 
-}
+
+
+function addProducts(desiredSection, background, proDescArray, proNameArray){
+
+    let sec = desiredSection;
+    let behind = background
+    var postsDesc = proDescArray
+    var posts = proNameArray
+    
+    
+    
+    //
+        function elementEventAdd(){
+            //create event cover div element
+        for (let i = 0; i < posts.length ; i++) {
+            var container = document.getElementById(sec);
+            var event = document.createElement("div");
+            event.setAttribute("id", "event");
+            event.setAttribute("class", "event");
+            event.style.backgroundImage=`url(/static/assets/${behind}${i}.jpg)`;
+            container.appendChild(event);
+            
+           
+            
+            
+            //Create eventName div
+            var eventNameCreator = document.createElement('div');
+            eventNameCreator.setAttribute("id", `event${i}`);
+            eventNameCreator.setAttribute("class", "eventName");
+            event.appendChild(eventNameCreator);
+            var eventName = document.createElement('p');
+            var name = document.createTextNode(posts[i]);
+            eventName.appendChild(name);
+            eventNameCreator.appendChild(eventName);
+            //Create The Desc Div and Contents
+            var eventDescCreator = document.createElement('div');
+            eventDescCreator.setAttribute("id", `event${i}desc`);
+            eventDescCreator.setAttribute("class", "eventdesc");
+            event.appendChild(eventDescCreator);
+            var eventDesc = document.createElement('p');
+            var desc = document.createTextNode(postsDesc[i]);
+            eventDesc.appendChild(desc);
+            eventDescCreator.appendChild(eventDesc);    
+
+             //create an rsvp div and append 
+             var eventContainer = document.getElementById('event');
+             var rsvpContainer = document.createElement('div');
+             rsvpContainer.setAttribute("id", `rsvp${posts[i]}`);
+             rsvpContainer.setAttribute("class", "rsvp");
+             event.appendChild(rsvpContainer);
+             //Add Button to the rsvp div ellemnt
+             var rsvpDiv = document.getElementById(`rsvp${posts[i]}`);
+             var button = document.createElement("button")
+             button.setAttribute('id', `button${i}`)
+             //button.setAttribute('type', 'Button')
+             var buttonTextCreator = document.createElement("p")
+             buttonTextCreator.setAttribute('id', `rsvp${posts[i]}`)
+             var buttonText = document.createTextNode('Add to Cart');
+             button.appendChild(buttonText);
+             button.appendChild(buttonTextCreator);
+             button.addEventListener('click', () => {
+             alert("You have Succsefully registered");})
+             /*
+             button.addEventListener('mouseover', () => {
+                var newbuttonTextCreator = document.createElement("p")
+                 newbuttonTextCreator.setAttribute('id', `rsvp`)
+                var newbuttonText = document.createTextNode(`Add to Cart`);
+                newbuttonTextCreator.appendChild(newbuttonText)
+                const element = document.getElementById(`button${i}`)
+                element.replaceChild( newbuttonTextCreator,element.childNodes[0])
+                //.innerHTML = 'Add to Cart'
+              })
+              */
+             rsvpDiv.appendChild(button);
+           
+            };
+        };
+    elementEventAdd();
+    
+    };  
+    //for skateboard
+    //Types od skateboards and desc
+    var skateNames = ['mini cruiser', 'Double-Kick Popsicle', 'Carve Skateboard', 'Classic Longboard Skateboard', 'Downhill Longboard Skateboard']
+    var skateDesc = [
+    'It is the perfect entry-level deck for young children but can also be used by intermediate skaters to cruise around town, pull off a few tricks, ride a bowl, or hit a park', 
+    "It's the standard skateboard and the most popular and widely used design. It works well on skateparks, street skating, and on almost all types of riding. They\'re lightweight and a great option for those who are getting into skateboarding for the first time.",
+    "The carve skateboard is a design that generates its own speed through effortless pumping.It was designed to mimic the surfboard\'s behavior on the face of the wave on flat ground.It\'s a great option for practicing turns and deep carves, but it also is a favorite plank for riding a bowl.",
+    "The longboard is a long and stable skateboard shaped for casual cruising on the boardwalk, fun and laid-back long-distance rides, and skating faster on more or less steep hills.They\'re a good option for first-timers because they offer a large riding platform that makes it easy to learn how to balance.But they\'re also a great pick for skaters of all ages and experience levels.The most common types of longboards feature pintail or twin-tip designs.",
+    "The downhill longboard is a skateboard that has been specifically designed to be ridden on steep mountain roads and slalom racing events.It\'s a unique skateboard shaped for a very special purpose and delivers more stability and speed than a classic longboard skate.When bombing hills at top speeds, skaters need a wide wheelbase and cutaway fenders that enable them to slide and control speed more safely.", 
+    ]
+    divCreator('skateboard0', 'flex-container0', 'flex-container')
+    addProducts('flex-container0','event', skateDesc, skateNames)
+    //Two Decks
+    var deckNames = ['STANDARD SKATE DECKS', 'CRUISER & SHAPED DECKS', 'OLD SCHOOL DECKS', 'LONGBOARD DECKS']
+    var deckDesc = [
+        'These are the best skateboard decks for beginners because they work well for street skating, skate parks and almost all other styles of skateboarding. Typically ridden with hard wheels, these skateboard decks resemble the shape of a popsicle stick because they feature both a nose and a tail that are exactly or nearly symmetrical.',
+        "If transportation is your goal, cruiser decks are our recommended choice. Cruiser decks are usually a similar length to standard decks, but have a large variety of different shapes. They are also typically ridden with soft wheels for a smoother, faster roll on rough surfaces. Compared to longboards, they are lighter and more nimble, allowing you to bob and weave through urban obstacles.",
+        "Old School decks pay respect to vintage 80\'s-style skateboards. These decks are much wider and have longer wheelbases than standard decks, making them stable and great for bowl skating and transportation. Extra width and short noses make old school boards more difficult to flip or ollie, so they are not ideal for street skating.",
+        "If you are a beginner looking for a large stable board that makes it easy to learn to balance, these are the boards for you. They are also ideal for mellow cruising, pushing long distances and skating down hills at high speeds."
+        ]
+    divCreator('skateboard1', 'flex-container1', 'flex-container')
+    addProducts('flex-container1','event', deckDesc, deckNames)
+
+//Three Wheels
+var wheelNames =["Skatepark and Street Wheels","Cruiser Skateboard Wheels","Longboard Skateboard Wheels" ]
+var wheelDesc =[
+"These skateboard wheels are typically lightweight. And they roll insanely well on most smooth surfaces. They slide almost effortlessly. They\'re precisely what you should choose if you like doing ledges, bowls, rails, and flip tricks.  In addition, they\'re remarkably smooth because they\'re produced from extremely hard polyurethane.The smoothest skateboard wheels also happen to be the hardest. Their hardness ranges from 95a to 104a. That\'s like from just hard to super hard. More on hardness vs softness down the road.Their diameter ranges between 50mm and 53mm. Unsurprisingly, skatepark and street skateboard wheels don\'t handle pebbles and cracks very well. And they\'re almost useless when it comes to riding on gravel.When it comes to pulling off an ollie, powerslides, various flip tricks, and suchlike technical tricks, go with small, hard wheels. Believe me, ollieing on soft wheels feels awkward.",
+"These wheels are a lot softer than street and park wheels. And they\'re great when it comes to skating on rough pavements and even cracks.We recommend cruiser skateboard wheels as the best option for skating on asphalt because they\'re incredibly grippy. And they don\'t vibrate all that much on such rough surfaces. They\'re good but not the best wheels for rolling over rough places, though. Longboard wheels are.Their hardness ranges from durometer 78a to 98a. As you can see, they range from very soft to relatively hard. But they\'re not like the hardest wheels in the world.Also, cruiser wheels are larger (in diameter) than street and park wheels. Their diameter stays in the 54 mm - 59 mm range.",
+"You won\'t find skateboard wheels that are softer or larger than longboard wheels. In terms of diameter, these wheels measure between 60 and 75 mm.Longboard wheels are the softest wheels you can ride on. They range between 75a to 85a on the durometer scale. Now, 75a is super soft, and 85a is just soft."
+
+]
+divCreator('skateboard2', 'flex-container2', 'flex-container')
+    addProducts('flex-container2','event', wheelDesc, wheelNames)
+
+
+//Four Trucks
+
+var trucksNames = ["SKATEBOARD TRUCKS (STANDARD KINGPIN)","LONGBOARD TRUCKS (REVERSE KINGPIN)","HIGH TRUCKS" ,"LOW TRUCKS", "HOLLOW TRUCKS"]
+var trucksDesc =[
+"Standard kingpin trucks are the most versatile type of trucks and can be used for any type of skateboarding. They are easily adjustable, by tightening or loosening, so you can customize the way your board turns.",
+"These are the best skateboard trucks for carving and cruising, or skating fast down hills. Reverse kingpin trucks are usually taller and wider than standard kingpin skateboard trucks, but are highly customizable for many types of riding. ",
+"High trucks are the standard, but some skateboard truck brands also offer high and low models. Usually, you'll only see this labeled if the model you are looking at offers both a high and low version. High trucks give you a more responsive turn and a little more wheel clearance so that you can use bigger wheels with less chance of wheel bite.",
+"Low trucks are primarily used by technical skaters because they give you quick, responsive pop and a more stable center of gravity. Usually, you'll only see trucks labeled as Low if the model is offered in both high and low configurations, or is only available in a low version.",
+"To reduce weight, many trucks are available with hollow kingpins and/or hollow axles. This can make your board pop higher, flick faster, and weigh down your backpack a little less. Lighter trucks can offer benefits to any type of skateboarding, but this is yet another case of personal preference.",
+,
+]
+
+divCreator('skateboard3', 'flex-container3', 'flex-container')
+addProducts('flex-container3','event', trucksDesc, trucksNames)
+//Five Bearings
+var bearingNames = ["Steel", "Ceramic"]
+var bearingDesc =[
+"Steel bearings are the industry standard, and are both durable and economical. The quality of the steel can vary. Higher grade steel in premium bearings can make the bearing faster and more durable. The downside of steel is its tendency to rust when exposed to moisture. If you want your bearings to last, keep them well-oiled avoid rolling through puddles or skating in the rain. If you do get them wet, drop in some extra lube, keep rolling or put them by a heater to dry them quickly.",
+"Ceramic bearings are harder than steel and deform less when pressure is applied to them. Since they are also heat resistant, they expand less and create less friction at faster speeds. Another benefit is that they do not rust when exposed to moisture, making them great for cruisers and rain boards. The only downside to ceramic bearings is that ceramic itself is a brittle substance. The ceramic is susceptible to breaking if skated under high impact, meaning ceramic bearings are great for commuting and low impact skating, but not ideal for skating big gaps or stair sets.",
+]
+divCreator('skateboard4', 'flex-container4', 'flex-container')
+addProducts('flex-container4','event', bearingDesc, bearingNames)
+
+//End of Skateboards section
