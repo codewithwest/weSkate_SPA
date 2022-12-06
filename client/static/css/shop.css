@@ -108,7 +108,7 @@
     
 }
 .shop-layout-creator .navAndDisplay1 .displayLayout .displayLayoutNavCo li a{ 
-    
+    color: aliceblue;
     font-size: 110%;
     width: 100%;
     height: 100%;
@@ -129,6 +129,88 @@
 
   
 
+.sub-sections{
+    height: 100px;
+    
+}
+#skateboard0{
+    background: red;
+    
+}
+#skateboard1{
+    background: green;
+    display: none;
+}
+#skateboard2{
+    background: blue;
+    display: none;
+}
+
+#skateboard3{
+    background: yellow;
+    display: none;
+}
+#skateboard4{
+    background: black;
+    display: none;
+}
+
+#shirts0{
+    background: grey;
+    
+}
+#shirts1{
+    background: blue;
+    display: none;
+}#shirts2{
+    background: pink;
+    display: none;
+}#shirts3{
+    background: white;
+    display: none;
+}
+#hoodies0{
+    background: brown;
+    
+}
+#hoodies1{
+    background: darkcyan;
+    display: none;
+}
+#hoodies2{
+    background: grey;
+    display: none;
+}
+#knits0{
+    background: darkmagenta;
+    
+}
+#knits1{
+    background: mediumaquamarine;
+    display: none;
+}
+#pants0{
+    background: mediumaquamarine;
+    
+}#pants1{
+    background: midnightblue;
+    display: none;
+}#pants2{
+    background: mediumaquamarine;
+    display: none;
+}
+#shorts0{
+    background: navy;
+    
+}
+#shorts1{
+    background: mediumaquamarine;
+    display: none;
+}
+
+
+
+
 
 
 
@@ -145,7 +227,7 @@
   .flex-container > .event {
       color: white;
       background-size:cover;
-      position: relative; 
+      
       width: 32%;
       height: 100%;
       margin: 0.5% 0.5%;

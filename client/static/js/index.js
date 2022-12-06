@@ -51,11 +51,12 @@ const router = async () => {
     var newUrl =  await view.getHtml();
     //document.getElementById("app").innerHTML = await view.getHtml();
 
-    const html = await fetch(newUrl).then((Response)  => Response.text());
+    const html = await fetch(newUrl).then((Response)  => Response.text())
     var srcLink = await view.getJs();
-    document.getElementById('content').innerHTML = html;
     var script = document.getElementById('script');
     script.setAttribute('src',srcLink )
+    document.getElementById('content').innerHTML = html;
+   
 
 };
 

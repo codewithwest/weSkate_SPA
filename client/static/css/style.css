@@ -23,7 +23,7 @@ body, html{
     linear-gradient(155deg, transparent, rgba(122, 10, 80, 0.8), transparent);
     */
     display: inline;
-    width: 24%;
+    width: 25%;
     height: 100%;
 }
 .static-container .navContainer #logo{
