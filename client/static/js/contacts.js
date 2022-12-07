@@ -7,7 +7,6 @@ function divCreator(parentContainer, idNames,classNames){
     var divObj = document.createElement("div");
     divObj.setAttribute("id", `${idName}`);
     divObj.setAttribute("class", `${className}`);
-    //divObj.style.backgroundImage="url(/frontend/static/assets/event1.jpg)";
     return newContainer.appendChild(divObj);
 }
 
@@ -73,5 +72,5 @@ newForm.appendChild(Message)
 
 newForm.appendChild(newButton)
 
-document.getElementById("about-div0").style.backgroundImage="url(static/assets/event6.jpg)"
+document.getElementById("about-div0").style.backgroundImage="url(static/assets/contacts/contacts0.jpg)"
 

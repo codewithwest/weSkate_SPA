@@ -1,19 +1,31 @@
 
 function addEvents(){
-    var posts = ["one", "two","three","four","five","six","seven","eight","nine","ten","eleven","twelve",];
+    var posts = ["Festive Charity Skate III", 
+    "Festive Charity Skate II","Festive Charity Skate I",
+    "Skate Home",
+    "Park Skate",
+    "SkateAthon",
+    "Winter Home",
+    "Winter Park",
+    "Early Bird",
+    "Late Bird",
+    "Skate Home",
+    "Park Skate",];
+    var state = ["RSVP", "RSVP","RSVP","RSVP","RSVP","RSVP","Re-VISIT","Re-VISIT","Re-VISIT","Re-VISIT","Re-VISIT","Re-VISIT",];
+    
     var postsDesc = [
-        "Charity skate coming up this  Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
-        "Charity skate coming up this satureday Dec 13 2022",
+        "Last charity skate event to grow the skating culture.",
+        "Second charity skate for everyone to show case thei skating skills.",
+        "Our first festive skating event featuring the event sponsors.",
+        "Virtual event where everyone tunes in to skate where ever they are.",
+        "In Park skate oncoming for all who skate and wish  to try skating for the first time",
+        "The new re-invenetd Skating marathon that goes on for 20km of skating non-stop",
+        "Home skating virtual events supported by all winter lovers that skate and those that don't",
+        "In Park skate oncoming for all who skate and wish  to try skating for the first time",
+        "Early morning skating event for theearly birds to start the day fast, the faster the better",
+        "For the late bloomers a night skating event, slogan 'The glow in the Dark'",
+        "Virtual event where everyone tunes in to skate where ever they are",
+        "In Park skate oncoming for all who skate and wish  to try skating for the first time",
         
     
     ];
@@ -26,7 +38,7 @@ function addEvents(){
             var event = document.createElement("div");
             event.setAttribute("id", "event");
             event.setAttribute("class", "event");
-            event.style.backgroundImage="url(/static/assets/event1.jpg)";
+            event.style.backgroundImage=`url(/static/assets/events/event${i}.jpg)`;
             container.appendChild(event);
             //create an rsvp div and append 
             var eventContainer = document.getElementById('event');
@@ -38,7 +50,7 @@ function addEvents(){
             var rsvpDiv = document.getElementById(`rsvp${i}`);
             var button = document.createElement("button")
             var buttonTextCreator = document.createElement("p")
-            var buttonText = document.createTextNode("RSVP");
+            var buttonText = document.createTextNode(`${state[i]}`);
             buttonTextCreator.appendChild(buttonText);
             button.appendChild(buttonTextCreator);
             button.addEventListener('click', () => {

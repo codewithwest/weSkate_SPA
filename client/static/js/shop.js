@@ -298,13 +298,17 @@ function hoodiesLinksCheck() {
     let knownCategoryLinks0 = document.getElementById(`${hoodiesCategories[0]}`)
     let knownCategoryLinks1 = document.getElementById(`${hoodiesCategories[1]}`)
     let knownCategoryLinks2 = document.getElementById(`${hoodiesCategories[2]}`)
+    let knownCategoryLinks3 = document.getElementById(`${hoodiesCategories[3]}`)
+    let knownCategoryLinks4 = document.getElementById(`${hoodiesCategories[4]}`)
     
     
     knownCategoryLinks0.onclick = function(event){
             event.preventDefault()
             document.getElementById(`hoodies${0}`).style.display="block"
             document.getElementById(`hoodies${1}`).style.display="none"    
-            document.getElementById(`hoodies${2}`).style.display="none"    
+            document.getElementById(`hoodies${2}`).style.display="none"
+            document.getElementById(`hoodies${3}`).style.display="none"    
+            document.getElementById(`hoodies${4}`).style.display="none"
             
         
         }
@@ -312,14 +316,34 @@ function hoodiesLinksCheck() {
             event.preventDefault()
             document.getElementById(`hoodies${0}`).style.display="none"
             document.getElementById(`hoodies${1}`).style.display="block"    
-            document.getElementById(`hoodies${2}`).style.display="none"    
+            document.getElementById(`hoodies${2}`).style.display="none" 
+            document.getElementById(`hoodies${3}`).style.display="none"    
+            document.getElementById(`hoodies${4}`).style.display="none"   
 
         }
         knownCategoryLinks2.onclick = function(event){
             event.preventDefault()
             document.getElementById(`hoodies${0}`).style.display="none"
             document.getElementById(`hoodies${1}`).style.display="none"    
-            document.getElementById(`hoodies${2}`).style.display="block"        
+            document.getElementById(`hoodies${2}`).style.display="block" 
+            document.getElementById(`hoodies${3}`).style.display="none"    
+            document.getElementById(`hoodies${4}`).style.display="none"       
+        }
+        knownCategoryLinks3.onclick = function(event){
+            event.preventDefault()
+            document.getElementById(`hoodies${0}`).style.display="none"
+            document.getElementById(`hoodies${1}`).style.display="none"    
+            document.getElementById(`hoodies${2}`).style.display="none" 
+            document.getElementById(`hoodies${3}`).style.display="block"    
+            document.getElementById(`hoodies${4}`).style.display="none"       
+        }
+        knownCategoryLinks4.onclick = function(event){
+            event.preventDefault()
+            document.getElementById(`hoodies${0}`).style.display="none"
+            document.getElementById(`hoodies${1}`).style.display="none"    
+            document.getElementById(`hoodies${2}`).style.display="none" 
+            document.getElementById(`hoodies${3}`).style.display="none"    
+            document.getElementById(`hoodies${4}`).style.display="block"       
         }
 
     }
@@ -536,11 +560,205 @@ addProducts('flex-container4','event', bearingDesc, bearingNames)
 
 //End of Skateboards section
 
-var hoodiesNames = ["Pullover", "Zip Up", "Fitted", "Sleeveless", "Cropped"]
-var hoodiesDesc = [
+
+//star of shirts
+//Shirts0
+//Half sleeves
+
+var halfSleeveNames = ["Pullovers", "Zip Ups", "Fitteds", "Sleevelesss", "Croppeds"]
+var halfSleeveDesc = [
     "The pullover hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
     "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
     "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
     "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
 ]
+divCreator('shirts0', 'flex-container5', 'flex-container')
+addProducts('flex-container5','event', halfSleeveDesc, halfSleeveNames)
+//Yoke Neck
+var yokeNeckNames = ["Pullover1", "Zip Up1", "Fitted1", "Sleeveless1", "Cropped1"]
+var yokeNeckDesc = [
+    "The pullover hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('shirts1', 'flex-container6', 'flex-container')
+addProducts('flex-container6','event', yokeNeckDesc, yokeNeckNames)
+
+
+//Long Sleeves
+var longSleeveNames = ["Pulloverss", "Zisp Up", "Fittsed", "Ssleeveless", "Crospped"]
+var longSleeveDesc = [
+    "The pullover hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('shirts2', 'flex-container7', 'flex-container')
+addProducts('flex-container7','event', longSleeveDesc, longSleeveNames)
+//V-neck
+var VneckNames = ["Pulslover", "sZip Up", "sFitted", "sSleeveless", "Crodpped"]
+var VneckDesc = [
+    "The pullover hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('shirts3', 'flex-container8', 'flex-container')
+addProducts('flex-container8','event', VneckDesc, VneckNames)
+
+
+
+//End of Shirts
+//Start oh hoodies
+
+//
+
+
+var pullOveames0 = ["Pulleeovser", "Zip eseUp", "Fitteeesd", "Seleeeevelsess", "Ceropsped"]
+var pullOveDesc0 = [
+    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('hoodies0', 'flex-container9', 'flex-container')
+addProducts('flex-container9','event', pullOveDesc0, pullOveames0)
+
+var pullOveames1 = ["Pullovser", "Zip sUp", "Fittesd", "Sleevelsess", "Cropsped"]
+var pullOveDesc1 = [
+    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('hoodies1', 'flex-container10', 'flex-container')
+addProducts('flex-container10','event', pullOveDesc1, pullOveames1)
+
+
+var pullOveames2 = ["Pullovsweer", "Zip ewsUp", "Fitteesd", "Sleevelesess", "Cropspeed"]
+var pullOveDesc2 = [
+    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('hoodies2', 'flex-container11', 'flex-container')
+addProducts('flex-container11','event', pullOveDesc2, pullOveames2)
+
+var pullOveames3 = ["Pulloveser", "Zip seeUp", "Fieetteesd", "Sleeevelsess", "Cropesped"]
+var pullOveDesc3 = [
+    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('hoodies3', 'flex-container12', 'flex-container')
+addProducts('flex-container12','event', pullOveDesc3, pullOveames3)
+
+var pullOveames4 = ["Pullofsveser", "Zip sseefUp", "ergfervssf", "Sleefevesslsess", "Crosvrvpesped"]
+var pullOveDesc4 = [
+    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('hoodies4', 'flex-container13', 'flex-container')
+addProducts('flex-container13','event', pullOveDesc4, pullOveames4)
+
+
+
+
+
+var knitsNames0 = ["Pullofvseser", "Zips seefUp", "ergsfervf", "Sleesfevelsess", "Csrovrvpesped"]
+var knitsDesc0 = [
+    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('knits0', 'flex-container14', 'flex-container')
+addProducts('flex-container14','event', knitsDesc0, knitsNames0)
+
+var knitsNames1 = ["Pullofer", "Zip sefUp", "ergferf", "Sleefevesess", "Crovrvpsped"]
+var knitsDesc1 = [
+    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('knits1', 'flex-container15', 'flex-container')
+addProducts('flex-container15','event', knitsDesc1, knitsNames1)
+
+
+
+
+
+
+var pantsNames0 = ["Pullofveser", "Zip seefUp", "ergfervfd", "Sleefevelsess", "Crovrvpesped"]
+var pantsDesc0 = [
+    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('pants0', 'flex-container15', 'flex-container')
+addProducts('flex-container15','event', pantsDesc0, pantsNames0)
+
+var pantsNames1 = ["Pulofer", "Zisp sefUp", "ergfeqrf", "Sleefsevesess", "Csrovrvpsped"]
+var pantsDesc1 = [
+    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('pants1', 'flex-container16', 'flex-container')
+addProducts('flex-container16','event', pantsDesc1, pantsNames1)
+
+var pantsNames2 = ["Pullofser", "Zip sefsUp", "ergfserf", "Sleefevesesss", "Crovsrvpsped"]
+var pantsDesc2 = [
+    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('pants2', 'flex-container17', 'flex-container')
+addProducts('flex-container17','event', pantsDesc2, pantsNames2)
+
+
+
+var shortsNames0 = ["Pulofder", "Zdisp sefUp","ergfeqertrf", "Sledefsevesess", "Cdsrovrvpsped"]
+var shortsDesc0 = [
+    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('shorts0', 'flex-container18', 'flex-container')
+addProducts('flex-container18','event', shortsDesc0, shortsNames0)
+
+var shortsNames1 = ["Pullofcser", "Zip sefcsUp", "ergfsdecserf", "Sleefevecsesss", "Crdovsrvpsped"]
+var shortsDesc1 = [
+    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
+divCreator('shorts1', 'flex-container19', 'flex-container')
+addProducts('flex-container19','event', shortsDesc1, shortsNames1)

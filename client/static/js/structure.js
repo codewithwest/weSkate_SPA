@@ -49,7 +49,7 @@ var socialNetDivs = ['facebook','twitter', 'whatsapp', 'instagram'];
 for (let fu = 0; fu < socialNetDivs.length; fu++) {
     divCreator('bottom-footer0', `net-divs${fu}`,`net-divs`)
     var net = document.getElementById(`net-divs${fu}`)
-    net.style.backgroundImage="url(/static/assets/event1.jpg)"
+    net.style.backgroundImage=`url(/static/assets/home/footer${fu}.jpg)`
     
 }
 //create botoom right divs with form
@@ -60,7 +60,7 @@ var form = document.createElement('form')
 var textInput = document.createElement('input') 
 textInput.setAttribute('name', "email") 
 textInput.setAttribute('type',"email") 
-textInput.setAttribute('value',"");
+textInput.setAttribute('placeholder',"example@gmail.com");
 var submitButton = document.createElement('button') 
 submitButton.setAttribute('name', "button") 
 submitButton.setAttribute('type',"button") 

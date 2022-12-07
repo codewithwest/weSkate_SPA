@@ -19,7 +19,7 @@ for (let ro = 0; ro < 4; ro++) {
     divCreator('rows', `row-child${[ro]}` , 'row-child')
 }
 // row child 1 child
-var topTexts = ["The Thesxt in check", "Thee text in left"]
+var topTexts = ["Welcome to WeSkate Your one stop shop for skating goods.", "from full built boards to customized boads, clothing for all the families needs"]
 for (let ro = 0; ro < 2; ro++) {
     divCreator('row-child0', `row-child1-children${[ro]}` , 'row-child1-children')
     divCreator(`row-child1-children${[ro]}`, `text-container${ro}` , 'text-container')
@@ -64,11 +64,13 @@ document.getElementById('button-cover').appendChild(downButton)
 // row child 3
 
 
-var topTexts = ["Pic Description", "Second one", "third one"]
+var topTexts = ["Get your eco-friendly resin based board today! \" made from recycled bio based renewable Ingredients and carbon fibre\"",
+ "Skate up Clothing for Your Perfect skating Day", 
+"Availble for the whole family too, in style chlothing for the little ones."]
 for (let row = 0; row < topTexts.length; row++) {   
     divCreator('row-child2', `row-child3-children${[row]}` , 'row-child3-children')
     var card = document.getElementById(`row-child3-children${[row]}`);
-    card.style.backgroundImage="url(/static/assets/event1.jpg)"
+    card.style.backgroundImage=`url(/static/assets/home/home${row}.jpg)`
     divCreator(`row-child3-children${[row]}`, `desc-container${row}` , 'desc-container')
     var textPara = document.createElement('p')
     var tText = document.createTextNode(topTexts[row])
@@ -82,11 +84,10 @@ for (let row = 0; row < topTexts.length; row++) {
 
  
 divCreator('row-child3', `row-child4-children` , 'row-child4-children')
-var farewell = document.getElementById('row-child4-children');
-farewell.style.backgroundImage="url(/static/assets/event1.jpg)"
+
 divCreator(`row-child4-children`, `mess-container` , 'mess-container')
 var newPar = document.createElement('p')
-var fare = document.createTextNode("Meesage from the Founder: \n Hello world")
+var fare = document.createTextNode("Meesage from the Founder: Alone we are powerless but together we can change the world.")
 newPar.appendChild(fare)
 var toAppends  = document.getElementById(`mess-container`)
 toAppends.appendChild(newPar)
