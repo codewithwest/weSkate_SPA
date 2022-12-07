@@ -15,8 +15,8 @@ function divCreator(parentContainer, idNames,classNames){
 
     var skateCategories = ["SkateBoard","Decks", "wheels", "trucks", "bearing"];
     var shirtsCategories = ["half sleeve","Yoke neck", "Long sleeve Crew neck", "V-neck"];
-    var hoodiesCategories = ["Plain Branded","Emroided", "Printed"];
-    var knitsCategories = ["double knit","light knit"];
+    var hoodiesCategories = ["Pullover", "Zip Up", "Fitted", "Sleeveless", "Cropped"];
+    var knitsCategories = ["double knit","pattern"];
     
     var pantsCategories = ["Trackpants","Sweat","slim fit"];
     var shortsCategories = ["Dri-Fit","cotton"];
@@ -535,3 +535,12 @@ divCreator('skateboard4', 'flex-container4', 'flex-container')
 addProducts('flex-container4','event', bearingDesc, bearingNames)
 
 //End of Skateboards section
+
+var hoodiesNames = ["Pullover", "Zip Up", "Fitted", "Sleeveless", "Cropped"]
+var hoodiesDesc = [
+    "The pullover hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
+]
