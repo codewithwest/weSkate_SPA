@@ -1,23 +1,23 @@
-body, html{
+body,
+html {
     width: 100%;
-  
     margin: 0 0;
 }
 
-.static-container{
+.static-container {
     height: 100%;
     width: 100%;
     display: inline;
 }
 
-.static-container .navContainer{
-    box-shadow: inset 2px 2px 3px rgba(122, 10, 80, 0.8),
-    inset -2px -2px 3px rgba(122, 10, 80, 0.8);
+.static-container .navContainer {
+    box-shadow: inset 2px 2px 3px rgba(122, 10, 80, 0.8), inset -2px -2px 3px rgba(122, 10, 80, 0.8);
     display: flex;
     width: 100%;
     height: 65px;
 }
-.static-container .navContainer .logo-container{
+
+.static-container .navContainer .logo-container {
     /*
     background: linear-gradient(25deg, transparent,transparent, rgba(122, 120, 80, 0.8)), 
     linear-gradient(155deg, transparent, rgba(122, 10, 80, 0.8), transparent);
@@ -26,128 +26,125 @@ body, html{
     width: 25%;
     height: 100%;
 }
-.static-container .navContainer #logo{
+
+.static-container .navContainer #logo {
     /*
     background: linear-gradient(25deg, transparent,transparent, rgba(122, 120, 80, 0.8)), 
     linear-gradient(155deg, transparent, rgba(122, 10, 80, 0.8), transparent);
     */
     background-position: center;
     background-size: cover;
-    
     width: 100%;
     height: 100%;
 }
-.static-container .navContainer .nav-container{
+
+.static-container .navContainer .nav-container {
     width: 75%;
     height: 100%;
 }
 
-.static-container .navContainer .nav-container .nav{
-    
+.static-container .navContainer .nav-container .nav {
     display: flex;
     width: 100%;
     height: 100%;
 }
 
-.static-container .navContainer .nav-container .nav .linkContainer{
+.static-container .navContainer .nav-container .nav .linkContainer {
     display: flex;
-
     width: calc(100%/5);
-
     text-align: center;
 }
-.static-container .navContainer .nav-container .linkContainer a{
+
+.static-container .navContainer .nav-container .linkContainer a {
     width: 100%;
     text-decoration: none;
     margin: auto 0;
     transition: all 0.5s;
 }
-.static-container .navContainer .nav-container .linkContainer a:hover{
-   color: red;
-   font-size: 28px;
-}
-.static-container .navContainer .nav-container .linkContainer a:active { 
+
+.static-container .navContainer .nav-container .linkContainer a:hover {
     color: red;
     font-size: 28px;
 }
 
+.static-container .navContainer .nav-container .linkContainer a:active {
+    color: red;
+    font-size: 28px;
+}
 
-.static-container .footer{  
-    box-shadow: inset 2px 2px 3px rgba(122, 10, 80, 0.8),
-    inset -2px -2px 3px rgba(122, 10, 80, 0.8);
+.static-container .footer {
+    box-shadow: inset 2px 2px 3px rgba(122, 10, 80, 0.8), inset -2px -2px 3px rgba(122, 10, 80, 0.8);
     display: flex;
     height: 180px;
     width: 100%;
-    
 }
 
-.static-container .footer .left-footer{  
+.static-container .footer .left-footer {
     height: 100%;
     width: 60%;
-  
 }
-.static-container .footer .bottom-footer{
+
+.static-container .footer .bottom-footer {
     display: flex;
-    
 }
-.static-container .footer .bottom-footer .net-divs{
+
+.static-container .footer .bottom-footer .net-divs {
     background-position: center;
-    background-size: cover;  
+    background-size: cover;
     margin: auto;
     height: 75%;
     display: inline-block;
     width: calc(100%/6);
     border-radius: 100%;
-    
 }
-.static-container .footer  .top-footer{  
+
+.static-container .footer .top-footer {
     text-align: center;
-    height:25%;
+    height: 25%;
     width: 100%;
-    
 }
-.static-container .footer  .bottom-footer{
-    display: flex;  
+
+.static-container .footer .bottom-footer {
+    display: flex;
     height: 50%;
     width: 100%;
-    
 }
-.static-container .footer .right-footer{  
-   
+
+.static-container .footer .right-footer {
     height: 100%;
     width: 100%;
-    
 }
-.static-container .footer .right-footer .form-container{  
+
+.static-container .footer .right-footer .form-container {
     display: flex;
+    position: sticky;
+    bottom: 0;
     height: 100%;
     width: 100%;
-    
 }
-.static-container .footer .right-footer .form-inner-container{  
+
+.static-container .footer .right-footer .form-inner-container {
     display: flex;
     margin: auto auto;
     height: 50%;
     width: 75%;
-    
 }
-.static-container .footer .right-footer .form-inner-container form{  
 
+.static-container .footer .right-footer .form-inner-container form {
     display: flex;
     height: 100%;
     width: 100%;
-    
 }
-.form-inner-container form button{  
+
+.form-inner-container form button {
     display: inline-block;
     width: 50%;
-    
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     background: #fff;
-    
 }
-.form-inner-container form input{  
+
+.form-inner-container form input {
     display: inline-block;
     padding: 10px;
     font-size: 20px;
@@ -156,5 +153,4 @@ body, html{
     background: #fff;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
-    
 }
