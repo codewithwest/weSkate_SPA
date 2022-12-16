@@ -9,9 +9,13 @@ function divCreator(parentContainer, idNames, classNames) {
     //divObj.style.backgroundImage="url(/frontend/static/assets/event1.jpg)";
     return newContainer.appendChild(divObj);
 }
-
-
-
+function createParagraph(theMaindiv,textNodeIn){
+    var maindiv = document.getElementById(theMaindiv)
+    var newPar = document.createElement('p')
+    var newTextPar = document.createTextNode(textNodeIn)
+    newPar.appendChild(newTextPar)
+    maindiv.appendChild(newPar)
+}
 
 var skateCategories = ["SkateBoard", "Decks", "wheels", "trucks", "bearing"];
 var shirtsCategories = ["half sleeve", "Yoke neck", "Long sleeve Crew neck", "V-neck"];
@@ -449,6 +453,7 @@ function addProducts(desiredSection, background, proDescArray, proNameArray) {
             var name = document.createTextNode(posts[i]);
             eventName.appendChild(name);
             eventNameCreator.appendChild(eventName);
+            /*
             //Create The Desc Div and Contents
             var eventDescCreator = document.createElement('div');
             eventDescCreator.setAttribute("id", `event${i}desc`);
@@ -458,6 +463,18 @@ function addProducts(desiredSection, background, proDescArray, proNameArray) {
             var desc = document.createTextNode(postsDesc[i]);
             eventDesc.appendChild(desc);
             eventDescCreator.appendChild(eventDesc);
+            */
+            //Free div for space
+            //divCreator(`event`, `above-button${posts[i]}` , 'above-button');
+            var spaceAboveButton = document.createElement("div")
+            spaceAboveButton.setAttribute("id", `above-button${posts[i]}`);
+            spaceAboveButton.setAttribute("class", "above-button");
+            event.appendChild(spaceAboveButton)
+
+            //divCreator('event', `event${i}desc-cost`, 'desc-cost');
+            //divCreator(`desc-cost${posts[i]}`, 'desc-cost0', 'desc-cost-child');
+            //divCreator(`desc-cost${posts[i]}`, 'desc-cost1' ,'desc-cost-child');
+
             //create an rsvp div and append 
             var eventContainer = document.getElementById('event');
             var rsvpContainer = document.createElement('div');
@@ -478,9 +495,48 @@ function addProducts(desiredSection, background, proDescArray, proNameArray) {
                 alert("You have Succsefully registered");
             })
             rsvpDiv.appendChild(button);
-            /*
-            var descPuTUp = document.createElement('div')
+            //space div above desc-cost
+            var spaceBelowButton = document.createElement("div")
+            spaceBelowButton.setAttribute("id", `below-button${posts[i]}`);
+            spaceBelowButton.setAttribute("class", "below-button");
+            event.appendChild(spaceBelowButton)
 
+
+            // create the description and cost divs
+            var descCostDiv = document.createElement("div")
+            descCostDiv.setAttribute("id", `desc-cost${posts[i]}`);
+            descCostDiv.setAttribute("class", " desc-cost");
+            event.appendChild(descCostDiv)
+
+            //divCreator('event', `event${i}desc-cost`, 'desc-cost');
+            divCreator(`desc-cost${posts[i]}`, `desc-cost0${posts[i]}`, 'desc-cost-child');
+            //inner div for details
+            divCreator( `desc-cost0${posts[i]}`, `details${posts[i]}`, 'details');
+            createParagraph(`details${posts[i]}`, "Description");
+            //Aler details feature
+            document.getElementById(`details${posts[i]}`).addEventListener('mouseover', () => {
+
+                setTimeout( alert(postsDesc[i]), 700)
+               // alert.setAttribute("class", "alert");
+                    //.innerHTML = 'Add to Cart'
+            })
+            
+            //Right Div for price/cost
+            divCreator(`desc-cost${posts[i]}`, `desc-cost1${posts[i]}`,'desc-cost-child');
+            //inner div for price/cost
+            divCreator( `desc-cost1${posts[i]}`, `cost${posts[i]}`, 'cost');
+
+            createParagraph(`cost${posts[i]}`, "R5");
+            
+            
+            //desc div
+
+            var descDiv = document.getElementById("desc-cost0")
+            
+
+            // Cost div
+            var costDiv = document.getElementById('desc-cost1')
+            /*
             var descPuTUpPar = document.createElement('p')
             var descPuTUpParNode = document.createTextNode('...')
             descPuTUpPar.appendChild(descPuTUpParNode)
@@ -493,6 +549,15 @@ function addProducts(desiredSection, background, proDescArray, proNameArray) {
                     //.innerHTML = 'Add to Cart'
             })
             */
+
+            // End div Spacing
+            //space div above desc-cost
+            var endSpace = document.createElement("div")
+            endSpace.setAttribute("id", `end-space${posts[i]}`);
+            endSpace.setAttribute("class", "end-space");
+            event.appendChild(endSpace)
+
+
         };
     };
     elementEventAdd();
@@ -743,3 +808,7 @@ var shortsDesc1 = [
 ]
 divCreator('shorts1', 'flex-container20', 'flex-container')
 addProducts('flex-container20', 'event', shortsDesc1, shortsNames1)
+
+
+//var theAbsdesc = document.getElementById('navAndDisplay1')
+//divCreator('displayLayout', 'deschover','deschover')
