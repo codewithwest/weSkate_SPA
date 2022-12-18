@@ -4,7 +4,7 @@ var mainContainer = document.getElementById('static-container');
 //Add a new nav div to the main Container
 divCreator('static-container','navContainer', 'navContainer')
 
-    var linkIds = ["Home", 'About us', "Shop", "Events", "Contacts"]
+    var linkIds = ["Home", 'About ', "Shop", "Events", "Contacts"]
    
     var linkHref = ["/", '/about', "/shop", "/events", "/contacts"]
     divCreator('navContainer', `inner-nav-container0`,'logo-container')

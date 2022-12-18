@@ -9,7 +9,7 @@
    
 }
 .about-div{
-    width :99%;
+    width :100%;
     height: 320px;
 background-size: cover;
     background-position:center;
@@ -38,7 +38,6 @@ background-size: cover;
     display: flex;
 }
 .location-div{
-    
     margin: auto auto;
     box-shadow: 3px 3px 4px rgba(23, 66, 55, 0.7), -3px 3px 4px rgba(23, 66, 55, 0.7);
     width:70%;
@@ -56,10 +55,14 @@ background-size: cover;
     height: 90%;
 }
 .location-div h2{
-    margin-top: 20%;
+    margin: 12% 0;
+
 }
 .location-div p{
-    margin-top: 30%;
+    display: flex;
+    margin: 0 5%;
+    margin-top: 38%;
+    
     
 }
 
@@ -74,20 +77,41 @@ background-size: cover;
 
 .form-div input{   
     width:75%;
-    height: 15%;
-    margin-top: 2%;
+    height: 13%;
+    margin-top: 3%;
+    
 }
-.form-div p{   
+.form-div h2{   
     margin: 0 0;
     margin-bottom: 3%;
-    font-size: 31px;
+    
 }
 .form-div #textarea{  
-    height: 30%;
+    height: 26%;
    
 }
-
 .form-div #button{  
     height: 12%;
     width: 55%;
+}
+
+
+
+
+/* Adjudt button height to look beter on screen*/
+@media only screen and (max-width: 450px) {
+
+#about-div-inner0{
+    display: flex;
+    width: 100%;
+    height: 80%;
+    margin: auto auto;
+}
+#about-div-inner1{
+    width: 100%;
+    display: flex;
+    height: 80%;
+    margin: auto auto;
+}
+
 }

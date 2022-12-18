@@ -32,7 +32,7 @@ localPointer.appendChild(where)
 localPointer.appendChild(textPar)
 divCreator(`about-div-inner1`,"form-div", "form-div" ) 
 
-var cont = document.createElement('p')
+var cont = document.createElement('h2')
 var conText = document.createTextNode("Reach out To us")
 
 cont.appendChild(conText)
@@ -59,7 +59,7 @@ Message.setAttribute('placeholder', "Message")
 var newButton = document.createElement('input')
 newButton.setAttribute('name', "Button")
 newButton.setAttribute('type', "button")
-newButton.setAttribute('value', "Button")
+newButton.setAttribute('value', "Submit")
 newButton.setAttribute('id', "button")
 
 divCreator('form-div', "inner-form", "inner-form")

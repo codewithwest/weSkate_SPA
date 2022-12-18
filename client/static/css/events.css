@@ -43,12 +43,12 @@ body {
     height: 100%;
     width: 100%;
     animation-duration: 5s;
-    background: linear-gradient(20deg, rgba(18, 24, 24, 0.7), transparent, rgba(132, 43, 155, 0.2));
+    background: linear-gradient(20deg, rgba(18, 24, 24, 0.7), transparent, rgb(14, 10, 11));
 }
 
 .flex-container .event .rsvp button:hover {
     box-shadow: inset 2px 2px 3px white, inset -2px -2px 3px white;
-    color: blue;
+    color: black;
 }
 
 .flex-container .event .rsvp button p {
@@ -75,4 +75,27 @@ body {
 .flex-container .event .eventdesc p {
     font-size: 80%;
     font-weight: 600;
+}
+
+
+/* Adjudt button height to look beter on screen*/
+@media only screen and (max-width: 450px) {
+
+    .flex-container .event .eventdesc p {
+        font-size: 40%;
+        font-weight: 600;
+    }
+    .flex-container .event .eventdesc p {
+        font-size: 40%;
+        font-weight: 600;
+    }
+    .flex-container .event .rsvp {
+        height: max-content;
+        width: max-content;
+        font-size: 10px;
+    }
+    .flex-container .event .eventName {
+        font-size: 18px;
+    }    
+
 }

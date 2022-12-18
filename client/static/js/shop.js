@@ -1,3 +1,5 @@
+let isDescUp = false;
+
 function divCreator(parentContainer, idNames, classNames) {
     let container = parentContainer;
     let idName = idNames;
@@ -16,13 +18,88 @@ function createParagraph(theMaindiv,textNodeIn){
     newPar.appendChild(newTextPar)
     maindiv.appendChild(newPar)
 }
+let productDesc = []
+let innerDivCount = []
+function descPopUp(distValue,productDescIn){
+    //let productDesc = []
+    
+    divCreator('navAndDisplay1', `popUp${distValue}`, 'alert')
+    
 
+    //var innerIn = document.getElementById(`inner-alert${distValue}`)
+    //createParagraph(`inner-alert${distValue}`, productDesc[0])
+    var descinpar = document.createElement('p')
+    descinpar.setAttribute('id', productDesc)
+    if (productDesc.length == 0 && innerDivCount.length == 0) {
+        //create button div
+        divCreator(`popUp${distValue}`, `inner-button${distValue}`, 'pop-button')
+        var destroyButton = document.createElement('input')
+        destroyButton.setAttribute('id', 'destroy-button')
+        destroyButton.setAttribute('type', 'button')
+        destroyButton.setAttribute('value', 'X')
+        document.getElementById(`inner-button${distValue}`).appendChild(destroyButton)
+        //create dec div
+        divCreator(`popUp${distValue}`, `inner-alert${distValue}`, 'inner-alert')
+        productDesc.push(productDescIn)
+        descinpar.innerHTML = productDesc[0];
+        var popUpDesc = document.getElementById(`popUp${distValue}`)
+        var innerAlert = document.getElementById(`inner-alert${distValue}`)
+        innerAlert.appendChild(descinpar)
+       //make div visible
+        popUpDesc.style.display="block";  
+    } else {
+          return;
+    }
+    //var popUpDescInner = document.getElementById(`inner-alert${distValue}`)
+    
+
+    destroyButton.onclick = function(){
+        popUpDesc.style.display="none";
+        productDesc.pop()  
+        popUpDesc.remove()
+        innerAlert.remove()
+        destroyButton.remove()
+       // popUpDescInner.style.display="none";    
+        }
+        
+       
+       
+    }
+    
+//Login Prompt
+function logInPopUp(){
+    //let productDesc = []
+    
+    divCreator('navAndDisplay1', `login`, 'login')
+    divCreator('login', `inner-login`, 'inner-login')
+    function inputcreator(pareDiv, InId, InType, placeH, valueI) {
+        var paren = document.getElementById(pareDiv)
+        var inP = document.createElement('input')
+        inP.setAttribute('id', InId)
+        inP.setAttribute('type', InType)
+        inP.setAttribute('placeholder', placeH)
+        inP.setAttribute('value', valueI)
+        paren.appendChild(inP)
+    }
+    inputcreator('inner-login', 'email','text', 'EMAIL', '')
+    inputcreator('inner-login','password','password', 'password','')
+    inputcreator('inner-login','button','button', '', 'LOGIN')
+    divCreator('inner-login', `forgot-register`, 'forgot-register')
+    divCreator(`forgot-register`, `forgotr`, 'forgot')
+    divCreator(`forgot-register`, `register`, 'register')
+    
+
+    
+
+    
+       
+    }
+    
 var skateCategories = ["SkateBoard", "Decks", "wheels", "trucks", "bearing"];
-var shirtsCategories = ["half sleeve", "Yoke neck", "Long sleeve Crew neck", "V-neck"];
-var hoodiesCategories = ["Pullover", "Zip Up", "Fitted", "Sleeveless", "Cropped"];
+var shirtsCategories = ["half sleeve", "Yoke neck", "Long sleeve", "V-neck"];
+var hoodiesCategories = ["Pullover", "Zip Up", "Sleeveless", "Cropped"];
 var knitsCategories = ["double knit", "pattern"];
-
-var pantsCategories = ["Trackpants", "Sweat", "slim fit"];
+var pantsCategories = ["Trackpants", "Jeans", "slim fit"];
 var shortsCategories = ["Dri-Fit", "cotton"];
 var cat = [skateCategories, shirtsCategories, hoodiesCategories, knitsCategories, pantsCategories, shortsCategories]
 
@@ -84,8 +161,10 @@ var Hoodies = document.getElementById('Hoodies');
 var Knits = document.getElementById('Knits');
 var Pants = document.getElementById('Pants');
 var Shorts = document.getElementById('Shorts');
-
 divCreator('navAndDisplay1', 'displayLayout', 'displayLayout')
+logInPopUp()
+
+
 var rightDivCon = document.getElementById('displayLayout')
 for (let rdiv = 0; rdiv < mechCategories.length; rdiv++) {
     divCreator('displayLayout', `${mechCategories[rdiv]}R`, 'sections')
@@ -194,7 +273,6 @@ for (let b = 0; b < cat[5].length; b++) {
 }
 
 function skateLinksCheck() {
-
     let knownCategoryLinks0 = document.getElementById(`${skateCategories[0]}`)
     let knownCategoryLinks1 = document.getElementById(`${skateCategories[1]}`)
     let knownCategoryLinks2 = document.getElementById(`${skateCategories[2]}`)
@@ -203,12 +281,10 @@ function skateLinksCheck() {
     knownCategoryLinks0.onclick = function(event) {
         event.preventDefault()
         document.getElementById(`skateboard${0}`).style.display = "block"
-
         document.getElementById(`skateboard${1}`).style.display = "none"
         document.getElementById(`skateboard${2}`).style.display = "none"
         document.getElementById(`skateboard${3}`).style.display = "none"
         document.getElementById(`skateboard${4}`).style.display = "none"
-
     }
     knownCategoryLinks1.onclick = function(event) {
         event.preventDefault()
@@ -250,7 +326,6 @@ function skateLinksCheck() {
 
 
 }
-
 function shirtsLinksCheck() {
 
     let knownCategoryLinks0 = document.getElementById(`${shirtsCategories[0]}`)
@@ -295,14 +370,13 @@ function shirtsLinksCheck() {
 
     }
 }
-
 function hoodiesLinksCheck() {
 
     let knownCategoryLinks0 = document.getElementById(`${hoodiesCategories[0]}`)
     let knownCategoryLinks1 = document.getElementById(`${hoodiesCategories[1]}`)
     let knownCategoryLinks2 = document.getElementById(`${hoodiesCategories[2]}`)
     let knownCategoryLinks3 = document.getElementById(`${hoodiesCategories[3]}`)
-    let knownCategoryLinks4 = document.getElementById(`${hoodiesCategories[4]}`)
+    //let knownCategoryLinks4 = document.getElementById(`${hoodiesCategories[4]}`)
 
 
     knownCategoryLinks0.onclick = function(event) {
@@ -311,7 +385,7 @@ function hoodiesLinksCheck() {
         document.getElementById(`hoodies${1}`).style.display = "none"
         document.getElementById(`hoodies${2}`).style.display = "none"
         document.getElementById(`hoodies${3}`).style.display = "none"
-        document.getElementById(`hoodies${4}`).style.display = "none"
+        //document.getElementById(`hoodies${4}`).style.display = "none"
 
 
     }
@@ -321,7 +395,7 @@ function hoodiesLinksCheck() {
         document.getElementById(`hoodies${1}`).style.display = "block"
         document.getElementById(`hoodies${2}`).style.display = "none"
         document.getElementById(`hoodies${3}`).style.display = "none"
-        document.getElementById(`hoodies${4}`).style.display = "none"
+      //  document.getElementById(`hoodies${4}`).style.display = "none"
 
     }
     knownCategoryLinks2.onclick = function(event) {
@@ -330,7 +404,7 @@ function hoodiesLinksCheck() {
         document.getElementById(`hoodies${1}`).style.display = "none"
         document.getElementById(`hoodies${2}`).style.display = "block"
         document.getElementById(`hoodies${3}`).style.display = "none"
-        document.getElementById(`hoodies${4}`).style.display = "none"
+        //document.getElementById(`hoodies${4}`).style.display = "none"
     }
     knownCategoryLinks3.onclick = function(event) {
         event.preventDefault()
@@ -338,8 +412,9 @@ function hoodiesLinksCheck() {
         document.getElementById(`hoodies${1}`).style.display = "none"
         document.getElementById(`hoodies${2}`).style.display = "none"
         document.getElementById(`hoodies${3}`).style.display = "block"
-        document.getElementById(`hoodies${4}`).style.display = "none"
+        //document.getElementById(`hoodies${4}`).style.display = "none"
     }
+    /*
     knownCategoryLinks4.onclick = function(event) {
         event.preventDefault()
         document.getElementById(`hoodies${0}`).style.display = "none"
@@ -347,7 +422,7 @@ function hoodiesLinksCheck() {
         document.getElementById(`hoodies${2}`).style.display = "none"
         document.getElementById(`hoodies${3}`).style.display = "none"
         document.getElementById(`hoodies${4}`).style.display = "block"
-    }
+    }*/
 
 }
 
@@ -359,16 +434,12 @@ function knitsLinksCheck() {
         event.preventDefault()
         document.getElementById(`knits${0}`).style.display = "block"
         document.getElementById(`knits${1}`).style.display = "none"
-
     }
     knownCategoryLinks1.onclick = function(event) {
         event.preventDefault()
         document.getElementById(`knits${0}`).style.display = "none"
         document.getElementById(`knits${1}`).style.display = "block"
-
     }
-
-
 }
 
 function pantsLinksCheck() {
@@ -425,8 +496,7 @@ hoodiesLinksCheck()
 knitsLinksCheck()
 pantsLinksCheck()
 shortsLinksCheck()
-    //Add events attempt
-
+//Add events attempt
 
 
 function addProducts(desiredSection, background, proDescArray, proNameArray) {
@@ -514,9 +584,21 @@ function addProducts(desiredSection, background, proDescArray, proNameArray) {
             divCreator( `desc-cost0${posts[i]}`, `details${posts[i]}`, 'details');
             createParagraph(`details${posts[i]}`, "Description");
             //Aler details feature
-            document.getElementById(`details${posts[i]}`).addEventListener('mouseover', () => {
-
-                setTimeout( alert(postsDesc[i]), 700)
+            
+            document.getElementById(`details${posts[i]}`).addEventListener('click', () => {
+                if (isDescUp == false) {
+                    setTimeout(
+                        ()=>{
+                            descPopUp(posts[i],postsDesc[i]);
+                            isDescUp == true;
+                        },
+                         100);    
+                }else if (isDescUp ==true){
+                    return;
+                };
+                
+                //var descTrash = document.getElementById('alert');
+                //descTrash.style.display="none"
                // alert.setAttribute("class", "alert");
                     //.innerHTML = 'Add to Cart'
             })
@@ -525,10 +607,8 @@ function addProducts(desiredSection, background, proDescArray, proNameArray) {
             divCreator(`desc-cost${posts[i]}`, `desc-cost1${posts[i]}`,'desc-cost-child');
             //inner div for price/cost
             divCreator( `desc-cost1${posts[i]}`, `cost${posts[i]}`, 'cost');
-
-            createParagraph(`cost${posts[i]}`, "R5");
-            
-            
+            let x = Math.floor((Math.random() * 300) + 1);
+            createParagraph(`cost${posts[i]}`,  `R${x}`);
             //desc div
 
             var descDiv = document.getElementById("desc-cost0")
@@ -564,7 +644,7 @@ function addProducts(desiredSection, background, proDescArray, proNameArray) {
 };
 //for skateboard
 //Types od skateboards and desc
-var skateNames = ['mini cruiser', 'Double-Kick Popsicle', 'Carve Skateboard', 'Classic Longboard Skateboard', 'Downhill Longboard Skateboard']
+var skateNames = ['mini cruiser', 'Double-Kick', 'Carve ', 'Classic Longboard ', 'Downhill Longboard ']
 var skateDesc = [
     'It is the perfect entry-level deck for young children but can also be used by intermediate skaters to cruise around town, pull off a few tricks, ride a bowl, or hit a park',
     "It's the standard skateboard and the most popular and widely used design. It works well on skateparks, street skating, and on almost all types of riding. They\'re lightweight and a great option for those who are getting into skateboarding for the first time.",
@@ -573,9 +653,9 @@ var skateDesc = [
     "The downhill longboard is a skateboard that has been specifically designed to be ridden on steep mountain roads and slalom racing events.It\'s a unique skateboard shaped for a very special purpose and delivers more stability and speed than a classic longboard skate.When bombing hills at top speeds, skaters need a wide wheelbase and cutaway fenders that enable them to slide and control speed more safely.",
 ]
 divCreator('skateboard0', 'flex-container0', 'flex-container')
-addProducts('flex-container0', 'event', skateDesc, skateNames)
+addProducts('flex-container0', '/shop/skateboards/skateboard/skateboard', skateDesc, skateNames)
     //Two Decks
-var deckNames = ['STANDARD SKATE DECKS', 'CRUISER & SHAPED DECKS', 'OLD SCHOOL DECKS', 'LONGBOARD DECKS']
+var deckNames = ['STANDARD ', 'SHAPED ', 'OLD SCHOOL', 'LONGBOARD']
 var deckDesc = [
     'These are the best skateboard decks for beginners because they work well for street skating, skate parks and almost all other styles of skateboarding. Typically ridden with hard wheels, these skateboard decks resemble the shape of a popsicle stick because they feature both a nose and a tail that are exactly or nearly symmetrical.',
     "If transportation is your goal, cruiser decks are our recommended choice. Cruiser decks are usually a similar length to standard decks, but have a large variety of different shapes. They are also typically ridden with soft wheels for a smoother, faster roll on rough surfaces. Compared to longboards, they are lighter and more nimble, allowing you to bob and weave through urban obstacles.",
@@ -583,10 +663,10 @@ var deckDesc = [
     "If you are a beginner looking for a large stable board that makes it easy to learn to balance, these are the boards for you. They are also ideal for mellow cruising, pushing long distances and skating down hills at high speeds."
 ]
 divCreator('skateboard1', 'flex-container1', 'flex-container')
-addProducts('flex-container1', 'event', deckDesc, deckNames)
+addProducts('flex-container1', 'shop/skateboards/decks/decks', deckDesc, deckNames)
 
 //Three Wheels
-var wheelNames = ["Skatepark and Street Wheels", "Cruiser Skateboard Wheels", "Longboard Skateboard Wheels"]
+var wheelNames = ["Street Wheels", "Cruiser  Wheels", "Longboard Wheels"]
 var wheelDesc = [
     "These skateboard wheels are typically lightweight. And they roll insanely well on most smooth surfaces. They slide almost effortlessly. They\'re precisely what you should choose if you like doing ledges, bowls, rails, and flip tricks.  In addition, they\'re remarkably smooth because they\'re produced from extremely hard polyurethane.The smoothest skateboard wheels also happen to be the hardest. Their hardness ranges from 95a to 104a. That\'s like from just hard to super hard. More on hardness vs softness down the road.Their diameter ranges between 50mm and 53mm. Unsurprisingly, skatepark and street skateboard wheels don\'t handle pebbles and cracks very well. And they\'re almost useless when it comes to riding on gravel.When it comes to pulling off an ollie, powerslides, various flip tricks, and suchlike technical tricks, go with small, hard wheels. Believe me, ollieing on soft wheels feels awkward.",
     "These wheels are a lot softer than street and park wheels. And they\'re great when it comes to skating on rough pavements and even cracks.We recommend cruiser skateboard wheels as the best option for skating on asphalt because they\'re incredibly grippy. And they don\'t vibrate all that much on such rough surfaces. They\'re good but not the best wheels for rolling over rough places, though. Longboard wheels are.Their hardness ranges from durometer 78a to 98a. As you can see, they range from very soft to relatively hard. But they\'re not like the hardest wheels in the world.Also, cruiser wheels are larger (in diameter) than street and park wheels. Their diameter stays in the 54 mm - 59 mm range.",
@@ -594,12 +674,12 @@ var wheelDesc = [
 
 ]
 divCreator('skateboard2', 'flex-container2', 'flex-container')
-addProducts('flex-container2', 'event', wheelDesc, wheelNames)
+addProducts('flex-container2', 'shop/skateboards/wheels/wheels', wheelDesc, wheelNames)
 
 
 //Four Trucks
 
-var trucksNames = ["SKATEBOARD TRUCKS (STANDARD KINGPIN)", "LONGBOARD TRUCKS (REVERSE KINGPIN)", "HIGH TRUCKS", "LOW TRUCKS", "HOLLOW TRUCKS"]
+var trucksNames = ["Standard", "Longboard", "High", "LOW ", "HOLLOW "]
 var trucksDesc = [
     "Standard kingpin trucks are the most versatile type of trucks and can be used for any type of skateboarding. They are easily adjustable, by tightening or loosening, so you can customize the way your board turns.",
     "These are the best skateboard trucks for carving and cruising, or skating fast down hills. Reverse kingpin trucks are usually taller and wider than standard kingpin skateboard trucks, but are highly customizable for many types of riding. ",
@@ -609,7 +689,7 @@ var trucksDesc = [
 ]
 
 divCreator('skateboard3', 'flex-container3', 'flex-container')
-addProducts('flex-container3', 'event', trucksDesc, trucksNames)
+addProducts('flex-container3', 'shop/skateboards/trucks/trucks', trucksDesc, trucksNames)
     //Five Bearings
 var bearingNames = ["Steel", "Ceramic"]
 var bearingDesc = [
@@ -617,7 +697,7 @@ var bearingDesc = [
     "Ceramic bearings are harder than steel and deform less when pressure is applied to them. Since they are also heat resistant, they expand less and create less friction at faster speeds. Another benefit is that they do not rust when exposed to moisture, making them great for cruisers and rain boards. The only downside to ceramic bearings is that ceramic itself is a brittle substance. The ceramic is susceptible to breaking if skated under high impact, meaning ceramic bearings are great for commuting and low impact skating, but not ideal for skating big gaps or stair sets.",
 ]
 divCreator('skateboard4', 'flex-container4', 'flex-container')
-addProducts('flex-container4', 'event', bearingDesc, bearingNames)
+addProducts('flex-container4', 'shop/skateboards/bearings/bearings', bearingDesc, bearingNames)
 
 //End of Skateboards section
 
@@ -635,18 +715,16 @@ var halfSleeveDesc = [
     "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
 ]
 divCreator('shirts0', 'flex-container5', 'flex-container')
-addProducts('flex-container5', 'event', halfSleeveDesc, halfSleeveNames)
+addProducts('flex-container5', 'shop/shirts/shortsleeves/shortsleeves', halfSleeveDesc, halfSleeveNames)
     //Yoke Neck
-var yokeNeckNames = ["Pullover1", "Zip Up1", "Fitted1", "Sleeveless1", "Cropped1"]
+var yokeNeckNames = ["Pullover1", "Zip Up1", "Fitted1",]
 var yokeNeckDesc = [
     "The pullover hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
     "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
-    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
-    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
-]
+    ]
 divCreator('shirts1', 'flex-container6', 'flex-container')
-addProducts('flex-container6', 'event', yokeNeckDesc, yokeNeckNames)
+addProducts('flex-container6', 'shop/shirts/yokeneck/yokeneck', yokeNeckDesc, yokeNeckNames)
 
 
 //Long Sleeves
@@ -659,7 +737,7 @@ var longSleeveDesc = [
     "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
 ]
 divCreator('shirts2', 'flex-container7', 'flex-container')
-addProducts('flex-container7', 'event', longSleeveDesc, longSleeveNames)
+addProducts('flex-container7', 'shop/shirts/longsleeves/longsleeves', longSleeveDesc, longSleeveNames)
     //V-neck
 var VneckNames = ["Pulslover", "sZip Up", "sFitted", "sSleeveless", "Crodpped"]
 var VneckDesc = [
@@ -670,20 +748,10 @@ var VneckDesc = [
     "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
 ]
 divCreator('shirts3', 'flex-container8', 'flex-container')
-addProducts('flex-container8', 'event', VneckDesc, VneckNames)
+addProducts('flex-container8', 'shop/shirts/vneck/vneck', VneckDesc, VneckNames)
 
 //End of Shirts
 //Start oh hoodies
-var pullOveames0 = ["Pulleeovser", "Zip eseUp", "Fitteeesd", "Seleeeevelsess", "Ceropsped"]
-var pullOveDesc0 = [
-    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
-    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
-    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
-    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
-    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
-]
-divCreator('hoodies0', 'flex-container9', 'flex-container')
-addProducts('flex-container9', 'event', pullOveDesc0, pullOveames0)
 
 var pullOveames1 = ["Pullovser", "Zip sUp", "Fittesd", "Sleevelsess", "Cropsped"]
 var pullOveDesc1 = [
@@ -693,23 +761,33 @@ var pullOveDesc1 = [
     "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
     "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
 ]
-divCreator('hoodies1', 'flex-container10', 'flex-container')
-addProducts('flex-container10', 'event', pullOveDesc1, pullOveames1)
+divCreator('hoodies0', 'flex-container9', 'flex-container')
+addProducts('flex-container9', 'shop/hoodies/pullover/pullover', pullOveDesc1, pullOveames1)
 
 
-var pullOveames2 = ["Pullovsweer", "Zip ewsUp", "Fitteesd", "Sleevelesess", "Cropspeed"]
-var pullOveDesc2 = [
+var zipUpNames2 = ["Pullovsweer", "Zip ewsUp", "Fitteesd", "Sleevelesess", "Cropspeed"]
+var zipUpDesc2 = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
     "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
     "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
     "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
 ]
-divCreator('hoodies2', 'flex-container11', 'flex-container')
-addProducts('flex-container11', 'event', pullOveDesc2, pullOveames2)
+divCreator('hoodies1', 'flex-container10', 'flex-container')
+addProducts('flex-container10', 'shop/hoodies/zipup/zipup', zipUpDesc2, zipUpNames2)
 
-var pullOveames3 = ["Pulloveser", "Zip seeUp", "Fieetteesd", "Sleeevelsess", "Cropesped"]
-var pullOveDesc3 = [
+var sleevelessNames = ["Pulloveser", "Zip seeUp", "Fieetteesd", "Sleeevelsess",]
+var sleevelessDesc = [
+    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
+    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
+    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
+    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
+    ]
+divCreator('hoodies2', 'flex-container11', 'flex-container')
+addProducts('flex-container11', 'shop/hoodies/sleeveless/sleeveless', sleevelessDesc, sleevelessNames)
+
+var croppedNames = ["Pullofsveser", "Zip sseefUp", "ergfervssf", "Sleefevesslsess", "Crosvrvpesped"]
+var croppedDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
     "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
@@ -717,32 +795,24 @@ var pullOveDesc3 = [
     "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
 ]
 divCreator('hoodies3', 'flex-container12', 'flex-container')
-addProducts('flex-container12', 'event', pullOveDesc3, pullOveames3)
+addProducts('flex-container12', 'shop/hoodies/cropped/cropped', croppedDesc, croppedNames)
 
-var pullOveames4 = ["Pullofsveser", "Zip sseefUp", "ergfervssf", "Sleefevesslsess", "Crosvrvpesped"]
-var pullOveDesc4 = [
+
+//Knits start
+
+
+var doubleKnitsNames = ["Pullofvseser", "Zips seefUp", "ergsfervf", "Sleesfevelsess"]
+var doubleknitsDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
     "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
     "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
-    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
-]
-divCreator('hoodies4', 'flex-container13', 'flex-container')
-addProducts('flex-container13', 'event', pullOveDesc4, pullOveames4)
-
-var knitsNames0 = ["Pullofvseser", "Zips seefUp", "ergsfervf", "Sleesfevelsess", "Csrovrvpesped"]
-var knitsDesc0 = [
-    "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
-    "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
-    "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
-    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
-    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
-]
+    ]
 divCreator('knits0', 'flex-container14', 'flex-container')
-addProducts('flex-container14', 'event', knitsDesc0, knitsNames0)
+addProducts('flex-container14', 'shop/knits/doubleknit/doubleknit', doubleknitsDesc, doubleKnitsNames)
 
-var knitsNames1 = ["Pullofer", "Zip sefUp", "ergferf", "Sleefevesess", "Crovrvpsped"]
-var knitsDesc1 = [
+var patternKnitsNames = ["Pullofer", "Zip sefUp", "ergferf", "Sleefevesess", "Crovrvpsped"]
+var patternKnitsDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
     "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
@@ -750,10 +820,10 @@ var knitsDesc1 = [
     "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
 ]
 divCreator('knits1', 'flex-container15', 'flex-container')
-addProducts('flex-container15', 'event', knitsDesc1, knitsNames1)
+addProducts('flex-container15', 'shop/knits/pattern/pattern', patternKnitsDesc, patternKnitsNames)
 
-var pantsNames0 = ["Pullofveser", "Zip seefUp", "ergfervfd", "Sleefevelsess", "Crovrvpesped"]
-var pantsDesc0 = [
+var sweatPantsNames = ["Pullofveser", "Zip seefUp", "ergfervfd", "Sleefevelsess", "Crovrvpesped"]
+var sweatPantsDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
     "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
@@ -761,10 +831,10 @@ var pantsDesc0 = [
     "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
 ]
 divCreator('pants0', 'flex-container16', 'flex-container')
-addProducts('flex-container16', 'event', pantsDesc0, pantsNames0)
+addProducts('flex-container16', 'shop/pants/sweatpants/sweatpants', sweatPantsDesc,sweatPantsNames)
 
-var pantsNames1 = ["Pulofer", "Zisp sefUp", "ergfeqrf", "Sleefsevesess", "Csrovrvpsped"]
-var pantsDesc1 = [
+var jeansNames = ["Pulofer", "Zisp sefUp", "ergfeqrf", "Sleefsevesess", "Csrovrvpsped"]
+var jeansDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
     "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
@@ -772,23 +842,21 @@ var pantsDesc1 = [
     "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
 ]
 divCreator('pants1', 'flex-container17', 'flex-container')
-addProducts('flex-container17', 'event', pantsDesc1, pantsNames1)
+addProducts('flex-container17', 'shop/pants/jeans/jeans', jeansDesc, jeansNames)
 
-var pantsNames2 = ["Pullofser", "Zip sefsUp", "ergfserf", "Sleefevesesss", "Crovsrvpsped"]
-var pantsDesc2 = [
+var slimfitNames = ["Pullofser", "Zip sefsUp", "ergfserf",]
+var slimfitDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
     "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
-    "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
-    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
-]
+   ]
 divCreator('pants2', 'flex-container18', 'flex-container')
-addProducts('flex-container18', 'event', pantsDesc2, pantsNames2)
+addProducts('flex-container18', 'shop/pants/slimfit/slimfit', slimfitDesc, slimfitNames)
 
 
 
-var shortsNames0 = ["Pulofder", "Zdisp sefUp", "ergfeqertrf", "Sledefsevesess", "Cdsrovrvpsped"]
-var shortsDesc0 = [
+var drifitNames = ["Pulofder", "Zdisp sefUp", "ergfeqertrf", "Sledefsevesess", "Cdsrovrvpsped"]
+var drifitDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
     "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
@@ -796,10 +864,10 @@ var shortsDesc0 = [
     "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
 ]
 divCreator('shorts0', 'flex-container19', 'flex-container')
-addProducts('flex-container19', 'event', shortsDesc0, shortsNames0)
+addProducts('flex-container19', 'shop/shorts/drifit/drifit', drifitDesc, drifitNames)
 
-var shortsNames1 = ["Pullofcser", "Zip sefcsUp", "ergfsdecserf", "Sleefevecsesss", "Crdovsrvpsped"]
-var shortsDesc1 = [
+var cottonNames = ["Pullofcser", "Zip sefcsUp", "ergfsdecserf", "Sleefevecsesss", "Crdovsrvpsped"]
+var cottonDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
     "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
@@ -807,7 +875,7 @@ var shortsDesc1 = [
     "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
 ]
 divCreator('shorts1', 'flex-container20', 'flex-container')
-addProducts('flex-container20', 'event', shortsDesc1, shortsNames1)
+addProducts('flex-container20', 'shop/shorts/cotton/cotton', cottonDesc, cottonNames)
 
 
 //var theAbsdesc = document.getElementById('navAndDisplay1')

@@ -1,7 +1,11 @@
 body,
 html {
     width: 100%;
+    height: 100%;
     margin: 0 0;
+    font-size: 18px;
+    color: black !important;
+    background: #fff;
 }
 
 .static-container {
@@ -73,9 +77,11 @@ html {
 }
 
 .static-container .footer {
+    position:static;
+    bottom: 0;
     box-shadow: inset 2px 2px 3px rgba(122, 10, 80, 0.8), inset -2px -2px 3px rgba(122, 10, 80, 0.8);
     display: flex;
-    height: 180px;
+ height: 150px;
     width: 100%;
 }
 
@@ -86,13 +92,14 @@ html {
 
 .static-container .footer .bottom-footer {
     display: flex;
+   
 }
 
 .static-container .footer .bottom-footer .net-divs {
     background-position: center;
     background-size: cover;
     margin: auto;
-    height: 75%;
+    height: 55%;
     display: inline-block;
     width: calc(100%/6);
     border-radius: 100%;
@@ -100,8 +107,10 @@ html {
 
 .static-container .footer .top-footer {
     text-align: center;
-    height: 25%;
-    width: 100%;
+    height: 35%;
+    width: 80%;
+    margin: 1% 10%;
+   
 }
 
 .static-container .footer .bottom-footer {
@@ -147,10 +156,47 @@ html {
 .form-inner-container form input {
     display: inline-block;
     padding: 10px;
-    font-size: 20px;
-    cursor: e-resize;
+    font-size: 15px;
+
     width: 100%;
     background: #fff;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
+}
+
+/* Adjudt button height to look beter on screen*/
+@media only screen and (min-width: 800px) {
+    .static-container .footer .bottom-footer .net-divs {
+        background-position: center;
+        background-size: cover;
+        margin: auto;
+        height: 75%;
+    }
+    .static-container .footer p{
+        font-size: 26px;
+        margin-bottom: 2%;
+        margin: auto auto;
+    }
+    html,body{
+        font-size: 28px;
+    }
+}
+
+/* Adjudt button height to look beter on screen*/
+@media only screen and (max-width: 450px) {
+    .static-container .footer .bottom-footer .net-divs {
+        background-position: center;
+        background-size: cover;
+        margin: auto;
+        height: 55%;
+    }
+    .static-container .footer p{
+        
+        margin-bottom: 2%;
+        margin: auto auto;
+        margin-top: 5%;
+    }
+    html,body{
+        font-size: 12px !important;
+    }
 }

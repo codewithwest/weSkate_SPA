@@ -1,11 +1,12 @@
 #about{
    
     width: 100%;
+    padding: 1% 0;
 
 }
 .fourdivs{
     display: flex;
-
+    height: auto;
     height: calc(100vh/3);
     
 }
@@ -39,6 +40,9 @@
 .who p, h1{
     margin: auto auto;
 }
+.who p{
+    margin: auto 5%;
+}
 .him{
     display: flex;
     
@@ -49,11 +53,15 @@
     display: flex;
     width: 50%;
     height: 100%;
+    overflow-y:hidden;
+    text-overflow: ellipsis;
 }
 
+.him .him-text:hover{
+    overflow-y: auto;
+}
 .him .him-text p{
-   margin: auto auto;
-    
+    margin: 5% 5%;
 }
 
 .him .him-pic{
@@ -83,13 +91,14 @@ box-shadow: 2px 2px 3px rgba(33, 33, 33, 0.8), -2px 2px 3px rgba(33, 33, 33, 0.8
 }
 .three-text{
     display: flex;
-    
+    text-align: center;
     width: 100%;
     height: 70%;
     
 }
 .three-text p{
-    margin: auto auto;
+    
+    margin: auto 5%;
 }
 .three-button{
     display: flex;
@@ -105,10 +114,12 @@ box-shadow: 2px 2px 3px rgba(33, 33, 33, 0.8), -2px 2px 3px rgba(33, 33, 33, 0.8
 .three-button input{
 box-shadow: 2px 2px 3px rgba(33, 33, 33, 0.8), -2px 2px 3px rgba(33, 33, 33, 0.8);
     border: none;
-font-size: large;
-   margin: auto auto;
-   height: 70%;
-   width: 50%;
+    background: rgba(33, 33, 33, 0.5);
+    color: white;
+    font-size: medium;
+    margin: auto auto;
+    height: 70%;
+    width: 50%;
 }
 
 
@@ -118,7 +129,7 @@ font-size: large;
     height: 30%;
     width: 100%;
     }
-.how h1 {
+.how h2 {
     margin: auto auto;
 }
 .how-desc {
@@ -126,10 +137,11 @@ font-size: large;
     display: flex;
     height: 70%;
     width: 100%;
+    text-align: center;
         
     }
  .how-desc p {
-    margin: auto auto;
+    margin: auto 5%;
 }
 
       
@@ -137,6 +149,39 @@ font-size: large;
     .fourdivs{
         display: flex;
         height: calc(100vh/2);
-        border: 1px dotted red;
-    } 
-  }
+        
+    }
+    
+.him .him-text{
+    overflow: none;
+    text-overflow: ellipsis;
+}
+.him .him-text:hover{
+    overflow-y: none;
+}
+.three-text{
+    height: 60%;   
+}
+.three-button input{
+font-size: 26px;    
+} 
+}
+
+
+/* Adjudt button height to look beter on screen*/
+@media only screen and (max-width: 450px) {
+    .fourdivs{
+        display: flex;
+        height: calc(100vh/4);
+        
+    }
+    .him .him-text:hover{
+        
+        overflow-y: auto;
+    }
+    .three-button input{
+            font-size: 10px;
+    }
+
+
+}

@@ -87,10 +87,14 @@ divCreator('row-child3', `row-child4-children` , 'row-child4-children')
 
 divCreator(`row-child4-children`, `mess-container` , 'mess-container')
 var newPar = document.createElement('p')
-var fare = document.createTextNode("Meesage from the Founder: Alone we are powerless but together we can change the world.")
+var fare = document.createTextNode("Meesage from the Founder")
+var newPar1 = document.createElement('p')
+
+newPar1.appendChild( document.createTextNode('Alone we are powerless but together we can change the world.'))
 newPar.appendChild(fare)
 var toAppends  = document.getElementById(`mess-container`)
 toAppends.appendChild(newPar)
+toAppends.appendChild(newPar1)
 
 
 
