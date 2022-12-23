@@ -153,6 +153,9 @@ for (let li = 0; li < mechCategories.length; li++) {
     leftNav.appendChild(navListItems);
     //End of left Side Nav
 }
+
+
+
 // Right Side display layout
 // display layout container
 var SkateBoard = document.getElementById('SkateBoards');
@@ -161,6 +164,7 @@ var Hoodies = document.getElementById('Hoodies');
 var Knits = document.getElementById('Knits');
 var Pants = document.getElementById('Pants');
 var Shorts = document.getElementById('Shorts');
+
 divCreator('navAndDisplay1', 'displayLayout', 'displayLayout')
 logInPopUp()
 
@@ -170,10 +174,21 @@ for (let rdiv = 0; rdiv < mechCategories.length; rdiv++) {
     divCreator('displayLayout', `${mechCategories[rdiv]}R`, 'sections')
 }
 console.log(rightDivCon)
+function checkMate(desiredArray,requiredId){
+    for (let ki = 0; ki < desiredArray.length; ki++) {
+        if (desiredArray[ki] == `${requiredId}`) {
+            document.getElementById(desiredArray[ki]).style.fontWeight="bold";   
+        }else{
+            document.getElementById(desiredArray[ki]).style.fontWeight="200";
+        }
+    }
+}
     //left nav clicked link check
 function LinkClicked() {
+    SkateBoard.style.fontWeight="bold";
     SkateBoard.onclick = function(event) {
         event.preventDefault()
+        checkMate(mechCategories,mechCategories[0])
         document.getElementById('SkateBoardsR').style.display = "block"
         document.getElementById('T-ShirtsR').style.display = "none"
         document.getElementById('HoodiesR').style.display = "none"
@@ -183,6 +198,7 @@ function LinkClicked() {
 
     }
     Shirts.onclick = function(event) {
+        checkMate(mechCategories,mechCategories[1])
         event.preventDefault()
         document.getElementById('SkateBoardsR').style.display = "none"
         document.getElementById('T-ShirtsR').style.display = "block"
@@ -194,6 +210,7 @@ function LinkClicked() {
     }
     Hoodies.onclick = function(event) {
         event.preventDefault()
+        checkMate(mechCategories,mechCategories[2])
         document.getElementById('SkateBoardsR').style.display = "none"
         document.getElementById('T-ShirtsR').style.display = "none"
         document.getElementById('HoodiesR').style.display = "block"
@@ -204,6 +221,7 @@ function LinkClicked() {
     }
     Knits.onclick = function(event) {
         event.preventDefault()
+        checkMate(mechCategories,mechCategories[3])
         document.getElementById('SkateBoardsR').style.display = "none"
         document.getElementById('T-ShirtsR').style.display = "none"
         document.getElementById('HoodiesR').style.display = "none"
@@ -214,6 +232,7 @@ function LinkClicked() {
     }
     Pants.onclick = function(event) {
         event.preventDefault()
+        checkMate(mechCategories,mechCategories[4])
         document.getElementById('SkateBoardsR').style.display = "none"
         document.getElementById('T-ShirtsR').style.display = "none"
         document.getElementById('HoodiesR').style.display = "none"
@@ -224,6 +243,7 @@ function LinkClicked() {
     }
     Shorts.onclick = function(event) {
         event.preventDefault()
+        checkMate(mechCategories,mechCategories[5])
         document.getElementById('SkateBoardsR').style.display = "none"
         document.getElementById('T-ShirtsR').style.display = "none"
         document.getElementById('HoodiesR').style.display = "none"
@@ -278,8 +298,10 @@ function skateLinksCheck() {
     let knownCategoryLinks2 = document.getElementById(`${skateCategories[2]}`)
     let knownCategoryLinks3 = document.getElementById(`${skateCategories[3]}`)
     let knownCategoryLinks4 = document.getElementById(`${skateCategories[4]}`)
+    knownCategoryLinks0.style.fontWeight="bold";
     knownCategoryLinks0.onclick = function(event) {
         event.preventDefault()
+        checkMate(skateCategories, skateCategories[0])
         document.getElementById(`skateboard${0}`).style.display = "block"
         document.getElementById(`skateboard${1}`).style.display = "none"
         document.getElementById(`skateboard${2}`).style.display = "none"
@@ -288,6 +310,8 @@ function skateLinksCheck() {
     }
     knownCategoryLinks1.onclick = function(event) {
         event.preventDefault()
+        checkMate(skateCategories, skateCategories[1])
+        
         document.getElementById(`skateboard${0}`).style.display = "none"
         document.getElementById(`skateboard${1}`).style.display = "block"
         document.getElementById(`skateboard${2}`).style.display = "none"
@@ -297,6 +321,8 @@ function skateLinksCheck() {
     }
     knownCategoryLinks2.onclick = function(event) {
         event.preventDefault()
+        checkMate(skateCategories, skateCategories[2])
+
         document.getElementById(`skateboard${0}`).style.display = "none"
         document.getElementById(`skateboard${1}`).style.display = "none"
         document.getElementById(`skateboard${2}`).style.display = "block"
@@ -306,6 +332,8 @@ function skateLinksCheck() {
     }
     knownCategoryLinks3.onclick = function(event) {
         event.preventDefault()
+        checkMate(skateCategories, skateCategories[3])
+
         document.getElementById(`skateboard${0}`).style.display = "none"
         document.getElementById(`skateboard${1}`).style.display = "none"
         document.getElementById(`skateboard${2}`).style.display = "none"
@@ -315,6 +343,8 @@ function skateLinksCheck() {
     }
     knownCategoryLinks4.onclick = function(event) {
         event.preventDefault()
+        checkMate(skateCategories, skateCategories[4])
+
         document.getElementById(`skateboard${0}`).style.display = "none"
         document.getElementById(`skateboard${1}`).style.display = "none"
         document.getElementById(`skateboard${2}`).style.display = "none"
@@ -327,23 +357,24 @@ function skateLinksCheck() {
 
 }
 function shirtsLinksCheck() {
-
     let knownCategoryLinks0 = document.getElementById(`${shirtsCategories[0]}`)
     let knownCategoryLinks1 = document.getElementById(`${shirtsCategories[1]}`)
     let knownCategoryLinks2 = document.getElementById(`${shirtsCategories[2]}`)
     let knownCategoryLinks3 = document.getElementById(`${shirtsCategories[3]}`)
+    knownCategoryLinks0.style.fontWeight="bold";
 
     knownCategoryLinks0.onclick = function(event) {
         event.preventDefault()
+        checkMate(shirtsCategories, shirtsCategories[0])
         document.getElementById(`shirts${0}`).style.display = "block"
         document.getElementById(`shirts${1}`).style.display = "none"
         document.getElementById(`shirts${2}`).style.display = "none"
         document.getElementById(`shirts${3}`).style.display = "none"
-
-
     }
     knownCategoryLinks1.onclick = function(event) {
         event.preventDefault()
+        checkMate(shirtsCategories, shirtsCategories[1])
+
         document.getElementById(`shirts${0}`).style.display = "none"
         document.getElementById(`shirts${1}`).style.display = "block"
         document.getElementById(`shirts${2}`).style.display = "none"
@@ -353,44 +384,42 @@ function shirtsLinksCheck() {
     }
     knownCategoryLinks2.onclick = function(event) {
         event.preventDefault()
+        checkMate(shirtsCategories, shirtsCategories[2])
+
         document.getElementById(`shirts${0}`).style.display = "none"
         document.getElementById(`shirts${1}`).style.display = "none"
         document.getElementById(`shirts${2}`).style.display = "block"
         document.getElementById(`shirts${3}`).style.display = "none"
-
-
     }
     knownCategoryLinks3.onclick = function(event) {
         event.preventDefault()
+        checkMate(shirtsCategories, shirtsCategories[3])
         document.getElementById(`shirts${0}`).style.display = "none"
         document.getElementById(`shirts${1}`).style.display = "none"
         document.getElementById(`shirts${2}`).style.display = "none"
         document.getElementById(`shirts${3}`).style.display = "block"
-
-
     }
 }
 function hoodiesLinksCheck() {
-
     let knownCategoryLinks0 = document.getElementById(`${hoodiesCategories[0]}`)
     let knownCategoryLinks1 = document.getElementById(`${hoodiesCategories[1]}`)
     let knownCategoryLinks2 = document.getElementById(`${hoodiesCategories[2]}`)
     let knownCategoryLinks3 = document.getElementById(`${hoodiesCategories[3]}`)
     //let knownCategoryLinks4 = document.getElementById(`${hoodiesCategories[4]}`)
-
-
+    knownCategoryLinks0.style.fontWeight="bold";
     knownCategoryLinks0.onclick = function(event) {
         event.preventDefault()
+        checkMate(hoodiesCategories, hoodiesCategories[0])
         document.getElementById(`hoodies${0}`).style.display = "block"
         document.getElementById(`hoodies${1}`).style.display = "none"
         document.getElementById(`hoodies${2}`).style.display = "none"
         document.getElementById(`hoodies${3}`).style.display = "none"
         //document.getElementById(`hoodies${4}`).style.display = "none"
-
-
     }
     knownCategoryLinks1.onclick = function(event) {
         event.preventDefault()
+        checkMate(hoodiesCategories, hoodiesCategories[1])
+
         document.getElementById(`hoodies${0}`).style.display = "none"
         document.getElementById(`hoodies${1}`).style.display = "block"
         document.getElementById(`hoodies${2}`).style.display = "none"
@@ -400,6 +429,7 @@ function hoodiesLinksCheck() {
     }
     knownCategoryLinks2.onclick = function(event) {
         event.preventDefault()
+        checkMate(hoodiesCategories, hoodiesCategories[2])
         document.getElementById(`hoodies${0}`).style.display = "none"
         document.getElementById(`hoodies${1}`).style.display = "none"
         document.getElementById(`hoodies${2}`).style.display = "block"
@@ -408,6 +438,8 @@ function hoodiesLinksCheck() {
     }
     knownCategoryLinks3.onclick = function(event) {
         event.preventDefault()
+        checkMate(hoodiesCategories, hoodiesCategories[3])
+
         document.getElementById(`hoodies${0}`).style.display = "none"
         document.getElementById(`hoodies${1}`).style.display = "none"
         document.getElementById(`hoodies${2}`).style.display = "none"
@@ -427,16 +459,19 @@ function hoodiesLinksCheck() {
 }
 
 function knitsLinksCheck() {
-
+  
     let knownCategoryLinks0 = document.getElementById(`${knitsCategories[0]}`)
     let knownCategoryLinks1 = document.getElementById(`${knitsCategories[1]}`)
+    knownCategoryLinks0.style.fontWeight="bold";
     knownCategoryLinks0.onclick = function(event) {
         event.preventDefault()
+        checkMate(knitsCategories, knitsCategories[0])
         document.getElementById(`knits${0}`).style.display = "block"
         document.getElementById(`knits${1}`).style.display = "none"
     }
     knownCategoryLinks1.onclick = function(event) {
         event.preventDefault()
+        checkMate(knitsCategories, knitsCategories[1])
         document.getElementById(`knits${0}`).style.display = "none"
         document.getElementById(`knits${1}`).style.display = "block"
     }
@@ -446,16 +481,18 @@ function pantsLinksCheck() {
     let knownCategoryLinks0 = document.getElementById(`${pantsCategories[0]}`)
     let knownCategoryLinks1 = document.getElementById(`${pantsCategories[1]}`)
     let knownCategoryLinks2 = document.getElementById(`${pantsCategories[2]}`)
-
+    knownCategoryLinks0.style.fontWeight="bold";
     knownCategoryLinks0.onclick = function(event) {
         event.preventDefault()
+        checkMate(pantsCategories, pantsCategories[0])
         document.getElementById(`pants${0}`).style.display = "block"
         document.getElementById(`pants${1}`).style.display = "none"
         document.getElementById(`pants${2}`).style.display = "none"
-
     }
     knownCategoryLinks1.onclick = function(event) {
         event.preventDefault()
+        checkMate(pantsCategories, pantsCategories[1])
+
         document.getElementById(`pants${0}`).style.display = "none"
         document.getElementById(`pants${1}`).style.display = "block"
         document.getElementById(`pants${2}`).style.display = "none"
@@ -463,6 +500,8 @@ function pantsLinksCheck() {
     }
     knownCategoryLinks2.onclick = function(event) {
         event.preventDefault()
+        checkMate(pantsCategories, pantsCategories[2])
+
         document.getElementById(`pants${0}`).style.display = "none"
         document.getElementById(`pants${1}`).style.display = "none"
         document.getElementById(`pants${2}`).style.display = "block"
@@ -474,14 +513,16 @@ function pantsLinksCheck() {
 function shortsLinksCheck() {
     let knownCategoryLinks0 = document.getElementById(`${shortsCategories[0]}`)
     let knownCategoryLinks1 = document.getElementById(`${shortsCategories[1]}`)
+    knownCategoryLinks0.style.fontWeight="bold";
     knownCategoryLinks0.onclick = function(event) {
         event.preventDefault()
+        checkMate(shortsCategories, shortsCategories[0])
         document.getElementById(`shorts${0}`).style.display = "block"
         document.getElementById(`shorts${1}`).style.display = "none"
-
     }
     knownCategoryLinks1.onclick = function(event) {
         event.preventDefault()
+        checkMate(shortsCategories, shortsCategories[1])
         document.getElementById(`shorts${0}`).style.display = "none"
         document.getElementById(`shorts${1}`).style.display = "block"
 

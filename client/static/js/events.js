@@ -11,7 +11,7 @@ function addEvents(){
     "Late Bird",
     "Skate Home",
     "Park Skate",];
-    var state = ["RSVP", "RSVP","RSVP","RSVP","RSVP","RSVP","Re-VISIT","Re-VISIT","Re-VISIT","Re-VISIT","Re-VISIT","Re-VISIT",];
+    var state = ["RSVP", "RSVP","RSVP","RSVP","RSVP","RSVP","RE-VISIT","RE-VISIT","RE-VISIT","RE-VISIT","RE-VISIT","RE-VISIT",];
     
     var postsDesc = [
         "Last charity skate event to grow the skating culture.",

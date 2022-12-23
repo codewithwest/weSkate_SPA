@@ -2,6 +2,7 @@ body,
 html {
     width: 100%;
     height: 100%;
+    
     margin: 0 0;
     font-size: 18px;
     color: black !important;
@@ -9,16 +10,19 @@ html {
 }
 
 .static-container {
-    height: 100%;
+    flex-direction: column;
+  height: 100%;
+    
     width: 100%;
-    display: inline;
 }
 
-.static-container .navContainer {
-    box-shadow: inset 2px 2px 3px rgba(122, 10, 80, 0.8), inset -2px -2px 3px rgba(122, 10, 80, 0.8);
+.static-container .navContainer 
+{
+   
+    box-shadow: inset .2px .2px .6px rgba(13, 10, 12, 0.8), inset -.2px -.2px .6px rgba(18, 13, 16, 0.8);
     display: flex;
     width: 100%;
-    height: 65px;
+    height: 13%;
 }
 
 .static-container .navContainer .logo-container {
@@ -67,21 +71,19 @@ html {
 }
 
 .static-container .navContainer .nav-container .linkContainer a:hover {
-    color: red;
-    font-size: 28px;
+    color: green;
+    font-weight: 700;
 }
 
 .static-container .navContainer .nav-container .linkContainer a:active {
-    color: red;
+    
     font-size: 28px;
 }
 
 .static-container .footer {
-    position:static;
-    bottom: 0;
-    box-shadow: inset 2px 2px 3px rgba(122, 10, 80, 0.8), inset -2px -2px 3px rgba(122, 10, 80, 0.8);
+    box-shadow: inset .2px .2px 1.5px rgba(15, 11, 13, 0.8), inset -.2px -.2px 1.5px rgba(20, 18, 20, 0.8);
     display: flex;
- height: 150px;
+    height: 30%;
     width: 100%;
 }
 
@@ -99,15 +101,15 @@ html {
     background-position: center;
     background-size: cover;
     margin: auto;
-    height: 55%;
-    display: inline-block;
+    height: 45%;
+    display: inline;
     width: calc(100%/6);
     border-radius: 100%;
 }
 
 .static-container .footer .top-footer {
     text-align: center;
-    height: 35%;
+    height: 40%;
     width: 80%;
     margin: 1% 10%;
    
@@ -184,19 +186,40 @@ html {
 
 /* Adjudt button height to look beter on screen*/
 @media only screen and (max-width: 450px) {
+    .static-container .footer .bottom-footer{
+        height: 35%;
+        
+    }
     .static-container .footer .bottom-footer .net-divs {
         background-position: center;
         background-size: cover;
         margin: auto;
-        height: 55%;
+        height: 50%;
     }
     .static-container .footer p{
-        
+        margin: 0 auto;
+        margin-top: 4%;
         margin-bottom: 2%;
-        margin: auto auto;
-        margin-top: 5%;
     }
     html,body{
         font-size: 12px !important;
     }
-}
+
+
+    .static-container .footer {
+        box-shadow: inset .2px .2px 1.5px rgba(15, 11, 13, 0.8), inset -.2px -.2px 1.5px rgba(20, 18, 20, 0.8);
+        display: flex;
+        height:19%;
+        width: 100%;
+    }
+    .static-container .footer .top-footer {
+        text-align: center;
+        height: 40%;
+        width: 80%;
+        margin: 0 10%;
+    }
+    .static-container .bottom-footer{
+        height: 100%;
+        display: block;
+           }
+    }

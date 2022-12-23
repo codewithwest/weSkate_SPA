@@ -1,4 +1,4 @@
-
+function dura() {
 function divCreator(parentContainer, idNames,classNames){
     let container = parentContainer;
     let idName  = idNames;
@@ -72,7 +72,7 @@ for (let row = 0; row < topTexts.length; row++) {
     var card = document.getElementById(`row-child3-children${[row]}`);
     card.style.backgroundImage=`url(/static/assets/home/home${row}.jpg)`
     divCreator(`row-child3-children${[row]}`, `desc-container${row}` , 'desc-container')
-    var textPara = document.createElement('p')
+    var textPara = document.createElement('marquee')
     var tText = document.createTextNode(topTexts[row])
     textPara.appendChild(tText)
     var toAppend  = document.getElementById(`desc-container${row}`)
@@ -89,14 +89,11 @@ divCreator(`row-child4-children`, `mess-container` , 'mess-container')
 var newPar = document.createElement('p')
 var fare = document.createTextNode("Meesage from the Founder")
 var newPar1 = document.createElement('p')
-
 newPar1.appendChild( document.createTextNode('Alone we are powerless but together we can change the world.'))
 newPar.appendChild(fare)
 var toAppends  = document.getElementById(`mess-container`)
 toAppends.appendChild(newPar)
 toAppends.appendChild(newPar1)
-
-
-
-
-
+console.log(homeContainer)
+}
+dura()

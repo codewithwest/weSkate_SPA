@@ -19,7 +19,6 @@
 }
 
 .shop-layout-creator .navAndDisplay1 {
-
     display: flex;
     padding-bottom: 2%;
 background: rgba(11, 33, 22, 0.6);
@@ -30,11 +29,14 @@ background: rgba(11, 33, 22, 0.6);
 /*desc alert*/
 .alert{
     position: absolute;
+    
     margin-bottom: 10px;
     top:30%;
     left:28%;
     display: none;
-    z-index: 200;
+   
+    
+    z-index: 20000;
     width:50%;
     height: 40%;
 }
@@ -50,21 +52,17 @@ background: rgba(11, 33, 22, 0.6);
     margin-top: 2%;
     background: inherit;
     border: none;
- 
     height: 100%;
-    
     text-shadow: -2px -2px 3px black,2px -2px 3px black;
     font-weight: 500;
     width: 10%;
     color: beige;
 }
 .inner-alert{
-    
    margin: auto auto;
-    color: aliceblue;
+    color: white;
     position: relative;
-    border: 1px dotted red;
-    background:rgba(25, 172, 98, 0.6);
+    background:rgba(2,2, 8, 0.8);
     box-shadow: -2px -2px 3px rgba(11, 33, 22, 0.6), 
     2px 2px 3px rgba(11, 33, 22, 0.6);
     z-index: 201;
@@ -72,13 +70,14 @@ background: rgba(11, 33, 22, 0.6);
     display: flex;
 }
 .login p{
-    margin: auto auto;
-    text-align: center;
+    text-align: left;
+    margin: 13% 13%;
+    
 }
 
 /*Login Alert*/
 .login{
-    display: none;
+    display:none;
     position: absolute;
     margin-bottom: 10px;
     top:30%;
@@ -222,7 +221,6 @@ background: rgba(11, 33, 22, 0.6);
 
 .shop-layout-creator .navAndDisplay1 .displayLayout .displayLayoutNavCo li a:hover {
     font-weight: bold;
-    font-size: 125%;
     text-align: center;
 }
 
@@ -245,7 +243,6 @@ background: rgba(11, 33, 22, 0.6);
 #shorts1{
     display: none;
 }
-
 .flex-container {
     text-transform: capitalize !important;
     padding-left: 3px;
@@ -263,14 +260,16 @@ background: rgba(11, 33, 22, 0.6);
     background-size: cover;
     margin: 0.7% 0.5%;
     width: 32%;
-    box-shadow: 2px 2px 4px rgba(7, 7, 7, 0.9), 
-    -2px -2px 4px rgba(7, 7, 7, 0.9);
+    box-shadow: 2px 2px 4px black, 
+    -2px -2px 4px black;
     text-align: center;
 }
-
 /* product name container*/
 
 .flex-container .event .eventName {
+    text-shadow:  3px 3px 4px rgba(7, 7, 7, 0.9), 
+    -3px -3px 4px rgba(7, 7, 7, 0.9);
+    text-transform: capitalize;
     word-wrap: normal;
     width: 80%;
     height: 20%;
@@ -296,7 +295,7 @@ background: rgba(11, 33, 22, 0.6);
     height: 100%;
     width: 100%;
     transition: all 1000ms;
-    background: linear-gradient(20deg, rgba(18, 24, 24, 0.7), transparent, rgba(132, 43, 155, 0.2));
+    background: linear-gradient(20deg, rgba(18, 24, 24, 0.7),rgba(2,2, 8, 0.8));
 }
 /* Button Animation on Hover*/
 .flex-container .event .rsvp button:hover {
@@ -322,6 +321,7 @@ margin: 0 0;
 
 /* Description and Cost div*/
 .desc-cost {
+    
     text-align: center;
     display:flex;
     height: 23%;
@@ -334,6 +334,7 @@ margin: 0 0;
 }
 /* Details Div */
 .desc-cost .details{
+    background:rgba(2,2, 8, 0.8);
     text-overflow: ellipsis;
     text-decoration: solid;
     display: flex;
@@ -351,10 +352,10 @@ margin: 0 0;
     font-weight: bold;
     box-shadow: inset 2px 1px 4px rgba(7, 7, 7, 0.9), inset
     -2px -2px 4px rgba(7, 7, 7, 0.9);
-
 }
 
 .desc-cost .cost{
+    background:rgba(2,2, 8, 0.8);
     display: flex;
     margin: 0 auto;
     height: 95%;
