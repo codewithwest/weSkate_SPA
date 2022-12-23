@@ -4,8 +4,30 @@ var mainContainer = document.getElementById('static-container');
 //Add a new nav div to the main Container
 divCreator('static-container','navContainer', 'navContainer')
 
-    var linkIds = ["Home", 'About ', "Shop", "Events", "Contacts"]
-   
+    var linkIds = ["Home", "About", "Shop", "Events", "Contacts"]
+   //nav current location signal
+   function checkMate(){
+    var urlLocation = window.location.href;
+    
+    
+    for (let ki = 0; ki < linkIds.length; ki++) {
+        //console.log(urlLocation.includes(linkIds[ki].toLowerCase()))
+        if (urlLocation.endsWith("/")) {
+        document.getElementById(linkIds[0]).style.fontWeight="bold";
+        }
+        if (urlLocation.includes(linkIds[ki].toLowerCase())) {
+            
+            document.getElementById(linkIds[ki]).style.fontWeight="bold"
+        }
+        else{
+            document.getElementById(linkIds[ki]).style.fontWeight="200";
+        }
+    }
+   }
+
+
+    
+    //console.log(typeof window.location.href)
     var linkHref = ["/", '/about', "/shop", "/events", "/contacts"]
     divCreator('navContainer', `inner-nav-container0`,'logo-container')
     divCreator('navContainer', `inner-nav-container1`,'nav-container')
@@ -13,7 +35,7 @@ divCreator('static-container','navContainer', 'navContainer')
     divCreator('inner-nav-container1', `nav`,'nav')
     
     
-
+//Create the links
     for (let li = 0; li < linkIds.length; li++) {
         divCreator('nav', `linkContainer${li}`,'linkContainer')
         var navBarContainer = document.getElementById(`linkContainer${li}`)
@@ -23,10 +45,14 @@ divCreator('static-container','navContainer', 'navContainer')
         anchor.setAttribute('class', "nav__link") 
         anchor.setAttribute('href',`${linkHref[li]}`);
         anchor.setAttribute('data-link', '');
+        //anchor.setAttribute('onclick', `checkMate${(linkHref[li])}`)
         anchor.appendChild(newText)
         navBarContainer.appendChild(anchor);
     }
 
+
+    checkMate()
+    
 var logos = document.getElementById('logo')
     logos.style.backgroundImage="url(/static/assets/event1.jpg)"
 var contentdiv = divCreator('static-container', 'content','content')

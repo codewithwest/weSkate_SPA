@@ -3,7 +3,9 @@
     text-transform:capitalize;
     height: 100%;    
     width: 100%;
-    
+    background: 
+    linear-gradient(120deg, transparent, rgba(15, 177, 14, 0.2), transparent),
+    linear-gradient(-310deg, transparent, rgba(15, 177, 14, 0.2) , transparent);
        
 }
 .home-container .rows{
@@ -14,44 +16,49 @@
 .home-container .rows .row-child{
     display: flex;
     width: 100%;
-    height: 120px;
+    height: 100%;
     text-align: center;
     margin: 0.02% 0;
 }
 
-
 /* row child 1*/
 #row-child0 .row-child1-children{
     display: flex;
-    width: 50%;
-    height: 100%;
-   
+    width: 100%;
 }
-#row-child0 .row-child1-children .text-container{
-    display: flex;
-    margin: auto auto;
-    height: 80%;
+#row-child0 {
+    margin-top: 1%;
+    float: right;
     width: 70%;
-   
+    box-shadow: .3px .3px 1.5px rgba(50, 169, 52, 0.8), -.3px -.3px 1.5px rgba(50, 169, 52, 0.8);
+}
+
+#row-child0 .row-child1-children .text-container{
+    margin: auto auto;
+    height: max-content;
+    margin: 12% auto;
+    width: 80%;
 }
 #row-child0 .row-child1-children .text-container p{
     text-align: center;
     margin: auto auto;
-   
 }
 
 /* row child 2*/
 #row-child1 .row-child2-children{
+    margin: 2% auto;
     display: flex;
     width: calc(100%/3);
    
 }
+
 #row-child1 .row-child2-children .text-cover{
     display: flex;
     margin: auto auto;
+    text-align:left;
     width: 80%;
     height: 60%;
-    
+    margin: 4% auto;
 }
 
 #row-child1 .row-child2-children .button-cover{
@@ -63,47 +70,47 @@
 }
 #row-child1 .row-child2-children .button-cover input{
     font-size: large;
-    color: azure;
+    color: white;
+    border: 1px solid green ;
     width: 100%;
     height: 100%;
     background: linear-gradient(10deg, transparent, transparent, rgba(52, 115, 117, 0.8)), linear-gradient(195deg, transparent, rgba(44, 101, 117, 0.8) , transparent);
+    transition: all 2000ms;
+    
+}
+#row-child1 .row-child2-children .button-cover input:hover{
+    background: linear-gradient(10deg, transparent, transparent, rgba(52, 115, 117, 0.8)), linear-gradient(195deg, transparent, rgba(4, 1, 1, 0.8) , transparent);
     
 }
 
 /* row child 3*/
-#row-child2 .row-child3-children {
-    height: 220px !important;
-    
-}
+
 #row-child2 .row-child3-children {
     margin: 1% 1%;
-    padding: 10px;
     display: flex;
     height: 100%;
     background-position: center;
     background-size: cover;
     width: calc(100%/3);
-    box-shadow: 2px 2px 3px rgba(50, 169, 52, 0.8), -2px -2px 3px rgba(50, 169, 52, 0.8);
+    box-shadow: 1px 1px 1px rgba(50, 169, 52, 0.8), -1px -1px 1px rgba(50, 169, 52, 0.8);
     
 }
 
 #row-child2 .desc-container{
     background: rgba(18, 17, 17, 0.7);
     color: white;
-    width: 80%;
+    width: 90%;
     box-shadow: 2px 2px 3px rgba(50, 108, 169, 0.8), -2px -2px 3px rgba(50, 108, 169, 0.8);
-    height: 33%;
-    margin: 130px auto;
+    height: 13%;
+    margin: auto auto;
+    margin-top: 100%;
+    margin-bottom: 5%;
     overflow: hidden;
 }
 
-
 /*Row child 4*/
 #row-child3 {
-    
     width: 100%;
-   margin-top: 23%;
-   height: 160px;
    margin-bottom: 2%;
    
 }
@@ -119,13 +126,13 @@
     
 }
 #row-child3 .row-child4-children .mess-container{
-    background: rgba(50, 108, 169, 0.3);
+    background: rgba(24, 28, 32, 0.3);
     color: white;
     margin: 3% auto;
-    width: 80%;
+    width: 98%;
     display: inline;
     text-align: center;
-    box-shadow: 2px 2px 3px rgba(50, 108, 169, 0.8), -2px -2px 3px rgba(50, 108, 169, 0.8);
+    box-shadow: .2px .2px 1px rgba(50, 108, 169, 0.8), -.2px -.2px 1px rgba(50, 108, 169, 0.8);
     font-size: 26px;
 }
 #row-child3 .row-child4-children .mess-container p{   
@@ -137,60 +144,39 @@
     #row-child2 .desc-container p{
        margin: 0 0;
      }
-     
   }
-
-
 
   /* Adjudt button height to look beter on screen*/
 @media only screen and (min-width: 800px) {
-    #row-child0, #row-child1{
-        height: 200px;
-        font-size: 27px;
-     }
      #row-child2 .desc-container{
-        height:44%;
-        margin: 170px auto;
+        margin: auto auto;
+        margin-top: 65%;
+        margin-bottom: 3%;
+        
      }
-  
-
-     #row-child3 {
-        margin-top: 18%;
-       height: 250px;
-    }
     #row-child3 .row-child4-children .mess-container{
-       height: 60%;
-       
-       
+       height: 70%; 
     }
     #row-child3 .row-child4-children .mess-container p{
-         
          margin: 2% 0;
      }
 
-    #row-child2 .row-child3-children {
-        height: 320px !important;
-        font-size: 25px;
-        
-    }
-    #row-child1 .row-child2-children .button-cover input{
-        font-size: 33px;}
-    
-
-}
+ }
 
 
 /* Adjudt button height to look beter on screen*/
 @media only screen and (max-width: 450px) {
+    .home-container{
+        height: auto;
+    
+    }
     #row-child3 .row-child4-children .mess-container p{
-         
         font-size: 22px;
     }
     #row-child3 {
-        margin-top: 30%;
-       height: 130px;
+       height: 100%;
     }
     }
-
+   
 
 

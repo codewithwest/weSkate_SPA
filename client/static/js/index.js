@@ -64,8 +64,28 @@ window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
     document.body.addEventListener("click", e => {
+        //e.target.style.fontWeight="bold"
         if (e.target.matches("[data-link]")) {
+           // document.getElementById(e).style.fontWeight="bold"
+            //alert(e.target.id)
             //e.preventDefault();
+            /*
+            
+            var linkIds = ["Home", 'About', "Shop", "Events", "Contacts"]
+   
+            function eTarget(requiredId){
+                for (let ki = 0; ki < linkIds.length; ki++) {
+                    if (linkIds[ki] === `${requiredId}`) {
+                        var k = document.getElementById(`${requiredId}`)
+                        console.log
+                        //document.getElementById(linkIds[ki]).style.fontSize="50px";   
+                    }else{
+                        document.getElementById(linkIds[ki]).style.fontWeight="200";
+                    }
+                }
+            }
+            eTarget(e.target.id);
+            */
             navigateTo(e.target.href);
         }
     });

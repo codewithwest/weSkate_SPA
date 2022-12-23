@@ -18,7 +18,7 @@ background-size: cover;
 
 }
 #about-div1{
-    height: 400px;
+    height: 350px;
     
 }
 .about-cont #about-div1{
@@ -65,7 +65,10 @@ background-size: cover;
     
     
 }
-
+form #button{
+    margin-top: 7%;
+    font-size: 80%;
+}
 .form-div .inner-form{
     text-align: center;
     align-content: center;
@@ -94,13 +97,23 @@ background-size: cover;
     height: 12%;
     width: 55%;
 }
-
-
-
+form{
+    height: 100%;
+}
 
 /* Adjudt button height to look beter on screen*/
+@media only screen and (min-width: 800px) {
+    
+    #about-div1{
+        height: 500px;
+    }
+    form #button{
+        margin-top: 7%;
+        font-size: 80%;
+    }
+    }
+/* Adjudt button height to look beter on screen*/
 @media only screen and (max-width: 450px) {
-
 #about-div-inner0{
     display: flex;
     width: 100%;
@@ -112,6 +125,9 @@ background-size: cover;
     display: flex;
     height: 80%;
     margin: auto auto;
+}
+#about-div1{
+    height: 340px;
 }
 
 }

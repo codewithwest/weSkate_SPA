@@ -38,16 +38,20 @@ var conText = document.createTextNode("Reach out To us")
 cont.appendChild(conText)
 
 
+var theForm = document.createElement('form')
 
 var newName = document.createElement('input')
 newName.setAttribute('name', "name")
 newName.setAttribute('type', "text")
 newName.setAttribute('placeholder', "Name") 
+newName.setAttribute('required', '');
+
 
 var email = document.createElement('input')
 email.setAttribute('name', "email")
 email.setAttribute('type', "email")
 email.setAttribute('placeholder', "Email") 
+email.setAttribute('required', '');
 
 
 var Message = document.createElement('input')
@@ -55,22 +59,41 @@ Message.setAttribute('name', "text")
 Message.setAttribute('type', "textarea")
 Message.setAttribute('id', "textarea")
 Message.setAttribute('placeholder', "Message") 
+Message.setAttribute('required', '');
 
 var newButton = document.createElement('input')
 newButton.setAttribute('name', "Button")
-newButton.setAttribute('type', "button")
+newButton.setAttribute('type', "submit")
 newButton.setAttribute('value', "Submit")
 newButton.setAttribute('id', "button")
+newButton.onclick = function(event) {
+    event.preventDefault()
+    if(newName.value !="" && Message.value !="" && email.value!="")
+    {
+        alert("Thanks for reaching out we will get back to you as soon as possible")
+    }
+    else{
+        if (newName.value=="") {
+        alert("Enter name!!!")
+        }
+    }if (email.value=="") {
+        alert("Enter vaid email!!!")  
+        }if (Message.value=="") {
+            alert("Enter name !!!")
+                
+            }
+}
 
 divCreator('form-div', "inner-form", "inner-form")
 var newForm = document.getElementById('inner-form')
 
-newForm.appendChild(cont)
-newForm.appendChild(newName)
-newForm.appendChild(email)
-newForm.appendChild(Message)
+theForm.appendChild(cont)
+theForm.appendChild(newName)
+theForm.appendChild(email)
+theForm.appendChild(Message)
 
-newForm.appendChild(newButton)
+theForm.appendChild(newButton)
 
+newForm.append(theForm)
 document.getElementById("about-div0").style.backgroundImage="url(static/assets/contacts/contacts0.jpg)"
 
