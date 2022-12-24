@@ -61,6 +61,8 @@
 
 .flex-container .event .eventName p {
     margin: 0;
+    text-shadow:  1px 1px 1px black, 
+    -1px -1px 1px black;
 }
 
 .flex-container .event .eventdesc {
@@ -72,6 +74,8 @@
 .flex-container .event .eventdesc p {
     font-size: 80%;
     font-weight: 600;
+    text-shadow:  1px 1px 1px black, 
+    -1px -1px 1px black;
 }
 
 

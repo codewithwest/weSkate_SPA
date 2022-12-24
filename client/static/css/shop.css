@@ -51,104 +51,127 @@ background: rgba(11, 33, 22, 0.6);
     margin-left: 84%;
     margin-top: 2%;
     background: inherit;
+    font-weight: bold;
+    text-decoration: double;
+    text-shadow: -2px -2px 3px black,
+    2px 2px 3px black;
     border: none;
     height: 100%;
-    text-shadow: -2px -2px 3px black,2px -2px 3px black;
-    font-weight: 500;
     width: 10%;
     color: beige;
 }
 .inner-alert{
+    border: 3px solid rgb(25, 35, 86);
    margin: auto auto;
     color: white;
     position: relative;
-    background:rgba(2,2, 8, 0.8);
+    background:rgba(0,0, 0, 0.9);
     box-shadow: -2px -2px 3px rgba(11, 33, 22, 0.6), 
     2px 2px 3px rgba(11, 33, 22, 0.6);
     z-index: 201;
     width:80%;
     display: flex;
 }
-.login p{
+.inner-alert p{
     text-align: left;
-    margin: 13% 13%;
+    margin: 3% 3%;
     
 }
 
-/*Login Alert*/
+/*Login Alert
 .login{
     display:none;
     position: absolute;
     margin-bottom: 10px;
     top:30%;
     left:28%;
-    background: rgba(18, 24, 24, 0.2);
     z-index: 200;
     width:50%;
     height: 50%;
 }
-.login .pop-button{
-    height: 10%;
-    width: 100%;
-    
 
-}
-.login .pop-button input{
-    position: relative;
-    margin-left: 80%;
-    right:  0;
-    height: 100%;
-    width: 10%;
-
-}
 .inner-login{
-    
+    display: block;
+    background: white;
    margin: auto auto;
-    color: aliceblue;
     position: relative;
-    border: 1px dotted red;
-    background:rgba(21, 52, 36, 0.6);
+    border: 3px solid blue;
     box-shadow: -2px -2px 3px rgba(11, 33, 22, 0.6), 
     2px 2px 3px rgba(11, 33, 22, 0.6);
     z-index: 201;
-    width:80%;
+    width:75%;
     height: 80%;
+}
+.inner-login .login-header{
+    border-bottom: 1px solid blue;
     
+    width: 100%;
+    display: flex;
+    height: 20%;
+    background: blue;
+    color: white;
 }
-.login p{
+.inner-login .login-header h2{
+    letter-spacing: 3px;
     margin: auto auto;
-    text-align: center;
 }
+
+
 .inner-login input{
     display: flex;
     margin: auto auto;
-    margin-top: 5%;
-    height: 15%;
+    margin-top: 3%;
+    height: 14%;
     width: 80%;
-    text-align: center;
+    background: white;
+    
 }
 
+.inner-login #email{
+   
+    border: 2px solid blue;
+    width: 80%;
+}.inner-login #password{
+    border: 2px solid blue;
+    width: 80%;
+}
+.inner-login #button{
+    display: block;
+    justify-items: center;
+    font-size: inherit;
+    border: 2px solid black;
+    color: white;
+    background: linear-gradient(80deg, transparent, black), linear-gradient(-10deg, transparent, black), blue;
+    width: 50%;
+}
+
+
 .inner-login .forgot-register{
+    border-top: 2px solid blue;
     display: flex;
-    height: 30%;
+    height: 21%;
+    margin-top: 3%;
     width:100%;
-    border: 1px dotted goldenrod;
+    background: rgba(23, 32, 217, 0.85);
 }
 .inner-login .register{
     display: flex;
     height: 100%;
-    width:50%;
-    background: rgba(55, 11, 66, 0.7);
+    width:50%;   
+}
+.inner-login  p{
+    text-decoration: underline;
+    text-align: center;
+    font-size: 11px !important;
+    margin: auto auto;
 }
 .inner-login .forgot{
     display: flex;
     height: 100%;
     width:50%;
-    background: rgba(55, 11, 66, 0.7);
+    
 }
-
-
-
+*/
 .displayLayout {
     display: flex;
     position: relative;
@@ -267,9 +290,9 @@ background: rgba(11, 33, 22, 0.6);
 /* product name container*/
 
 .flex-container .event .eventName {
-    text-shadow:  3px 3px 4px rgba(7, 7, 7, 0.9), 
-    -3px -3px 4px rgba(7, 7, 7, 0.9);
+    
     text-transform: capitalize;
+    
     word-wrap: normal;
     width: 80%;
     height: 20%;
@@ -277,6 +300,10 @@ background: rgba(11, 33, 22, 0.6);
 }
 
 .flex-container .event .eventName p {
+    text-decoration: double;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow:  1px 1px 1px black, 
+    -1px -1px 1px black;
     margin: 0 0;
 }
 
@@ -301,7 +328,7 @@ background: rgba(11, 33, 22, 0.6);
 .flex-container .event .rsvp button:hover {
     background: linear-gradient(30deg, transparent, transparent, rgba(55, 11, 66, 0.7));
     box-shadow: inset 2px 2px 3px white, inset -2px -2px 3px white;
-    font-weight: bold;
+    
 }
 
 .flex-container .event .rsvp p {
@@ -365,18 +392,36 @@ margin: 0 0;
 }
 .desc-cost p{
     display: flex;
-    margin: auto auto;
-   
+    margin: auto auto;   
 }
-
-
-
 
 /* Adjudt button height to look beter on screen*/
 @media only screen and (min-width: 800px) {
+    .inner-login .login-header{
+        border-top: 2px solid blue;
+        width: 101%;
+        height: 20%;
+        margin-top: 0 0;
+    }
+    .inner-login .forgot-register{
+        border-top: 2px solid blue;
+        display: flex;
+        height: 21%;
+        margin-top: 2%;
+        width:101%;
+    }
+    .login{
+        width:33%;
+        height: 56%;
+        top: 22%;
+        margin-left: 13%;
+    }
+    
     .flex-container > .event{
+        
     padding-bottom: 26.3%;
     }
+
     .desc-cost{
         height: 95%;
     }

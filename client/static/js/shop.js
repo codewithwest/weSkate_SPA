@@ -24,7 +24,6 @@ function descPopUp(distValue,productDescIn){
     //let productDesc = []
     
     divCreator('navAndDisplay1', `popUp${distValue}`, 'alert')
-    
 
     //var innerIn = document.getElementById(`inner-alert${distValue}`)
     //createParagraph(`inner-alert${distValue}`, productDesc[0])
@@ -61,15 +60,11 @@ function descPopUp(distValue,productDescIn){
         destroyButton.remove()
        // popUpDescInner.style.display="none";    
         }
-        
-       
-       
     }
     
 //Login Prompt
 function logInPopUp(){
     //let productDesc = []
-    
     divCreator('navAndDisplay1', `login`, 'login')
     divCreator('login', `inner-login`, 'inner-login')
     function inputcreator(pareDiv, InId, InType, placeH, valueI) {
@@ -81,20 +76,34 @@ function logInPopUp(){
         inP.setAttribute('value', valueI)
         paren.appendChild(inP)
     }
-    inputcreator('inner-login', 'email','text', 'EMAIL', '')
+    divCreator('inner-login', `login-header`, 'login-header')
+    var loginHeaderDiv = document.getElementById(`login-header`)
+    var loginHeader = document.createElement('h2')
+    loginHeader.appendChild(document.createTextNode('LOGIN'))
+    loginHeaderDiv.appendChild(loginHeader)
+    inputcreator('inner-login', 'email','text', 'username', '')
     inputcreator('inner-login','password','password', 'password','')
     inputcreator('inner-login','button','button', '', 'LOGIN')
     divCreator('inner-login', `forgot-register`, 'forgot-register')
-    divCreator(`forgot-register`, `forgotr`, 'forgot')
+    divCreator(`forgot-register`, `forgot`, 'forgot')
+    var forgotHeaderDiv = document.getElementById(`forgot`)
+    var forgotHeader = document.createElement('p')
+    forgotHeader.appendChild(document.createTextNode('Forgot password?'))
+    forgotHeaderDiv.appendChild(forgotHeader)
     divCreator(`forgot-register`, `register`, 'register')
-    
+    var registerHeaderDiv = document.getElementById(`register`)
+    var registerHeader = document.createElement('p')
+    registerHeader.appendChild(document.createTextNode("Don't have an account? Register"))
+    registerHeaderDiv.appendChild(registerHeader)
 
-    
-
-    
-       
+    var submitLogin  = document.getElementById('button') 
+    submitLogin.onclick = function(event) {
+        event.preventDefault()
+        document.getElementById('login').style.display="none"
     }
     
+}
+
 var skateCategories = ["SkateBoard", "Decks", "wheels", "trucks", "bearing"];
 var shirtsCategories = ["half sleeve", "Yoke neck", "Long sleeve", "V-neck"];
 var hoodiesCategories = ["Pullover", "Zip Up", "Sleeveless", "Cropped"];
@@ -166,7 +175,7 @@ var Pants = document.getElementById('Pants');
 var Shorts = document.getElementById('Shorts');
 
 divCreator('navAndDisplay1', 'displayLayout', 'displayLayout')
-logInPopUp()
+
 
 
 var rightDivCon = document.getElementById('displayLayout')
@@ -603,7 +612,13 @@ function addProducts(desiredSection, background, proDescArray, proNameArray) {
             button.appendChild(buttonText);
             button.appendChild(buttonTextCreator);
             button.addEventListener('click', () => {
-                alert("You have Succsefully registered");
+                if (usernameLogged.username != "User") {
+                    document.getElementById("login").style.display="none"
+                    
+                } else {
+                    document.getElementById("login").style.display="flex";
+                }
+                
             })
             rsvpDiv.appendChild(button);
             //space div above desc-cost
