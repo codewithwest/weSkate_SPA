@@ -24,7 +24,6 @@ function descPopUp(distValue,productDescIn){
     //let productDesc = []
     
     divCreator('navAndDisplay1', `popUp${distValue}`, 'alert')
-    
 
     //var innerIn = document.getElementById(`inner-alert${distValue}`)
     //createParagraph(`inner-alert${distValue}`, productDesc[0])
@@ -61,15 +60,11 @@ function descPopUp(distValue,productDescIn){
         destroyButton.remove()
        // popUpDescInner.style.display="none";    
         }
-        
-       
-       
     }
     
 //Login Prompt
 function logInPopUp(){
     //let productDesc = []
-    
     divCreator('navAndDisplay1', `login`, 'login')
     divCreator('login', `inner-login`, 'inner-login')
     function inputcreator(pareDiv, InId, InType, placeH, valueI) {
@@ -81,20 +76,34 @@ function logInPopUp(){
         inP.setAttribute('value', valueI)
         paren.appendChild(inP)
     }
-    inputcreator('inner-login', 'email','text', 'EMAIL', '')
+    divCreator('inner-login', `login-header`, 'login-header')
+    var loginHeaderDiv = document.getElementById(`login-header`)
+    var loginHeader = document.createElement('h2')
+    loginHeader.appendChild(document.createTextNode('LOGIN'))
+    loginHeaderDiv.appendChild(loginHeader)
+    inputcreator('inner-login', 'email','text', 'username', '')
     inputcreator('inner-login','password','password', 'password','')
     inputcreator('inner-login','button','button', '', 'LOGIN')
     divCreator('inner-login', `forgot-register`, 'forgot-register')
-    divCreator(`forgot-register`, `forgotr`, 'forgot')
+    divCreator(`forgot-register`, `forgot`, 'forgot')
+    var forgotHeaderDiv = document.getElementById(`forgot`)
+    var forgotHeader = document.createElement('p')
+    forgotHeader.appendChild(document.createTextNode('Forgot password?'))
+    forgotHeaderDiv.appendChild(forgotHeader)
     divCreator(`forgot-register`, `register`, 'register')
-    
+    var registerHeaderDiv = document.getElementById(`register`)
+    var registerHeader = document.createElement('p')
+    registerHeader.appendChild(document.createTextNode("Don't have an account? Register"))
+    registerHeaderDiv.appendChild(registerHeader)
 
-    
-
-    
-       
+    var submitLogin  = document.getElementById('button') 
+    submitLogin.onclick = function(event) {
+        event.preventDefault()
+        document.getElementById('login').style.display="none"
     }
     
+}
+
 var skateCategories = ["SkateBoard", "Decks", "wheels", "trucks", "bearing"];
 var shirtsCategories = ["half sleeve", "Yoke neck", "Long sleeve", "V-neck"];
 var hoodiesCategories = ["Pullover", "Zip Up", "Sleeveless", "Cropped"];
@@ -166,7 +175,7 @@ var Pants = document.getElementById('Pants');
 var Shorts = document.getElementById('Shorts');
 
 divCreator('navAndDisplay1', 'displayLayout', 'displayLayout')
-logInPopUp()
+
 
 
 var rightDivCon = document.getElementById('displayLayout')
@@ -603,7 +612,13 @@ function addProducts(desiredSection, background, proDescArray, proNameArray) {
             button.appendChild(buttonText);
             button.appendChild(buttonTextCreator);
             button.addEventListener('click', () => {
-                alert("You have Succsefully registered");
+                if (usernameLogged.username != "User") {
+                    document.getElementById("login").style.display="none"
+                    
+                } else {
+                    document.getElementById("login").style.display="flex";
+                }
+                
             })
             rsvpDiv.appendChild(button);
             //space div above desc-cost
@@ -685,7 +700,7 @@ function addProducts(desiredSection, background, proDescArray, proNameArray) {
 };
 //for skateboard
 //Types od skateboards and desc
-var skateNames = ['mini cruiser', 'Double-Kick', 'Carve ', 'Classic Longboard ', 'Downhill Longboard ']
+var skateNames = ['mini cruiser', 'Double-Kick', 'Carve ', 'Classic L/board ', 'Downhill L/board ']
 var skateDesc = [
     'It is the perfect entry-level deck for young children but can also be used by intermediate skaters to cruise around town, pull off a few tricks, ride a bowl, or hit a park',
     "It's the standard skateboard and the most popular and widely used design. It works well on skateparks, street skating, and on almost all types of riding. They\'re lightweight and a great option for those who are getting into skateboarding for the first time.",
@@ -696,7 +711,7 @@ var skateDesc = [
 divCreator('skateboard0', 'flex-container0', 'flex-container')
 addProducts('flex-container0', '/shop/skateboards/skateboard/skateboard', skateDesc, skateNames)
     //Two Decks
-var deckNames = ['STANDARD ', 'SHAPED ', 'OLD SCHOOL', 'LONGBOARD']
+var deckNames = ['Standard ', 'Shaped ', 'Old School', 'Longboard']
 var deckDesc = [
     'These are the best skateboard decks for beginners because they work well for street skating, skate parks and almost all other styles of skateboarding. Typically ridden with hard wheels, these skateboard decks resemble the shape of a popsicle stick because they feature both a nose and a tail that are exactly or nearly symmetrical.',
     "If transportation is your goal, cruiser decks are our recommended choice. Cruiser decks are usually a similar length to standard decks, but have a large variety of different shapes. They are also typically ridden with soft wheels for a smoother, faster roll on rough surfaces. Compared to longboards, they are lighter and more nimble, allowing you to bob and weave through urban obstacles.",
@@ -707,7 +722,7 @@ divCreator('skateboard1', 'flex-container1', 'flex-container')
 addProducts('flex-container1', 'shop/skateboards/decks/decks', deckDesc, deckNames)
 
 //Three Wheels
-var wheelNames = ["Street Wheels", "Cruiser  Wheels", "Longboard Wheels"]
+var wheelNames = ["Street Wheels", "Cruiser  Wheels", "L/Board Wheels"]
 var wheelDesc = [
     "These skateboard wheels are typically lightweight. And they roll insanely well on most smooth surfaces. They slide almost effortlessly. They\'re precisely what you should choose if you like doing ledges, bowls, rails, and flip tricks.  In addition, they\'re remarkably smooth because they\'re produced from extremely hard polyurethane.The smoothest skateboard wheels also happen to be the hardest. Their hardness ranges from 95a to 104a. That\'s like from just hard to super hard. More on hardness vs softness down the road.Their diameter ranges between 50mm and 53mm. Unsurprisingly, skatepark and street skateboard wheels don\'t handle pebbles and cracks very well. And they\'re almost useless when it comes to riding on gravel.When it comes to pulling off an ollie, powerslides, various flip tricks, and suchlike technical tricks, go with small, hard wheels. Believe me, ollieing on soft wheels feels awkward.",
     "These wheels are a lot softer than street and park wheels. And they\'re great when it comes to skating on rough pavements and even cracks.We recommend cruiser skateboard wheels as the best option for skating on asphalt because they\'re incredibly grippy. And they don\'t vibrate all that much on such rough surfaces. They\'re good but not the best wheels for rolling over rough places, though. Longboard wheels are.Their hardness ranges from durometer 78a to 98a. As you can see, they range from very soft to relatively hard. But they\'re not like the hardest wheels in the world.Also, cruiser wheels are larger (in diameter) than street and park wheels. Their diameter stays in the 54 mm - 59 mm range.",
@@ -720,7 +735,7 @@ addProducts('flex-container2', 'shop/skateboards/wheels/wheels', wheelDesc, whee
 
 //Four Trucks
 
-var trucksNames = ["Standard", "Longboard", "High", "LOW ", "HOLLOW "]
+var trucksNames = ["Standard", "Longboards", "High", "Low ", "Hollow "]
 var trucksDesc = [
     "Standard kingpin trucks are the most versatile type of trucks and can be used for any type of skateboarding. They are easily adjustable, by tightening or loosening, so you can customize the way your board turns.",
     "These are the best skateboard trucks for carving and cruising, or skating fast down hills. Reverse kingpin trucks are usually taller and wider than standard kingpin skateboard trucks, but are highly customizable for many types of riding. ",
@@ -747,7 +762,7 @@ addProducts('flex-container4', 'shop/skateboards/bearings/bearings', bearingDesc
 //Shirts0
 //Half sleeves
 
-var halfSleeveNames = ["Pullovers", "Zip Ups", "Fitteds", "Sleevelesss", "Croppeds"]
+var halfSleeveNames = ["Black Unisex ", "Girls Pink", "Boys Multicolor", "Women White", "Men Simple"]
 var halfSleeveDesc = [
     "The pullover hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
@@ -758,7 +773,7 @@ var halfSleeveDesc = [
 divCreator('shirts0', 'flex-container5', 'flex-container')
 addProducts('flex-container5', 'shop/shirts/shortsleeves/shortsleeves', halfSleeveDesc, halfSleeveNames)
     //Yoke Neck
-var yokeNeckNames = ["Pullover1", "Zip Up1", "Fitted1",]
+var yokeNeckNames = ["Girls White", "Women Black", "Unisex Grey",]
 var yokeNeckDesc = [
     "The pullover hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
@@ -769,7 +784,7 @@ addProducts('flex-container6', 'shop/shirts/yokeneck/yokeneck', yokeNeckDesc, yo
 
 
 //Long Sleeves
-var longSleeveNames = ["Pulloverss", "Zisp Up", "Fittsed", "Ssleeveless", "Crospped"]
+var longSleeveNames = ["Grey Printed", "Girls Printed", "Boys Green", "Men Black/Grey", "Women Pink"]
 var longSleeveDesc = [
     "The pullover hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
@@ -780,7 +795,7 @@ var longSleeveDesc = [
 divCreator('shirts2', 'flex-container7', 'flex-container')
 addProducts('flex-container7', 'shop/shirts/longsleeves/longsleeves', longSleeveDesc, longSleeveNames)
     //V-neck
-var VneckNames = ["Pulslover", "sZip Up", "sFitted", "sSleeveless", "Crodpped"]
+var VneckNames = ["Women Cherry", "Men Fited Grey", "Boys L/Orange", "Girls W/Stripped", "Women Maroon"]
 var VneckDesc = [
     "The pullover hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
@@ -794,7 +809,7 @@ addProducts('flex-container8', 'shop/shirts/vneck/vneck', VneckDesc, VneckNames)
 //End of Shirts
 //Start oh hoodies
 
-var pullOveames1 = ["Pullovser", "Zip sUp", "Fittesd", "Sleevelsess", "Cropsped"]
+var pullOveames1 = ["Grey/Black Men", "Women O/Sized", "Boys Brown", "Girls Light/Pink", "Coming Soon"]
 var pullOveDesc1 = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
@@ -806,7 +821,7 @@ divCreator('hoodies0', 'flex-container9', 'flex-container')
 addProducts('flex-container9', 'shop/hoodies/pullover/pullover', pullOveDesc1, pullOveames1)
 
 
-var zipUpNames2 = ["Pullovsweer", "Zip ewsUp", "Fitteesd", "Sleevelesess", "Cropspeed"]
+var zipUpNames2 = ["UniSex L/Purple", "Pink Printed", "Men Multi/Color", "Boys SeamBlue", "Women T/green"]
 var zipUpDesc2 = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
@@ -817,7 +832,7 @@ var zipUpDesc2 = [
 divCreator('hoodies1', 'flex-container10', 'flex-container')
 addProducts('flex-container10', 'shop/hoodies/zipup/zipup', zipUpDesc2, zipUpNames2)
 
-var sleevelessNames = ["Pulloveser", "Zip seeUp", "Fieetteesd", "Sleeevelsess",]
+var sleevelessNames = ["Toddlers Grey", "Unisex UpGrey", "B/White Men", "Girls L/Blue",]
 var sleevelessDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
@@ -827,13 +842,12 @@ var sleevelessDesc = [
 divCreator('hoodies2', 'flex-container11', 'flex-container')
 addProducts('flex-container11', 'shop/hoodies/sleeveless/sleeveless', sleevelessDesc, sleevelessNames)
 
-var croppedNames = ["Pullofsveser", "Zip sseefUp", "ergfervssf", "Sleefevesslsess", "Crosvrvpesped"]
+var croppedNames = ["Unisex White/C", "Girls Cute Black", "Dimmed Fitted", "Men Trainers"]
 var croppedDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
     "As the name says suggests, this style of hoodie is more fitted than its relaxed cousin. The slim fit style offers more mobility which is also assisted by being made with a medium to light weight fabric.",
     "Cut off hoodie or sleeveless hoodies come in a variety of styles. However the most notable feature is that they don’t have sleeves. This gives the wearer greater mobility and can help regulate temperature for active users.",
-    "The cropped or crop top hoodie is a female style of sweater. The most pronounced feature, is that the bottom of the sweater (hem) is cut short. It sits around the belly button line exposing the belly."
 ]
 divCreator('hoodies3', 'flex-container12', 'flex-container')
 addProducts('flex-container12', 'shop/hoodies/cropped/cropped', croppedDesc, croppedNames)
@@ -842,7 +856,7 @@ addProducts('flex-container12', 'shop/hoodies/cropped/cropped', croppedDesc, cro
 //Knits start
 
 
-var doubleKnitsNames = ["Pullofvseser", "Zips seefUp", "ergsfervf", "Sleesfevelsess"]
+var doubleKnitsNames = ["Darp Purple Scarf", "Striped Socks ", "Purple/Grey Hat", "Brown Scarf"]
 var doubleknitsDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
@@ -852,7 +866,7 @@ var doubleknitsDesc = [
 divCreator('knits0', 'flex-container14', 'flex-container')
 addProducts('flex-container14', 'shop/knits/doubleknit/doubleknit', doubleknitsDesc, doubleKnitsNames)
 
-var patternKnitsNames = ["Pullofer", "Zip sefUp", "ergferf", "Sleefevesess", "Crovrvpsped"]
+var patternKnitsNames = ["G/B Socks", "B/W Scarf", "Pink Gloves", "Greyed Scarf", "Brown Gloves"]
 var patternKnitsDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
@@ -863,7 +877,7 @@ var patternKnitsDesc = [
 divCreator('knits1', 'flex-container15', 'flex-container')
 addProducts('flex-container15', 'shop/knits/pattern/pattern', patternKnitsDesc, patternKnitsNames)
 
-var sweatPantsNames = ["Pullofveser", "Zip seefUp", "ergfervfd", "Sleefevelsess", "Crovrvpesped"]
+var sweatPantsNames = ["Multi/C Girls", "Men Grey W/P", "Women Grey W/P", "All Sized", "Choice Printed"]
 var sweatPantsDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
@@ -874,7 +888,7 @@ var sweatPantsDesc = [
 divCreator('pants0', 'flex-container16', 'flex-container')
 addProducts('flex-container16', 'shop/pants/sweatpants/sweatpants', sweatPantsDesc,sweatPantsNames)
 
-var jeansNames = ["Pulofer", "Zisp sefUp", "ergfeqrf", "Sleefsevesess", "Csrovrvpsped"]
+var jeansNames = ["Men Grey Torn", "Boys Blue Torn", "Girls Torn Blue", "Women Torn", "Women Ribbed"]
 var jeansDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
@@ -885,7 +899,7 @@ var jeansDesc = [
 divCreator('pants1', 'flex-container17', 'flex-container')
 addProducts('flex-container17', 'shop/pants/jeans/jeans', jeansDesc, jeansNames)
 
-var slimfitNames = ["Pullofser", "Zip sefsUp", "ergfserf",]
+var slimfitNames = ["Men Formal", "Men Skinny", "Mens Fitted ",]
 var slimfitDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
@@ -896,7 +910,7 @@ addProducts('flex-container18', 'shop/pants/slimfit/slimfit', slimfitDesc, slimf
 
 
 
-var drifitNames = ["Pulofder", "Zdisp sefUp", "ergfeqertrf", "Sledefsevesess", "Cdsrovrvpsped"]
+var drifitNames = ["Side Stripped", "Inner G/Grey", "Assorted W/T", "Skate Blue", "Summer B/G"]
 var drifitDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
@@ -907,7 +921,7 @@ var drifitDesc = [
 divCreator('shorts0', 'flex-container19', 'flex-container')
 addProducts('flex-container19', 'shop/shorts/drifit/drifit', drifitDesc, drifitNames)
 
-var cottonNames = ["Pullofcser", "Zip sefcsUp", "ergfsdecserf", "Sleefevecsesss", "Crdovsrvpsped"]
+var cottonNames = ["Women Summer", "Men Grey/Zip", "Assorted All Age", "Boys In Blue", "Red Printed"]
 var cottonDesc = [
     "The pullOve hoodie is a loose fitting hooded sweater that you simply pull over your head to wear. The fabric is also usually heavier than a normal sweater for added warmth.",
     "A zip up hoodie has a full length zipper running from the neck to hem line. This makes it easy to get in and out of. In addition, zip up hoodies can be worn unzipped and open to regulate temperature or to be styled differently. They are also notably made with lighter fabric.",
