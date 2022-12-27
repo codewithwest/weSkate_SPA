@@ -93,7 +93,7 @@ function logInPopUp(){
     divCreator('inner-nav-container1', `nav`,'nav')
     divCreator('inner-nav-container2', `icon`,'icon')
     var iconHead = document.getElementById('icon')
-    iconHead.style.backgroundImage="url(/static/assets/home/user3.png)"
+    iconHead.style.backgroundImage="url(/static/assets/index/user3.png)"
     divCreator('inner-nav-container2', `usernameT`,'usernameT')
     var userNames = document.getElementById('usernameT')
     var userN = document.createElement('p')
@@ -130,7 +130,7 @@ function logInPopUp(){
     }
     checkMate()
 var logos = document.getElementById('logo')
-    logos.style.backgroundImage="url(/static/assets/event1.jpg)"
+    logos.style.backgroundImage="url(/static/assets/index/logo0.png)"
 var contentdiv = divCreator('static-container', 'content','content')
 
 divCreator('static-container', 'footer','footer')
@@ -149,7 +149,7 @@ var socialNetDivs = ['facebook','twitter', 'whatsapp', 'instagram'];
 for (let fu = 0; fu < socialNetDivs.length; fu++) {
     divCreator('bottom-footer0', `net-divs${fu}`,`net-divs`)
     var net = document.getElementById(`net-divs${fu}`)
-    net.style.backgroundImage=`url(/static/assets/home/footer${fu}.jpg)`
+    net.style.backgroundImage=`url(/static/assets/index/footer${fu}.jpg)`
     
 }
 //create botoom right divs with form

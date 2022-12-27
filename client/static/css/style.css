@@ -22,7 +22,7 @@ html {
     box-shadow: inset .2px .2px .6px rgba(13, 10, 12, 0.8), inset -.2px -.2px .6px rgba(18, 13, 16, 0.8);
     display: flex;
     width: 100%;
-    height: 13%;
+    height: 18%;
 }
 
 .static-container .navContainer .logo-container {
@@ -31,7 +31,7 @@ html {
     linear-gradient(155deg, transparent, rgba(122, 10, 80, 0.8), transparent);
     */
     display: inline;
-    width: 25%;
+    width: 22%;
     height: 100%;
 }
 
@@ -385,12 +385,12 @@ html {
 /* Adjudt button height to look beter on screen*/
 @media only screen and (min-width: 800px) {
     .static-container .navContainer .icon-container {
-        width: 8%;
-        height: 67%; 
+        width: 10%;
+        height: 70%; 
     }
     .icon{
         height: 80%;
-        width: 50%;
+        width: 55%;
     }
     .username{
         display: flex;
