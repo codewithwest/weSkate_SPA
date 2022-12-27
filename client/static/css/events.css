@@ -100,3 +100,17 @@
     }    
 
 }
+/* Adjudt button height to look beter on screen*/
+@media only screen and (min-width: 800px) {
+
+    
+    .flex-container .event .eventdesc p {
+        font-size: 25px;
+        font-weight: 600;
+    }
+    
+    .flex-container .event .eventName {
+        font-size: 32px;
+    }    
+    
+}

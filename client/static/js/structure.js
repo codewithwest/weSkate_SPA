@@ -2,8 +2,8 @@
 //import * as emoji from "emoji-api";
 import divCreator from "./functions.js";
 //Get the Page Container
-var usernameLogged = await fetch('/api').then((Response)  => Response.json())
-
+var getData = await fetch('/api').then((Response)  => Response.json())
+console.log(getData)
 var mainContainer = document.getElementById('static-container');
 //Add a new nav div to the main Container
 divCreator('static-container','navContainer', 'navContainer')
@@ -97,13 +97,14 @@ function logInPopUp(){
     divCreator('inner-nav-container2', `usernameT`,'usernameT')
     var userNames = document.getElementById('usernameT')
     var userN = document.createElement('p')
-    var data = "west";
-    var uName = document.createTextNode(`${usernameLogged.username}`)
+    
+    var uName = document.createTextNode(``)
     userN.appendChild(uName)
     userNames.appendChild(userN)
 
     iconHead.onclick = function(event) {
-        if (usernameLogged.username != "User") {
+        console.log(userN.innerHTML.length)
+        if (userN.innerHTML != 0) {
             document.getElementById("login").style.display="none"
         }
         else{
@@ -180,7 +181,133 @@ for (let topfu = 0; topfu < topfooterText.length; topfu++) {
     par.appendChild(parText)
     theTopFooterDiv.appendChild(par)
 }
- 
-if (usernameLogged.username != "User") {
+ //Check on Login/Register
+if (getData.username != "User") {
     document.getElementById("login").style.display="none"
 }
+
+//Button click validation on form submit
+var signUpForm = document.getElementById('signupform')
+var regUserName = document.getElementById('newusername');
+var regEmail = document.getElementById('newemail');
+var regPassword = document.getElementById('newpassword');
+var regPassword1 = document.getElementById('confirmpassword');
+
+// checkifUsername in database
+
+regUserName.addEventListener('change', (e)=>{
+    if (regUserName.value.length > 3) {
+        regUserName.style.borderColor="green"
+    }else{
+    
+    regUserName.style.borderColor="red"
+}});
+function validateEmail(emailId)
+{
+var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+if(emailId.value.match(mailformat))
+{
+
+return true;
+}
+else
+{
+alert("Invalid email address.");
+
+return false;
+}
+}
+regEmail.addEventListener('change', ()=>{
+    if (validateEmail(regEmail) == true) {
+        regEmail.style.borderColor="green"
+    }
+    else{
+    regEmail.focus()
+    regEmail.style.borderColor="red"
+
+}});
+regPassword.addEventListener('change', ()=>{
+    if (regPassword.value.length > 6 && regPassword.value?.match(/[A-Z]/,/[1-9]/,/[a-z]/) != null) {
+        console.log(regPassword.value)
+        regPassword.style.borderColor="green"
+    }  
+    else{
+    regPassword.focus()
+    regPassword.style.borderColor="red"
+    
+}});
+regPassword1.addEventListener('change', ()=>{
+    if (regPassword1.value === regPassword.value) {
+        console.log(regPassword1.value)
+        regPassword1.style.borderColor="green"
+    }
+    else{
+    regPassword1.focus()
+    regPassword1.style.borderColor="red"
+    
+}});
+/*
+var uSet =false;
+var eSet =false;
+var pSet =false;
+var status = false
+var buttonSign = document.getElementById("register")
+
+signUpForm.addEventListener('submit', (e)=>{
+let k = 0
+if ((uSet == true&&eSet == true&&pSet== true) == true) {
+    var ignin = document.getElementById('signup')
+    ignin.style.display="none"
+} else {
+           
+// Validate Registration info
+if (regUserName.value.length > 3) {
+    getData.forEach((un) => {
+        if(regUserName.value == un.name){
+            alert("Username already exists")
+        }})
+        uSet = true
+        k++
+}
+// checkifEmail in database   
+  if (validateEmail(regEmail) == true) {
+    getData.forEach((un) => {
+    if(regEmail.value == un.email){
+        alert("email Already exits Login instead")
+    }})
+}
+    else{
+    eSet = true
+    k++
+  }
+
+//var regPassword = document.getElementById('newpassword');
+// Check password strength
+if (regPassword.value.length > 6 && regPassword.value?.match(/[A-Z]/,/[1-9]/,/[a-z]/) != null) {
+    return true
+}else{
+    alert("password weak")
+}
+//var regPassword1 = document.getElementById('confirmpassword');
+// check password match
+if (regPassword1.value.length == regPassword.value) {
+    pSet = true
+    k++
+
+}else{
+    alert("passwords do not match")
+}
+
+}
+if (k==3) {
+    alert("loogin")
+}
+});
+*/
+
+
+
+
+    
+
+

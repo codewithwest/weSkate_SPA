@@ -397,6 +397,9 @@ margin: 0 0;
 
 /* Adjudt button height to look beter on screen*/
 @media only screen and (min-width: 800px) {
+    .flex-container .event .rsvp button {
+        
+    }
     .inner-login .login-header{
         border-top: 2px solid blue;
         width: 101%;

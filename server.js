@@ -1,10 +1,15 @@
 const express = require("express");
 const path = require("path");
+
 var bodyParser = require('body-parser')
 const emoji = require('node-emoji')
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
-const dictSet = require("./dataset.json");
+const fs = require('fs');
+ 
+
+let dataFile = fs.readFileSync('dataset.json');
+let dictSet = require("./dataset.json")
 
 const PORT = 4000;
 
@@ -68,50 +73,69 @@ app.get("/*", (req, res) => {
 */
 app.post('/',(req,res) => {  
     function  ifCorrect(userEnteredUsername ,userEnteredPassword){
-      dictSet.forEach((item) => {
+        userData = require('./dataset.json')
+        userData.forEach((item) => {
           if(userEnteredUsername == item.name && userEnteredPassword == item.password){
               correct = true
           }})     
     }
   ifCorrect(req.body.username,req.body.password)
-  if(correct == true){
+        if(correct == true){
               console.log(req.body.username,req.body.password)
               session=req.session;
               session.userid=req.body.username;
               console.log(req.session)
-              //res.json({"username":req.body.username});
-              //req.body.querySelector('form').style.display = 'none'
               res.redirect('/');
               if (myuserName == "") {
                 myuserName = req.body.username
               }
               return 
           }
-          else if(req.body.newusername && req.body.newpassword && req.body.newemail){
-            dictSet.forEach((item) => {
-                if(req.body.newusername == item.name){
-                    console.log("uername already exits")
-                }}) 
-
-            console.log(req.body.newusername)
-            console.log(req.body.newemail)
-            console.log(req.body.newpassword)
-            console.log(dictSet)
+        else if(req.body.newusername && req.body.newpassword && req.body.newemail){
+                var newUserData ={
+                    id:dictSet.length,
+                    name:req.body.newusername,
+                    email:req.body.newemail,
+                    password:req.body.newpassword
+                }
+            //const jsonString = JSON.stringify([newUserData])
+            if (dataFile.length == 0) {
+                //add data to json file
+                fs.writeFileSync("./dataset.json", JSON.stringify())
+                fs.writeFileSync('./dataset.json', jsonString, err => {
+                return true;
+            })
+            } else {
+                var thedataFile = fs.readFileSync('./dataset.json')
+                const jsonObject = JSON.parse(thedataFile);
+                jsonObject.push(newUserData);
+                fs.writeFileSync("./dataset.json", JSON.stringify(jsonObject));
+                updated = require('./dataset.json')
+                dictSet = JSON.parse(fs.readFileSync('./dataset.json'))                
+                console.log(dictSet)
+            }
+          }else{
+            res.redirect('/');
           }
-          else{
-              res.send('Invalid username or password');
-          }
+          
   });
   app.get('/logout',(req,res) => {
       req.session.destroy();
       res.redirect('/');
   });
   app.get('/api',(req,res) => {
+    
+    var thedataFile1 = fs.readFileSync('./dataset.json')
+    const jsonObject1 = JSON.parse(thedataFile1);
+    res.send(jsonObject1)
+    
+    /*
     if (correct == true) {
         res.send({"username":myuserName})
     }
     res.send({"username":"User"})
-    console.log("hello")
+*/
+    
 });
 
   
