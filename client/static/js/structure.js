@@ -2,8 +2,52 @@
 //import * as emoji from "emoji-api";
 import divCreator from "./functions.js";
 //Get the Page Container
+
+function profilePoPUp(){
+    divCreator('content', 'profile','profile')
+    divCreator('profile', 'profile-cover','profile-cover')
+    divCreator('profile-cover', 'inner-profile','inner-profile')
+    divCreator('inner-profile','inner-profile-child0', 'inner-profile-child')
+    divCreator('inner-profile-child0','profile-exit', 'profile-exit')
+    var profileExit = document.getElementById('profile-exit')
+    var pG = document.createElement('p')
+    pG.appendChild(document.createTextNode(`X`))
+    profileExit.appendChild(pG)
+    pG.addEventListener('mouseover',()=>{
+        pG.style.cursor="pointer";
+    pG.addEventListener('click',(e)=>{
+        //e.preventDefault()
+        
+        document.getElementById('profile').style.display="none";
+    })})
+    divCreator('inner-profile','inner-profile-child1', 'inner-profile-child')
+    var profileExitName = document.getElementById('inner-profile-child1')
+    var pU = document.createElement('p')
+    pU.appendChild(document.createTextNode(`UserName : ${ifLogged.username}`))
+    profileExitName.appendChild(pU)
+    divCreator('inner-profile','inner-profile-child2', 'inner-profile-child')
+    var profileExitEmail = document.getElementById('inner-profile-child2')
+    var pE = document.createElement('p')
+    pE.appendChild(document.createTextNode(`Email : ${ifLogged.email}`))
+    profileExitEmail.appendChild(pE)
+    divCreator('inner-profile','inner-profile-child3', 'inner-profile-child')
+    var profileExitLogOut = document.getElementById('inner-profile-child3')
+    var pL = document.createElement('a')
+    pL.appendChild(document.createTextNode('LogOut'))
+    profileExitLogOut.appendChild(pL)
+    pL.addEventListener('mouseover',()=>{
+        pL.style.cursor="pointer";
+    pL.addEventListener('click',(e)=>{
+        //e.preventDefault()
+        pL.setAttribute('href', '/logout');
+        document.getElementById('profile').style.display="none";
+    })})
+    
+
+    }
+     
 var getData = await fetch('/api').then((Response)  => Response.json())
-console.log(getData)
+
 var mainContainer = document.getElementById('static-container');
 //Add a new nav div to the main Container
 divCreator('static-container','navContainer', 'navContainer')
@@ -14,7 +58,7 @@ divCreator('static-container','navContainer', 'navContainer')
    function checkMate(){
     var urlLocation = window.location.href;  
     for (let ki = 0; ki < linkIds.length; ki++) {
-        //console.log(urlLocation.includes(linkIds[ki].toLowerCase()))
+        
         if (urlLocation.endsWith("/")) {
         document.getElementById(linkIds[0]).style.fontWeight="bold";
         }
@@ -80,9 +124,6 @@ function logInPopUp(){
     
     
 }
-
-//console.log(document.getElementById('login'))
-    //console.log(typeof window.location.href)
     var linkHref = ["/", '/about', "/shop", "/events", "/contacts"]
     divCreator('navContainer', `inner-nav-container0`,'logo-container')
     divCreator('navContainer', `inner-nav-container1`,'nav-container')
@@ -102,18 +143,6 @@ function logInPopUp(){
     userN.appendChild(uName)
     userNames.appendChild(userN)
 
-    iconHead.onclick = function(event) {
-        console.log(userN.innerHTML.length)
-        if (userN.innerHTML != 0) {
-            document.getElementById("login").style.display="none"
-        }
-        else{
-            document.getElementById("login").style.display="flex"
-        }
-    }
-    //console.log(document.getElementById("inner-nav-container2"))
-    //const emoji = await fetch("/api").then((Response)  => Response.json())
-    //document.getElementById("icon").innerText = String.fromCodePoint(0x1F464)
 //Create the links
     for (let li = 0; li < linkIds.length; li++) {
         divCreator('nav', `linkContainer${li}`,'linkContainer')
@@ -130,7 +159,8 @@ function logInPopUp(){
     }
     checkMate()
 var logos = document.getElementById('logo')
-    logos.style.backgroundImage="url(/static/assets/index/logo0.png)"
+logos.style.backgroundImage="url(/static/assets/index/logo0.png)"
+
 var contentdiv = divCreator('static-container', 'content','content')
 
 divCreator('static-container', 'footer','footer')
@@ -181,10 +211,48 @@ for (let topfu = 0; topfu < topfooterText.length; topfu++) {
     par.appendChild(parText)
     theTopFooterDiv.appendChild(par)
 }
- //Check on Login/Register
-if (getData.username != "User") {
-    document.getElementById("login").style.display="none"
+
+//Handling login and Registration
+//Check on Login/Register
+var ifLogged = await fetch('/status').then((Response)  => Response.json())
+profilePoPUp()
+if (ifLogged.username != "") {
+    
+    userN.innerHTML = ifLogged.username
+    document.getElementById("login").style.display="none";
 }
+document.getElementById("login").style.display="none"
+
+let emojia = await fetch('/emoji').then((Response)  => Response.json())
+
+iconHead.onclick = function(event) {
+    if (userN.innerHTML != 0) {
+        document.getElementById("login").style.display="none"
+        document.getElementById('profile').style.display='flex'
+
+    }
+    else{
+        document.getElementById("login").style.display="flex"
+    }
+}
+var redirectRegister = document.getElementById('noAccount')
+redirectRegister.addEventListener('mouseover',()=>{
+    redirectRegister.style.cursor="pointer";
+redirectRegister.addEventListener('click',()=>{
+    document.getElementById("signup").style.display="flex";
+    document.getElementById("login").style.display="none";
+})})
+
+var redirectLogin = document.getElementById('hasAccount')
+
+redirectLogin.addEventListener('mouseover',()=>{
+    redirectLogin.style.cursor="pointer";
+    redirectLogin.addEventListener('click',()=>{
+    
+    document.getElementById("signup").style.display="none";
+    document.getElementById("login").style.display="flex";
+
+})})
 
 //Button click validation on form submit
 var signUpForm = document.getElementById('signupform')
@@ -193,13 +261,32 @@ var regEmail = document.getElementById('newemail');
 var regPassword = document.getElementById('newpassword');
 var regPassword1 = document.getElementById('confirmpassword');
 
-// checkifUsername in database
+
+// check ifUsername in database
+let k= 0
+var uSet =false;
+var eSet =false;
+var pSet =false;
+var p1Set = false;
+var status = false
 
 regUserName.addEventListener('change', (e)=>{
     if (regUserName.value.length > 3) {
-        regUserName.style.borderColor="green"
-    }else{
-    
+            getData.forEach((un) => {
+                if(regUserName.value == un.name){
+
+                    regUserName.style.borderColor="red"
+
+                }else{
+                uSet = true
+
+                regUserName.style.borderColor="green"
+
+                }
+            })
+        }
+        
+    else{
     regUserName.style.borderColor="red"
 }});
 function validateEmail(emailId)
@@ -212,102 +299,126 @@ return true;
 }
 else
 {
-alert("Invalid email address.");
-
+console.log("Invalid email address.");
 return false;
 }
 }
-regEmail.addEventListener('change', ()=>{
-    if (validateEmail(regEmail) == true) {
-        regEmail.style.borderColor="green"
-    }
-    else{
-    regEmail.focus()
-    regEmail.style.borderColor="red"
 
-}});
+regEmail.addEventListener('change', ()=>{
+
+    if (validateEmail(regEmail) == true) {
+        getData.forEach((un) => {
+        if(regEmail.value == un.email){
+            eSet = false
+            regEmail.style.borderColor="red"
+        }else{
+            eSet = true 
+            regEmail.focus()
+            regEmail.style.borderColor="green"
+        }
+    })
+    }
+        else{
+            regEmail.focus()
+            regEmail.style.borderColor="red"
+            eSet = false
+        }
+});
 regPassword.addEventListener('change', ()=>{
+
     if (regPassword.value.length > 6 && regPassword.value?.match(/[A-Z]/,/[1-9]/,/[a-z]/) != null) {
-        console.log(regPassword.value)
+        pSet=true
         regPassword.style.borderColor="green"
     }  
     else{
-    regPassword.focus()
-    regPassword.style.borderColor="red"
+        pSet=false
+        regPassword.focus()
+        regPassword.style.borderColor="red"
     
 }});
 regPassword1.addEventListener('change', ()=>{
     if (regPassword1.value === regPassword.value) {
-        console.log(regPassword1.value)
+        
+        p1Set = true
+        
         regPassword1.style.borderColor="green"
     }
     else{
-    regPassword1.focus()
-    regPassword1.style.borderColor="red"
+        p1Set = false;
+        regPassword1.focus()
+        regPassword1.style.borderColor="red"
     
 }});
-/*
-var uSet =false;
-var eSet =false;
-var pSet =false;
-var status = false
-var buttonSign = document.getElementById("register")
-
 signUpForm.addEventListener('submit', (e)=>{
-let k = 0
-if ((uSet == true&&eSet == true&&pSet== true) == true) {
-    var ignin = document.getElementById('signup')
-    ignin.style.display="none"
-} else {
-           
-// Validate Registration info
-if (regUserName.value.length > 3) {
-    getData.forEach((un) => {
-        if(regUserName.value == un.name){
-            alert("Username already exists")
-        }})
-        uSet = true
-        k++
-}
-// checkifEmail in database   
-  if (validateEmail(regEmail) == true) {
-    getData.forEach((un) => {
-    if(regEmail.value == un.email){
-        alert("email Already exits Login instead")
-    }})
-}
-    else{
-    eSet = true
-    k++
-  }
+    e.preventDefault()
+    if ((uSet&& eSet && pSet && p1Set ) === true) {
+        document.getElementById("signup").style.display="none"
 
-//var regPassword = document.getElementById('newpassword');
-// Check password strength
-if (regPassword.value.length > 6 && regPassword.value?.match(/[A-Z]/,/[1-9]/,/[a-z]/) != null) {
-    return true
-}else{
-    alert("password weak")
-}
-//var regPassword1 = document.getElementById('confirmpassword');
-// check password match
-if (regPassword1.value.length == regPassword.value) {
-    pSet = true
-    k++
+        status = true;
+        e.currentTarget.submit();
+        document.getElementById("login").style.display="flex"
 
-}else{
-    alert("passwords do not match")
-}
-
-}
-if (k==3) {
-    alert("loogin")
-}
+    } else {
+        signUpForm.focus();
+        signUpForm.style.borderColor="red"
+    }
 });
-*/
 
 
+var luSet = false;
+var leSet = false;
 
+var loginUserName = document.getElementById('username')
+loginUserName.addEventListener('change', (e)=>{
+    if (loginUserName.value.length > 3) {
+            getData.forEach((un) => {
+                if(loginUserName.value == un.name){
+                    luSet = true;
+                    loginUserName.style.borderColor="green"
+                }else{
+                uSet = false
+                loginUserName.style.borderColor="red"
+                }
+            })
+        }
+    else{
 
-    
+        loginUserName.style.borderColor="red"
+}});
 
+var loginEmail = document.getElementById('password');
+loginEmail.addEventListener('change', ()=>{
+    if (loginEmail.value.length > 5) {
+        getData.forEach((un) => {
+        if(loginEmail.value == un.password){
+            leSet = true
+            loginEmail.style.borderColor="green"
+        }else{
+            leSet = false 
+            loginEmail.focus()
+            loginEmail.style.borderColor="red"
+        }
+    })
+    }
+        else{
+            loginEmail.focus()
+            loginEmail.style.borderColor="red"
+            leSet = false      
+        }
+});
 
+var loginUpForm = document.getElementById('loginForm'); 
+loginUpForm.addEventListener('submit', (e)=>{
+    e.preventDefault()
+    if ((leSet && luSet) === true) {
+        document.getElementById("signup").style.display="none"
+        status = true;
+        e.currentTarget.submit();
+        document.getElementById("login").style.display="flex"
+
+    } else {
+        loginUpForm.focus();
+        loginUpForm.style.borderColor="red"
+    }
+});
+console.log(document.getElementById('content'))

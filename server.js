@@ -1,15 +1,16 @@
 const express = require("express");
 const path = require("path");
-
 var bodyParser = require('body-parser')
 const emoji = require('node-emoji')
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 const fs = require('fs');
- 
 
 let dataFile = fs.readFileSync('dataset.json');
-let dictSet = require("./dataset.json")
+//let dictSet = require("./dataset.json")
+
+var rawdictSet = fs.readFileSync('./dataset.json')
+let dictSet = JSON.parse(rawdictSet);
 
 const PORT = 4000;
 
@@ -18,8 +19,8 @@ let correct = false;
 // creating 24 hours from milliseconds
 const oneDay = 1000 * 60 * 60 * 24;
 app.use(bodyParser.json())
-    //app.use(express.bodyParser());
- 
+//app.use(express.bodyParser());
+
 //session middleware
 app.use(sessions({
     secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
@@ -41,6 +42,7 @@ app.use(cookieParser());
 // a variable to save a session
 var session;
 let myuserName = "";
+let loginState = "User"
 
 app.get('/',(req,res) => {
     session=req.session;
@@ -51,6 +53,7 @@ app.get('/',(req,res) => {
 });
 app.get('/about',(req,res) => {
     session=req.session;
+    console.log(session)
     res.sendFile(path.resolve(__dirname, "client", "index.html"));
 });
 app.get('/shop',(req,res) => {
@@ -73,24 +76,24 @@ app.get("/*", (req, res) => {
 */
 app.post('/',(req,res) => {  
     function  ifCorrect(userEnteredUsername ,userEnteredPassword){
-        userData = require('./dataset.json')
+        userData = dictSet
         userData.forEach((item) => {
           if(userEnteredUsername == item.name && userEnteredPassword == item.password){
               correct = true
           }})     
     }
-  ifCorrect(req.body.username,req.body.password)
+ifCorrect(req.body.username,req.body.password)
         if(correct == true){
-              console.log(req.body.username,req.body.password)
-              session=req.session;
-              session.userid=req.body.username;
-              console.log(req.session)
-              res.redirect('/');
-              if (myuserName == "") {
-                myuserName = req.body.username
-              }
-              return 
-          }
+              //console.log(req.body.username,req.body.password)
+            session=req.session;
+            session.userid=req.body.username;
+            res.redirect('/');
+            console.log(sessions.Cookie.length)
+            if (myuserName == "") {
+            myuserName = req.body.username;
+            }
+            return ;
+        }
         else if(req.body.newusername && req.body.newpassword && req.body.newemail){
                 var newUserData ={
                     id:dictSet.length,
@@ -98,6 +101,8 @@ app.post('/',(req,res) => {
                     email:req.body.newemail,
                     password:req.body.newpassword
                 }
+                res.redirect('/')
+                
             //const jsonString = JSON.stringify([newUserData])
             if (dataFile.length == 0) {
                 //add data to json file
@@ -112,7 +117,7 @@ app.post('/',(req,res) => {
                 fs.writeFileSync("./dataset.json", JSON.stringify(jsonObject));
                 updated = require('./dataset.json')
                 dictSet = JSON.parse(fs.readFileSync('./dataset.json'))                
-                console.log(dictSet)
+                
             }
           }else{
             res.redirect('/');
@@ -122,6 +127,8 @@ app.post('/',(req,res) => {
   app.get('/logout',(req,res) => {
       req.session.destroy();
       res.redirect('/');
+      myuserName = ""
+      console.log(session)
   });
   app.get('/api',(req,res) => {
     
@@ -137,9 +144,39 @@ app.post('/',(req,res) => {
 */
     
 });
+app.get('/status',(req,res) => {
 
-  
+    res.send({username: myuserName})
+    
+    /*
+    if (correct == true) {
+        res.send({"username":myuserName})
+    }
+    res.send({"username":"User"})
+*/
+    
+});
+app.get('/emoji',(req,res) => {
+
+    res.send(emoji)
+    
+    /*
+    if (correct == true) {
+        res.send({"username":myuserName})
+    }
+    res.send({"username":"User"})
+*/
+    
+});
+
+
 app.listen(process.env.PORT || 3000, () => {
     console.log("Server running...\n http://localhost:3000")
+    if (sessions.Session.userid) {
+        console.log(sessions)
+    } else {
+        console.log(sessions.Store.length)
+        console.log( "on")
+    }
 });
 

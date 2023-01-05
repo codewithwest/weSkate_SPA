@@ -1,4 +1,4 @@
-function dura() {
+
 function divCreator(parentContainer, idNames,classNames){
     let container = parentContainer;
     let idName  = idNames;
@@ -10,65 +10,70 @@ function divCreator(parentContainer, idNames,classNames){
     //divObj.style.backgroundImage="url(/frontend/static/assets/event1.jpg)";
     return newContainer.appendChild(divObj);
 }
+function textCreator(pDiv, inputTextNode) {
+    var parentD = document.getElementById(pDiv)
+    var textPar = document.createElement('p')
+    var text = document.createTextNode(inputTextNode)
+    textPar.appendChild(text)
+    parentD.appendChild(textPar)
+}
 
 var homeContainer = document.getElementById('home-container')
 //create rows
 // row chilren
 divCreator('home-container', 'rows', 'rows')
-for (let ro = 0; ro < 4; ro++) {
-    divCreator('rows', `row-child${[ro]}` , 'row-child')
-}
-// row child 1 child
-var topTexts = ["Welcome to WeSkate Your one stop shop for skating goods.", "from full built boards to customized boads, clothing for all the families needs"]
-for (let ro = 0; ro < 2; ro++) {
-    divCreator('row-child0', `row-child1-children${[ro]}` , 'row-child1-children')
-    divCreator(`row-child1-children${[ro]}`, `text-container${ro}` , 'text-container')
-    var textPar = document.createElement('p')
-    var text = document.createTextNode(topTexts[ro])
-    textPar.appendChild(text)
-    var toAp  = document.getElementById(`text-container${ro}`)
-    toAp.appendChild(textPar)
-}
+divCreator('rows', 'two-rows1', 'two-rows')
+divCreator('rows', 'two-rows0', 'two-rows')
 
 
+//Upper Row
+divCreator('two-rows0', 'upper-three0', 'upper-three')
+divCreator('two-rows0', 'upper-three1', 'upper-three')
+divCreator('two-rows0', 'upper-three2', 'upper-three')
 
-//row child 2 chilren
-for (let roch = 0; roch < 3; roch++) {
-    divCreator('row-child1', `row-child2-children${[roch]}` , 'row-child2-children')
-}
+//upper row box 1
+var topTexts = ["Welcome to WeSkate Your one stop shop for skating goods.", 
+"From full built boards to customized boards, clothing for all the families needs"];
 
-//row child 2 child 3 button and 1
+divCreator('upper-three0', 'three-zero0', 'three-zero')
 
-var textdiv0 = divCreator('row-child2-children0', 'text-cover-left', 'text-cover')
-var textdiv1 =divCreator('row-child2-children2', 'text-cover-right', 'text-cover')
-var texts =["Use The download link to get our new app", " Available for all devices: Android ,iOS and Huawei Store"]
+textCreator('three-zero0', topTexts[0])
 
-var textdiv = [textdiv0, textdiv1]
-
-for (let t = 0; t < texts.length; t++) {
-    var textPar = document.createElement('p')
-    var text = document.createTextNode(texts[t])
-    textPar.appendChild(text)
-    textdiv[t].appendChild(textPar)
-}
-
-//row child 2 child 2 button
-divCreator('row-child2-children1', 'button-cover', 'button-cover')
-var downButton = document.createElement('input');
-downButton.setAttribute('type', 'button');
+divCreator('upper-three0', 'three-zero1', 'three-zero')
+textCreator('three-zero1', topTexts[1])
+//upper row box 2
+divCreator('upper-three1', 'three-one0', 'three-one')
+divCreator('upper-three1', 'three-one1', 'three-one')
+var downButton = document.createElement('button');
+downButton.appendChild(document.createTextNode('Download'))
+//downButton.setAttribute('type', 'button');
 downButton.setAttribute('value', 'DOWNLOAD');
-downButton.setAttribute('name', 'Button');
+//downButton.setAttribute('name', 'Button');
 downButton.setAttribute('onClick', 'alert("download Started")');
-document.getElementById('button-cover').appendChild(downButton)
+document.getElementById('three-one1').appendChild(downButton)
 
-// row child 3
+divCreator('upper-three1', 'three-one2', 'three-one')
+
+var texts =["Use The download link to get our new app", " Available for Android, iOS & Huawei"]
+
+
+textCreator('three-one0', texts[0])
+textCreator('three-one2', texts[1])
+    
+//upper row box 3
+divCreator('upper-three2', 'three-two', 'three-two')
+
+textCreator('three-two', "Our belief:")
+textCreator('three-two', "Alone we are powerless but together we can change the world.")
+
+//Lower Row
 
 
 var topTexts = ["Get your eco-friendly resin based board today! \" made from recycled bio based renewable Ingredients and carbon fibre\"",
  "Skate up Clothing for Your Perfect skating Day", 
 "Availble for the whole family too, in style chlothing for the little ones."]
 for (let row = 0; row < topTexts.length; row++) {   
-    divCreator('row-child2', `row-child3-children${[row]}` , 'row-child3-children')
+    divCreator('two-rows1', `row-child3-children${[row]}` , 'row-child3-children')
     var card = document.getElementById(`row-child3-children${[row]}`);
     card.style.backgroundImage=`url(/static/assets/home/home${row}.jpg)`
     divCreator(`row-child3-children${[row]}`, `desc-container${row}` , 'desc-container')
@@ -82,18 +87,5 @@ for (let row = 0; row < topTexts.length; row++) {
 
 
 
- 
-divCreator('row-child3', `row-child4-children` , 'row-child4-children')
 
-divCreator(`row-child4-children`, `mess-container` , 'mess-container')
-var newPar = document.createElement('p')
-var fare = document.createTextNode("Meesage from the Founder")
-var newPar1 = document.createElement('p')
-newPar1.appendChild( document.createTextNode('Alone we are powerless but together we can change the world.'))
-newPar.appendChild(fare)
-var toAppends  = document.getElementById(`mess-container`)
-toAppends.appendChild(newPar)
-toAppends.appendChild(newPar1)
-console.log(homeContainer)
-}
-dura()
+

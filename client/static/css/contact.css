@@ -103,13 +103,23 @@ form{
 
 /* Adjudt button height to look beter on screen*/
 @media only screen and (min-width: 800px) {
-    
+    .content{
+       
+        min-height: 820px !important;
+    }
     #about-div1{
         height: 500px;
     }
     form #button{
         margin-top: 7%;
         font-size: 80%;
+    }
+    .location-div p{
+        display: flex;
+        margin: 0 5%;
+        margin-top: 25%;
+        
+        
     }
     }
 /* Adjudt button height to look beter on screen*/
@@ -125,6 +135,11 @@ form{
     display: flex;
     height: 80%;
     margin: auto auto;
+
+}
+.content{
+    height: fit-content !important;
+    min-height: 650px;
 }
 #about-div1{
     height: 340px;

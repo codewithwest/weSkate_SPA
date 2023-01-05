@@ -1,12 +1,15 @@
-
-.eventsIntro {
-    width: 60%;
-    display: inline;
-    text-align: center;
-    background: none;
+.content{
+    height: fit-content !important;
+    min-height: 1100px;
 }
-
-.flex-container {
+.eventsHolder{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    height: 100%;
+}
+.eventsContainer{
+   
     margin: 1% 0;
     display: flex;
     flex-wrap: wrap;
@@ -15,8 +18,15 @@
     width: 100%;
     height: 100%;
 }
+.eventsIntro {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: none;
+}
 
-.flex-container>.event {
+.eventsContainer>.event {
     color: white;
     background-size: cover;
     position: relative;
@@ -27,13 +37,13 @@
     font-size: 30px;
 }
 
-.flex-container .event .rsvp {
+.eventsContainer .event .rsvp {
     height: 15%;
     width: 45%;
     margin: 10% auto;
 }
 
-.flex-container .event .rsvp button {
+.eventsContainer .event .rsvp button {
     border: 0.1px solid white;
     color: white;
     text-align: center;
@@ -43,35 +53,36 @@
     background: linear-gradient(20deg, rgba(18, 24, 24, 0.7), transparent, rgb(14, 10, 11));
 }
 
-.flex-container .event .rsvp button:hover {
+.eventsContainer .event .rsvp button:hover {
     box-shadow: inset 2px 2px 3px white, inset -2px -2px 3px white;
     color: black;
 }
 
-.flex-container .event .rsvp button p {
+.eventsContainer .event .rsvp button p {
     margin: 10% 0;
-    height: 100%;
+    height: 50%;
     width: 100%;
     font-weight: 800;
 }
 
-.flex-container .event .eventName {
+.eventsContainer .event .eventName {
     margin-top: 30%;
 }
 
-.flex-container .event .eventName p {
+.eventsContainer .event .eventName p {
     margin: 0;
     text-shadow:  1px 1px 1px black, 
     -1px -1px 1px black;
 }
 
-.flex-container .event .eventdesc {
+.eventsContainer .event .eventdesc {
     font-size: 20px;
+    
     height: 30%;
     margin-top: 3%;
 }
 
-.flex-container .event .eventdesc p {
+.eventsContainer .event .eventdesc p {
     font-size: 80%;
     font-weight: 600;
     text-shadow:  1px 1px 1px black, 
@@ -80,36 +91,52 @@
 
 
 /* Adjudt button height to look beter on screen*/
+
 @media only screen and (max-width: 450px) {
 
-    .flex-container .event .eventdesc p {
+    .eventsContainer>.event {
+        height: calc(100%/4.2);
+        
+    }
+    .content{
+        height: 100%;
+        min-height: 1000px !important;
+        margin: 0 0;
+    }
+    
+    .eventsContainer .event .eventdesc p {
+        
         font-size: 40%;
         font-weight: 600;
     }
-    .flex-container .event .eventdesc p {
+    .eventsContainer .event .eventdesc p {
         font-size: 40%;
         font-weight: 600;
+        
     }
-    .flex-container .event .rsvp {
+    .eventsContainer .event .rsvp {
         height: max-content;
         width: max-content;
         font-size: 10px;
     }
-    .flex-container .event .eventName {
+    .eventsContainer .event .eventName {
+        margin-top: 90%;
         font-size: 18px;
     }    
 
 }
 /* Adjudt button height to look beter on screen*/
 @media only screen and (min-width: 800px) {
-
+    .content{
+    min-height: 1800px !important;
+}
     
-    .flex-container .event .eventdesc p {
+    .eventsContainer .event .eventdesc p {
         font-size: 25px;
         font-weight: 600;
     }
     
-    .flex-container .event .eventName {
+    .eventsContainer .event .eventName {
         font-size: 32px;
     }    
     

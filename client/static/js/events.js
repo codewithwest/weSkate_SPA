@@ -1,3 +1,4 @@
+var ifLogged = await fetch('/status').then((Response)  => Response.json())
 
 function addEvents(){
     var posts = ["Festive Charity Skate III", 
@@ -34,7 +35,7 @@ function addEvents(){
         function elementEventAdd(){
             //create event cover div element
         for (let i = 0; i < posts.length ; i++) {
-            var container = document.getElementById('flex-container');
+            var container = document.getElementById('eventsContainer');
             var event = document.createElement("div");
             event.setAttribute("id", "event");
             event.setAttribute("class", "event");
@@ -54,7 +55,14 @@ function addEvents(){
             buttonTextCreator.appendChild(buttonText);
             button.appendChild(buttonTextCreator);
             button.addEventListener('click', () => {
-            alert("You have Succsefully registered");})
+                if (ifLogged.username.length != "") {
+                    document.getElementById("login").style.display="none";
+                    alert('Event logged');
+                }
+                else{
+                    document.getElementById("login").style.display="flex";
+                }
+            });
             rsvpDiv.appendChild(button);
             //Create eventName div
             var eventNameCreator = document.createElement('div');
@@ -81,4 +89,13 @@ function addEvents(){
     
     };    
     
+    var eventsHolder = document.createElement('div')
+    eventsHolder.setAttribute('id', 'eventsHolder')
+    eventsHolder.setAttribute('class', 'eventsHolder')
+    document.getElementById('content').append(eventsHolder)
+    var eventsContainer = document.createElement('div')
+    eventsContainer.setAttribute('id', 'eventsContainer')
+    eventsContainer.setAttribute('class', 'eventsContainer')
+    document.getElementById('eventsHolder').append(eventsContainer)
+        
  addEvents();

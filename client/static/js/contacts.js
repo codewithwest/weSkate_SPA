@@ -74,13 +74,19 @@ newButton.onclick = function(event) {
     }
     else{
         if (newName.value=="") {
-        alert("Enter name!!!")
+        newName.focus()
+            newName.style.borderColor="blue"
+            newName.style.background="white"
         }
     }if (email.value=="") {
-        alert("Enter vaid email!!!")  
+        email.focus() 
+        
+            email.style.borderColor="blue"
+            email.style.background="white"
         }if (Message.value=="") {
-            alert("Enter name !!!")
-                
+            Message.focus()
+            Message.style.borderColor="blue"
+            Message.style.background="white"
             }
 }
 

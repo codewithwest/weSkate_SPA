@@ -10,21 +10,15 @@
 </head>
 
 <body>
-<!--
-    <nav class="nav">
-        <a href="/" class="nav__link" data-link>Dashboard</a>
-        <a href="/posts" class="nav__link" data-link>Posts</a>
-        <a href="/settings" class="nav__link" data-link>Settings</a>
-    </nav>
--->
     <div id="static-container" class="static-container">   
-    <center>
+    </div>
+        <center>
         <div class="login" id="login">
             <div class="inner-login">
             <div class="login-header">
                 <h2>Login</h2>
             </div>
-            <form action="/" method="post">
+            <form action="/" method="post" id="loginForm">
                 <input placeholder="username" type="text" name="username" id="username">
                 <input placeholder="password" type="password" name="password" id="password">
                 <input type="submit" value="LOGIN" id="button">
@@ -34,7 +28,7 @@
                     <p>Forgot password?</p>
                 </div>
                 <div class="register">
-                    <p>Don't have an account? Register</p>
+                    <p id="noAccount">Don't have an account? Register</p>
                 </div>
             </div>
         </div>
@@ -56,18 +50,17 @@
                 <p>Terms and Conditions</p>
             </div>
             <div class="register">
-                <p>Already have an account? Login</p>
+                <p id="hasAccount">Already have an account? Login</p>
             </div>
         </div>
     </div>
 </div>
     </center>
-    </div>
+    
     
 <script type="module" src="/static/js/structure.js"></script>
 <script type="module" id="script"></script>
-<script type="module" src="/static/js/index.js">
-    
+<script type="module" src="/static/js/index.js">  
 </script> 
 </body> 
 </html>

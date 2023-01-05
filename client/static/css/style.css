@@ -4,42 +4,48 @@ html {
     height: 100%;
     
     margin: 0 0;
-    font-size: 18px;
+    font-size: 100%;
     color: black !important;
     background: #fff;
 }
 
 .static-container {
+    display: flex;
     flex-direction: column;
-  height: 100%;
-    
-    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    width:100%;
 }
+
+.content{
+    min-height: 700px;
+    min-width: 700px;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    margin-top: .3%;
+}
+
 
 .static-container .navContainer 
 {
-   
-    box-shadow: inset .2px .2px .6px rgba(13, 10, 12, 0.8), inset -.2px -.2px .6px rgba(18, 13, 16, 0.8);
+    box-shadow: 0px 2px rgba(11, 33, 22, 0.6);
+    font-weight: 30px;
     display: flex;
     width: 100%;
-    height: 15%;
+    min-height: 90px;
+    height: 9%;
 }
 
 .static-container .navContainer .logo-container {
-    /*
-    background: linear-gradient(25deg, transparent,transparent, rgba(122, 120, 80, 0.8)), 
-    linear-gradient(155deg, transparent, rgba(122, 10, 80, 0.8), transparent);
-    */
+    
+
     display: inline;
     width: 22%;
     height: 100%;
 }
 
 .static-container .navContainer #logo {
-    /*
-    background: linear-gradient(25deg, transparent,transparent, rgba(122, 120, 80, 0.8)), 
-    linear-gradient(155deg, transparent, rgba(122, 10, 80, 0.8), transparent);
-    */
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -47,11 +53,15 @@ html {
 }
 
 .static-container .navContainer .nav-container {
+
+    margin: 10px;
     width: 65%;
     height: 80%;
     margin: auto auto;
+    display: inline-block;
 }
 .static-container .navContainer .icon-container {
+
     width: 10%;
     height: 70%; 
     margin: auto auto;
@@ -69,7 +79,8 @@ html {
 .usernameT{
     height: 20%;
     text-align: center;
-    font-size: 80%;
+    font-size: 100%;
+    font-weight: 900;
 }
 .usernameT p{
     margin: auto auto;
@@ -78,6 +89,7 @@ html {
 
 .static-container .navContainer .nav-container .nav {
     display: flex;
+    font-size: 120%;
     width: 100%;
     height: 100%;
 }
@@ -91,24 +103,19 @@ html {
 .static-container .navContainer .nav-container .linkContainer a {
     width: 100%;
     text-decoration: none;
-    margin: auto 0;
-    transition: all 0.5s;
+    margin: auto auto;
+   
 }
 
-.static-container .navContainer .nav-container .linkContainer a:hover {
-    color: green;
-    font-weight: 700;
-}
 
-.static-container .navContainer .nav-container .linkContainer a:active {
-    
-    font-size: 28px;
-}
+
+
 
 .static-container .footer {
     box-shadow: inset .2px .2px 1.5px rgba(15, 11, 13, 0.8), inset -.2px -.2px 1.5px rgba(20, 18, 20, 0.8);
     display: flex;
-    height: 30%;
+    height: 25%;
+    min-height: 170px;
     width: 100%;
 }
 
@@ -119,7 +126,6 @@ html {
 
 .static-container .footer .bottom-footer {
     display: flex;
-   
 }
 
 .static-container .footer .bottom-footer .net-divs {
@@ -260,6 +266,7 @@ html {
     width: 50%;
 }
 .inner-login .forgot-register{
+    color:white;
     margin: auto auto;
     border-top: 2px solid blue;
     display: flex;
@@ -272,7 +279,13 @@ html {
     height: 100%;
     width:50%;   
 }
+.inner-login .forgot{
+    display: flex;
+    height: 100%;
+    width:50%;   
+}
 .inner-login  p{
+    
     text-decoration: underline;
     text-align: center;
     font-size: 11px !important;
@@ -284,6 +297,7 @@ html {
     width:50%;
     
 }
+
 /*End of log in Pop up*/
 /*Start of SignIn*/
 
@@ -331,7 +345,6 @@ html {
     letter-spacing: 5px;
     margin: auto auto;
 }
-
 .inner-signup input{
     font-size: medium;
     border: .3px solid blue;
@@ -360,7 +373,6 @@ html {
     width: 40%;
     height: 20%;
 }
-
 .inner-signup .forgot-register{
     margin: auto auto;
     border-top: 2px solid blue;
@@ -381,25 +393,91 @@ html {
     margin: auto auto;
 }
 
+.profile{
+    display: none;
+    top: 0;
+    position: absolute;
+    z-index: 3000;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    
+}
+.profile-cover{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    margin: auto auto;
+    z-index: 300;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    
+}
+.inner-profile{
+    display: grid;
+    grid-auto-rows: auto;
+    margin: auto auto;
+    height: 200px;
+    width: 170px;
+
+    border: 1px dotted black;
+    background-color: rgba(22, 22, 22, 0.9);
+}
+.inner-profile-child{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border: 1px dotted white;
+}
+#inner-profile-child0{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.profile-exit{
+    display: flex;
+    flex-direction: row-reverse;
+    height: 50%;
+    width: 12%;
+    border: 1px dotted white;
+}
+.inner-profile-child p,a{
+    display: flex;
+    margin: auto auto;
+   
+}
+
 /*End of sign in*/
 /* Adjudt button height to look beter on screen*/
 @media only screen and (min-width: 800px) {
+    .content{
+        height: 100%;
+        min-height: 1000px !important;
+    }
     .static-container .navContainer{
         height: 18%;
+        min-height: 120px;
+        font-size: 120%;
     }
     .static-container .navContainer .icon-container {
         width: 10%;
-        height: 70%; 
+        height: 65%; 
     }
     .icon{
-        height: 80%;
-        width: 55%;
+        height: 70%;
+        width: 37%;
     }
     .username{
         display: flex;
         height: 12%;
         text-align: center;
-        font-size: 60%;
+        font-size: 80%;
+    }
+    .inner-profile{
+        height: 400px;
+        width: 370px;
+        border: 1px dotted black;
+        background-color: rgba(22, 22, 22, 0.9);
     }
     .static-container .footer .bottom-footer .net-divs {
         background-position: center;
@@ -412,19 +490,54 @@ html {
         margin-bottom: 2%;
         margin: auto auto;
     }
+    .static-container .footer {
+        min-height: 220px;
+    }
     html,body{
         font-size: 28px;
+    }
+    .signup{
+        left: 30%;
+        width:50%;
+        height: 90%;
+        color: #fff;
+    }
+    .inner-login{
+       
+        width:50%;
+        height: 9   0%;
     }
 }
 
 /* Adjudt button height to look beter on screen*/
 @media only screen and (max-width: 450px) {
-    .static-container .navContainer{
-        height: 9%;
+    
+    .signup{
+        left: 8%;
+        width:50%;
+        height: 90%;
+        color: #fff;
     }
+    .static-container .navContainer{
+        height: 8%;
+        min-height: 75px;
+        
+    }
+    .signup{
+        
+        width:90%;
+        height: 70%;
+        color: #fff;
+    }
+
+    
     .static-container .navContainer .icon-container {
         width: 10%;
-        height: 70%; 
+        height: 60%; 
+    }
+    .static-container .navContainer .nav-container .nav {
+        display: flex;
+        font-size: 90%;
     }
     .icon{
         height: 80%;
@@ -454,6 +567,7 @@ html {
         box-shadow: inset .2px .2px 1.5px rgba(15, 11, 13, 0.8), inset -.2px -.2px 1.5px rgba(20, 18, 20, 0.8);
         display: flex;
         height:19%;
+        min-height: 140px;
         width: 100%;
     }
     .static-container .footer .top-footer {
@@ -466,4 +580,17 @@ html {
         height: 100%;
         display: block;
            }
+           .inner-login{
+            display: flex;
+            flex-direction: column;
+            background: white;
+           margin: auto auto;
+            position: relative;
+            border: 3px solid blue;
+            box-shadow: -2px -2px 3px rgba(11, 33, 22, 0.6), 
+            2px 2px 3px rgba(11, 33, 22, 0.6);
+            z-index: 201;
+            width:120%;
+            height: 70%;
+        }
     }

@@ -20,16 +20,15 @@
 
 .shop-layout-creator .navAndDisplay1 {
     display: flex;
-    padding-bottom: 2%;
-background: rgba(11, 33, 22, 0.6);
-    box-shadow: -2px -2px 3px rgba(11, 33, 22, 0.6), 2px 2px 3px rgba(11, 33, 22, 0.6);
-   height: 100%;
+    
+background: rgba(22, 22, 22, 0.9);
+    box-shadow: -2px -2px  rgba(11, 33, 22, 0.6), 2px 2px  rgba(11, 33, 22, 0.6);
+   height: 98%;
     width: 74%;
 }
 /*desc alert*/
 .alert{
     position: absolute;
-    
     margin-bottom: 10px;
     top:30%;
     left:28%;
@@ -77,101 +76,6 @@ background: rgba(11, 33, 22, 0.6);
     margin: 3% 3%;
     
 }
-
-/*Login Alert
-.login{
-    display:none;
-    position: absolute;
-    margin-bottom: 10px;
-    top:30%;
-    left:28%;
-    z-index: 200;
-    width:50%;
-    height: 50%;
-}
-
-.inner-login{
-    display: block;
-    background: white;
-   margin: auto auto;
-    position: relative;
-    border: 3px solid blue;
-    box-shadow: -2px -2px 3px rgba(11, 33, 22, 0.6), 
-    2px 2px 3px rgba(11, 33, 22, 0.6);
-    z-index: 201;
-    width:75%;
-    height: 80%;
-}
-.inner-login .login-header{
-    border-bottom: 1px solid blue;
-    
-    width: 100%;
-    display: flex;
-    height: 20%;
-    background: blue;
-    color: white;
-}
-.inner-login .login-header h2{
-    letter-spacing: 3px;
-    margin: auto auto;
-}
-
-
-.inner-login input{
-    display: flex;
-    margin: auto auto;
-    margin-top: 3%;
-    height: 14%;
-    width: 80%;
-    background: white;
-    
-}
-
-.inner-login #email{
-   
-    border: 2px solid blue;
-    width: 80%;
-}.inner-login #password{
-    border: 2px solid blue;
-    width: 80%;
-}
-.inner-login #button{
-    display: block;
-    justify-items: center;
-    font-size: inherit;
-    border: 2px solid black;
-    color: white;
-    background: linear-gradient(80deg, transparent, black), linear-gradient(-10deg, transparent, black), blue;
-    width: 50%;
-}
-
-
-.inner-login .forgot-register{
-    border-top: 2px solid blue;
-    display: flex;
-    height: 21%;
-    margin-top: 3%;
-    width:100%;
-    background: rgba(23, 32, 217, 0.85);
-}
-.inner-login .register{
-    display: flex;
-    height: 100%;
-    width:50%;   
-}
-.inner-login  p{
-    text-decoration: underline;
-    text-align: center;
-    font-size: 11px !important;
-    margin: auto auto;
-}
-.inner-login .forgot{
-    display: flex;
-    height: 100%;
-    width:50%;
-    
-}
-*/
 .displayLayout {
     display: flex;
     position: relative;
@@ -217,39 +121,50 @@ background: rgba(11, 33, 22, 0.6);
 
 .shop-layout-creator .navAndDisplay1 .displayLayout .displayLayoutNavCo {
     top: 0;
-    box-shadow: 2px 2px 3px rgba(11, 33, 22, 0.6);
+    box-shadow: 2px 2px 3px rgba(11, 33, 22, 0.9);
+    background: black;
     position: sticky;
-    margin-top: 1%;
     z-index: 100;
     display: flex;
+    flex-direction: row;
     width: 100%;
-    height: 20%;
+    min-height: 20px;
+    height: 5%;
 }
 
-.shop-layout-creator .navAndDisplay1 .displayLayout .displayLayoutNavCo li {
+.displayLayout .displayLayoutNavCo li {
     color: white;
     display: flex;
+    margin: auto auto;
+    
     width: 100%;
     height: 100%;
 }
 
-.shop-layout-creator .navAndDisplay1 .displayLayout .displayLayoutNavCo li a {
+.displayLayout .displayLayoutNavCo li a {
     color: aliceblue;
     font-size: 110%;
+
     width: 100%;
+    
+    margin: auto auto;
     height: 100%;
-    text-align: center;
+    
     transition: all 1200ms;
 }
 
-.shop-layout-creator .navAndDisplay1 .displayLayout .displayLayoutNavCo li a:hover {
+.displayLayout .displayLayoutNavCo li a:hover {
     font-weight: bold;
     text-align: center;
 }
 
-.shop-layout-creator .navAndDisplay1 .displayLayout .displayLayoutNavCo li a {
-    margin: 5% 5%;
-    height: 100%;
+.shop-layout-creator .navAndDisplay1 
+.displayLayout .displayLayoutNavCo li a {
+    width: fit-content;
+    margin: auto auto;
+    height: fit-content;
+    
+    text-align: center;
     text-decoration: none;
 }
 
@@ -342,7 +257,7 @@ margin: 0 0;
 }
 .below-button{
     display: flex;
-    height: 15%;
+    height: 33%;
     padding: auto;
 }
 
@@ -397,6 +312,9 @@ margin: 0 0;
 
 /* Adjudt button height to look beter on screen*/
 @media only screen and (min-width: 800px) {
+    .content{
+        min-height: 1350px !important;
+    }
     .flex-container .event .rsvp button {
         
     }
@@ -446,7 +364,7 @@ margin: 0 0;
     }
     .below-button{
         display: flex;
-        height: 30%;
+        height: 90%;
         
     }
     .end-div{
@@ -465,6 +383,9 @@ margin: 0 0;
 
 /* Adjudt button height to look beter on screen*/
 @media only screen and (max-width: 450px) {
+    .content{
+        min-height: 560px;
+    }
     .flex-container > .event{
     padding-bottom: 18.3%;
     }

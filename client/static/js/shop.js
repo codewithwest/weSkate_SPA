@@ -547,6 +547,7 @@ knitsLinksCheck()
 pantsLinksCheck()
 shortsLinksCheck()
 //Add events attempt
+var ifLogged = await fetch('/status').then((Response)  => Response.json())
 
 
 function addProducts(desiredSection, background, proDescArray, proNameArray) {
@@ -554,7 +555,7 @@ function addProducts(desiredSection, background, proDescArray, proNameArray) {
     let behind = background
     var postsDesc = proDescArray
     var posts = proNameArray
-
+    
     function elementEventAdd() {
         //create event cover div element
         for (let i = 0; i < posts.length; i++) {
@@ -590,12 +591,6 @@ function addProducts(desiredSection, background, proDescArray, proNameArray) {
             spaceAboveButton.setAttribute("id", `above-button${posts[i]}`);
             spaceAboveButton.setAttribute("class", "above-button");
             event.appendChild(spaceAboveButton)
-
-            //divCreator('event', `event${i}desc-cost`, 'desc-cost');
-            //divCreator(`desc-cost${posts[i]}`, 'desc-cost0', 'desc-cost-child');
-            //divCreator(`desc-cost${posts[i]}`, 'desc-cost1' ,'desc-cost-child');
-
-            //create an rsvp div and append 
             var eventContainer = document.getElementById('event');
             var rsvpContainer = document.createElement('div');
             rsvpContainer.setAttribute("id", `rsvp${posts[i]}`);
@@ -611,11 +606,14 @@ function addProducts(desiredSection, background, proDescArray, proNameArray) {
             var buttonText = document.createTextNode('Add to Cart');
             button.appendChild(buttonText);
             button.appendChild(buttonTextCreator);
-            button.addEventListener('click', () => {
-                if (usernameLogged.username != "User") {
+            
+            button.addEventListener('click', () =>
+             {
+                if (ifLogged.username != "") {
                     document.getElementById("login").style.display="none"
-                    
-                } else {
+                    alert("Item Added to cart")
+                }
+             else {
                     document.getElementById("login").style.display="flex";
                 }
                 
